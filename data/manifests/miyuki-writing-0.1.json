@@ -1,0 +1,86 @@
+{
+  "name": "miyuki-writing-0.1",
+  "version": "0.1.0",
+  "description": "Human-authored Miyuki writing exemplars teaching PROMPT->WRITE not explain. 38 examples covering Phase1 failures.",
+  "source": "human-authored",
+  "license": "CC-BY-4.0",
+  "creation_date": "2026-09-24T21:10:47.575801+00:00",
+  "num_examples": 38,
+  "categories": {
+    "scene": 29,
+    "continuation": 1,
+    "quiet": 10,
+    "character_consistency": 14,
+    "dialogue": 10,
+    "subtext": 7,
+    "character_voice": 7,
+    "atmospheric": 3,
+    "description": 14,
+    "pacing": 14,
+    "emotion": 2,
+    "action": 2,
+    "anti_meta": 10,
+    "rewriting": 5,
+    "context_retention": 5,
+    "transitional": 1,
+    "instruction_following": 4,
+    "sensory_detail": 1,
+    "humor": 1,
+    "tension": 1,
+    "continuity": 1
+  },
+  "skills": {
+    "instruction_following": 31,
+    "continuity": 3,
+    "prose_flow": 25,
+    "pacing": 8,
+    "character_consistency": 3,
+    "naturalness": 7,
+    "sensory_detail": 5,
+    "subtext": 1
+  },
+  "splits": {
+    "train": 38
+  },
+  "characters": {
+    "total_chars": 21776,
+    "avg_chars_per_example": 573.0526315789474
+  },
+  "tokens": {
+    "total_tokens_qwen": 5072,
+    "avg_tokens_per_example": 133.47368421052633,
+    "tokens_per_char": 0.23291697281410728
+  },
+  "tokenizer": {
+    "id": "Qwen/Qwen2-0.5B-Instruct",
+    "vocab_size": 151646,
+    "chat_template": true
+  },
+  "files": {
+    "dataset.jsonl": {
+      "sha256": "9e1b97461f98948254bc45906cb275f111318f5d5adfc9e7139ab9c35c200d5e",
+      "num_examples": 38
+    }
+  },
+  "validation": {
+    "status": "passed",
+    "errors": [],
+    "duplicates": 0
+  },
+  "provenance": {
+    "author": "Miyuki Lab human-authored (AI-assisted drafting, human-edited)",
+    "phase1_failures_addressed": [
+      "meta-analysis",
+      "flat dialogue",
+      "lore dumping",
+      "quiet-scene failure",
+      "context hedging",
+      "action incoherence",
+      "premature EOS",
+      "repetition",
+      "exposition",
+      "voice drift"
+    ]
+  },
+  "notes": "First writing corpus. Quality over volume. Each example has keep/edit/discard reviewed in review.yaml. Before/after anti-meta pairs included."
+}

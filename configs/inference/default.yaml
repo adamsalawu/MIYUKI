@@ -1,0 +1,7 @@
+# Inference defaults - can override model config's generation at runtime
+temperature: 0.8
+top_p: 0.95
+max_new_tokens: 256
+repetition_penalty: 1.1
+do_sample: true
+seed: 42

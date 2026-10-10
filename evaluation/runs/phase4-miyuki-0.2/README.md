@@ -1,0 +1,1 @@
+# Phase 4 — miyuki-writing-0.2 (120 ex, assistant-only) — 5 keep/4 edit/3 discard vs Phase1 0/3/9, Phase3B 1/2/9. See docs/phase4_report.md and human_eval.yaml. Original 12 prompts at 180 tokens, expanded at 60 tokens (CPU-limited) in phase4-expanded-miyuki-0.2-60.

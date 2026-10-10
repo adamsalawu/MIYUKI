@@ -1,0 +1,73 @@
+{
+  "run_name": "2026-09-25_Qwen_Qwen2-0.5B-Instruct",
+  "timestamp": "2026-09-25T16:58:20.541883+00:00",
+  "model": {
+    "model": {
+      "name": "Qwen/Qwen2-0.5B-Instruct",
+      "family": "qwen2",
+      "tokenizer": "Qwen/Qwen2-0.5B-Instruct",
+      "context_length": 4096,
+      "trust_remote_code": false
+    },
+    "runtime": {
+      "device": "auto",
+      "dtype": "auto",
+      "quantization": null,
+      "attn_implementation": null
+    },
+    "generation": {
+      "temperature": 0.8,
+      "top_p": 0.95,
+      "top_k": null,
+      "max_new_tokens": 256,
+      "repetition_penalty": 1.1,
+      "do_sample": true,
+      "seed": 42
+    },
+    "adapter": {
+      "type": null,
+      "r": 16,
+      "alpha": 32,
+      "dropout": 0.05,
+      "target_modules": null,
+      "enabled": false
+    },
+    "training": {
+      "output_dir": "checkpoints/miyuki-0.1",
+      "num_epochs": 2,
+      "per_device_train_batch_size": 1,
+      "per_device_eval_batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.03,
+      "lr_scheduler_type": "cosine",
+      "logging_steps": 10,
+      "save_steps": 100,
+      "eval_steps": 100,
+      "save_total_limit": 3,
+      "max_seq_length": 1024,
+      "bf16": false,
+      "fp16": false,
+      "gradient_checkpointing": true,
+      "seed": 42,
+      "resume_from_checkpoint": null,
+      "push_to_hub": false,
+      "report_to": "none",
+      "assistant_only_loss": false
+    },
+    "version": "0.1.0",
+    "description": "Small instruct model example. Enable when GPU/VRAM allows. Requires download."
+  },
+  "prompts_file": "evaluation\\prompts\\phase4_expanded.jsonl",
+  "num_prompts": 12,
+  "num_outputs": 12,
+  "num_errors": 0,
+  "generation_overrides": {},
+  "elapsed_s": 1009.2261068820953,
+  "load_s": 5.989174842834473,
+  "load_error": null,
+  "model_params": 494032768,
+  "run_dir": "C:\\Aether\\RisingStar\\MIYUKI\\evaluation\\runs\\phase4-expanded-base\\2026-09-25_Qwen_Qwen2-0.5B-Instruct",
+  "outputs_path": "C:\\Aether\\RisingStar\\MIYUKI\\evaluation\\runs\\phase4-expanded-base\\2026-09-25_Qwen_Qwen2-0.5B-Instruct\\outputs.jsonl"
+}

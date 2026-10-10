@@ -1,0 +1,432 @@
+{
+  "tokenizer_id": "Qwen/Qwen2-0.5B-Instruct",
+  "vocab_size": 151646,
+  "chat_template": true,
+  "pad_token": "<|endoftext|>",
+  "eos_token": "<|im_end|>",
+  "total_examples": 38,
+  "total_messages": 76,
+  "total_chars": 21738,
+  "total_words": 3719,
+  "total_tokens": 5071,
+  "tokens_per_char": 0.23327813046278406,
+  "tokens_per_word": 1.3635385856413014,
+  "avg_tokens_per_example": 133.47368421052633,
+  "min_tokens_per_example": 41,
+  "max_tokens_per_example": 212,
+  "test_words": {
+    "Mara": {
+      "tokens": [
+        "M",
+        "ara"
+      ],
+      "num": 2
+    },
+    "Jinx": {
+      "tokens": [
+        "J",
+        "inx"
+      ],
+      "num": 2
+    },
+    "Elena": {
+      "tokens": [
+        "E",
+        "lena"
+      ],
+      "num": 2
+    },
+    "Haru": {
+      "tokens": [
+        "Har",
+        "u"
+      ],
+      "num": 2
+    },
+    "Mika": {
+      "tokens": [
+        "M",
+        "ika"
+      ],
+      "num": 2
+    },
+    "Bren": {
+      "tokens": [
+        "B",
+        "ren"
+      ],
+      "num": 2
+    },
+    "Toma": {
+      "tokens": [
+        "T",
+        "oma"
+      ],
+      "num": 2
+    },
+    "Lira": {
+      "tokens": [
+        "L",
+        "ira"
+      ],
+      "num": 2
+    },
+    "Kira": {
+      "tokens": [
+        "K",
+        "ira"
+      ],
+      "num": 2
+    },
+    "Aoi": {
+      "tokens": [
+        "A",
+        "oi"
+      ],
+      "num": 2
+    },
+    "Ken": {
+      "tokens": [
+        "Ken"
+      ],
+      "num": 1
+    },
+    "Aureline": {
+      "tokens": [
+        "A",
+        "ure",
+        "line"
+      ],
+      "num": 3
+    },
+    "Kestrel": {
+      "tokens": [
+        "K",
+        "est",
+        "rel"
+      ],
+      "num": 3
+    },
+    "lumenweave": {
+      "tokens": [
+        "l",
+        "umen",
+        "we",
+        "ave"
+      ],
+      "num": 4
+    },
+    "scryglass": {
+      "tokens": [
+        "sc",
+        "ry",
+        "glass"
+      ],
+      "num": 3
+    },
+    "voidtide": {
+      "tokens": [
+        "void",
+        "t",
+        "ide"
+      ],
+      "num": 3
+    },
+    "Emberhearth": {
+      "tokens": [
+        "Em",
+        "ber",
+        "he",
+        "arth"
+      ],
+      "num": 4
+    },
+    "genkan": {
+      "tokens": [
+        "gen",
+        "kan"
+      ],
+      "num": 2
+    },
+    "\"": {
+      "tokens": [
+        "\""
+      ],
+      "num": 1
+    },
+    "—": {
+      "tokens": [
+        "âĢĶ"
+      ],
+      "num": 1
+    },
+    "…": {
+      "tokens": [
+        "âĢ¦"
+      ],
+      "num": 1
+    },
+    "'": {
+      "tokens": [
+        "'"
+      ],
+      "num": 1
+    },
+    "...": {
+      "tokens": [
+        "..."
+      ],
+      "num": 1
+    },
+    "--": {
+      "tokens": [
+        "--"
+      ],
+      "num": 1
+    }
+  },
+  "phrases": {
+    "The lighthouse had been dark for twenty years": 9,
+    "chipped blue mug": 4,
+    "broken compass": 2,
+    "She said, glancing away": 6,
+    "“Oh, great,” she said": 6,
+    "lumenweave cloak": 5,
+    "voidtide flats": 4
+  },
+  "miyuki_terms": {
+    "Aureline": {
+      "freq": 6,
+      "tokens": [
+        "A",
+        "ure",
+        "line"
+      ],
+      "num": 3
+    },
+    "Kestrel": {
+      "freq": 1,
+      "tokens": [
+        "K",
+        "est",
+        "rel"
+      ],
+      "num": 3
+    },
+    "lumenweave": {
+      "freq": 6,
+      "tokens": [
+        "l",
+        "umen",
+        "we",
+        "ave"
+      ],
+      "num": 4
+    },
+    "scryglass": {
+      "freq": 5,
+      "tokens": [
+        "sc",
+        "ry",
+        "glass"
+      ],
+      "num": 3
+    },
+    "voidtide": {
+      "freq": 7,
+      "tokens": [
+        "void",
+        "t",
+        "ide"
+      ],
+      "num": 3
+    },
+    "Mara": {
+      "freq": 5,
+      "tokens": [
+        "M",
+        "ara"
+      ],
+      "num": 2
+    },
+    "Jinx": {
+      "freq": 8,
+      "tokens": [
+        "J",
+        "inx"
+      ],
+      "num": 2
+    },
+    "Elena": {
+      "freq": 5,
+      "tokens": [
+        "E",
+        "lena"
+      ],
+      "num": 2
+    },
+    "Haru": {
+      "freq": 12,
+      "tokens": [
+        "Har",
+        "u"
+      ],
+      "num": 2
+    },
+    "Mika": {
+      "freq": 7,
+      "tokens": [
+        "M",
+        "ika"
+      ],
+      "num": 2
+    },
+    "Toma": {
+      "freq": 7,
+      "tokens": [
+        "T",
+        "oma"
+      ],
+      "num": 2
+    },
+    "Lira": {
+      "freq": 9,
+      "tokens": [
+        "L",
+        "ira"
+      ],
+      "num": 2
+    },
+    "genkan": {
+      "freq": 1,
+      "tokens": [
+        "gen",
+        "kan"
+      ],
+      "num": 2
+    }
+  },
+  "fragmented_frequent": [
+    {
+      "word": "lumenweave",
+      "freq": 6,
+      "num": 4,
+      "tokens": [
+        "l",
+        "umen",
+        "we",
+        "ave"
+      ]
+    },
+    {
+      "word": "Sensory",
+      "freq": 2,
+      "num": 3,
+      "tokens": [
+        "S",
+        "ens",
+        "ory"
+      ]
+    },
+    {
+      "word": "voidtide",
+      "freq": 7,
+      "num": 3,
+      "tokens": [
+        "void",
+        "t",
+        "ide"
+      ]
+    },
+    {
+      "word": "lanterns",
+      "freq": 2,
+      "num": 3,
+      "tokens": [
+        "lan",
+        "tern",
+        "s"
+      ]
+    },
+    {
+      "word": "sighed",
+      "freq": 2,
+      "num": 3,
+      "tokens": [
+        "s",
+        "igh",
+        "ed"
+      ]
+    },
+    {
+      "word": "melancholic",
+      "freq": 2,
+      "num": 3,
+      "tokens": [
+        "mel",
+        "anch",
+        "olic"
+      ]
+    },
+    {
+      "word": "Lavender",
+      "freq": 2,
+      "num": 3,
+      "tokens": [
+        "L",
+        "av",
+        "ender"
+      ]
+    },
+    {
+      "word": "Aureline",
+      "freq": 6,
+      "num": 3,
+      "tokens": [
+        "A",
+        "ure",
+        "line"
+      ]
+    },
+    {
+      "word": "sensory",
+      "freq": 2,
+      "num": 3,
+      "tokens": [
+        "s",
+        "ens",
+        "ory"
+      ]
+    },
+    {
+      "word": "sweater",
+      "freq": 3,
+      "num": 3,
+      "tokens": [
+        "s",
+        "we",
+        "ater"
+      ]
+    },
+    {
+      "word": "unevenly",
+      "freq": 2,
+      "num": 3,
+      "tokens": [
+        "une",
+        "ven",
+        "ly"
+      ]
+    },
+    {
+      "word": "scryglass",
+      "freq": 5,
+      "num": 3,
+      "tokens": [
+        "sc",
+        "ry",
+        "glass"
+      ]
+    }
+  ]
+}

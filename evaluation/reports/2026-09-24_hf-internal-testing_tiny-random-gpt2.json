@@ -1,0 +1,40 @@
+{
+  "run_name": "2026-09-24_hf-internal-testing_tiny-random-gpt2",
+  "timestamp": "2026-09-24T19:27:15.432961+00:00",
+  "model": "hf-internal-testing/tiny-random-gpt2",
+  "model_version": "0.1.0",
+  "num_prompts": 12,
+  "num_errors": 0,
+  "elapsed_s": 32.98176193237305,
+  "categories": [
+    "action_scene",
+    "character_consistency",
+    "character_interaction",
+    "context_retention",
+    "continuation",
+    "description",
+    "dialogue",
+    "emotional_scene",
+    "quiet_scene",
+    "rewriting",
+    "scene_writing",
+    "tone_consistency"
+  ],
+  "prompt_ids": [
+    "continuation-01",
+    "dialogue-01",
+    "scene-writing-01",
+    "character-interaction-01",
+    "emotional-scene-01",
+    "action-scene-01",
+    "quiet-scene-01",
+    "description-01",
+    "rewriting-01",
+    "character-consistency-01",
+    "tone-consistency-01",
+    "context-retention-01"
+  ],
+  "outputs_path": "evaluation\\runs\\2026-09-24_hf-internal-testing_tiny-random-gpt2\\outputs.jsonl",
+  "metadata_path": "evaluation\\runs\\2026-09-24_hf-internal-testing_tiny-random-gpt2\\metadata.json",
+  "notes": "Automated generation complete. Fill human_template.yaml for qualitative ratings."
+}

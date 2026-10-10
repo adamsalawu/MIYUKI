@@ -1,0 +1,20 @@
+{
+  "name": "miyuki-writing-smoke",
+  "version": "0.0.1",
+  "source": "synthetic",
+  "license": null,
+  "creation_date": "2026-09-24T19:27:58.391415+00:00",
+  "num_examples": 20,
+  "splits": {
+    "train": 20
+  },
+  "preprocessing": null,
+  "token_stats": {
+    "approx_tokens_total": 1571,
+    "approx_tokens_train": 1571
+  },
+  "file_hashes": {
+    "data\\processed\\smoke_demo.jsonl": "ae0ec332614405ebbcb27279e5dad4cdd90a5a0264402b8a91514694fabdef3c"
+  },
+  "notes": "Tiny smoke demo 20 examples"
+}

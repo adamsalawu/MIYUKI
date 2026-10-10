@@ -1,0 +1,43 @@
+# Human evaluation template - one entry per model output
+# Copy this file per evaluation run and fill in ratings/notes.
+# Do not collapse to a single score unless justified; keep raw notes.
+#
+# Scale for each dimension: 1-5 (1=poor, 5=excellent) + freeform notes
+# Mark N/A if dimension does not apply to a given prompt.
+
+evaluation_run: "evaluation/runs/YYYY-MM-DD_model-name"
+evaluator: "name"
+date: "YYYY-MM-DD"
+
+# Per-output ratings - duplicate this block for each prompt id
+outputs:
+  - prompt_id: "continuation-01"
+    model: "baseline"
+    ratings:
+      prose_quality: { score: null, notes: "" }        # sentence flow, word choice, rhythm
+      naturalness: { score: null, notes: "" }           # does it sound human, not robotic
+      character_consistency: { score: null, notes: "" } # voices stay true if applicable
+      dialogue_quality: { score: null, notes: "" }      # natural, distinct voices
+      pacing: { score: null, notes: "" }                # not rushed/dragging
+      creativity: { score: null, notes: "" }            # fresh, not generic
+      instruction_adherence: { score: null, notes: "" } # followed the instruction
+      continuity: { score: null, notes: "" }            # respects prior context
+      overall_usefulness: { score: null, notes: "" }    # would an author keep/edit this
+    raw_notes: ""
+    keep_edit_discard: null  # keep | edit | discard
+    # exact output text can be referenced from evaluation/runs/.../outputs.jsonl
+
+  - prompt_id: "dialogue-01"
+    model: "baseline"
+    ratings:
+      prose_quality: { score: null, notes: "" }
+      naturalness: { score: null, notes: "" }
+      character_consistency: { score: null, notes: "" }
+      dialogue_quality: { score: null, notes: "" }
+      pacing: { score: null, notes: "" }
+      creativity: { score: null, notes: "" }
+      instruction_adherence: { score: null, notes: "" }
+      continuity: { score: null, notes: "" }
+      overall_usefulness: { score: null, notes: "" }
+    raw_notes: ""
+    keep_edit_discard: null

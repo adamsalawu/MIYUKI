@@ -1,0 +1,204 @@
+# Human evaluation — Phase 1 Qwen2-0.5B-Instruct baseline
+# Evaluated against docs/miyuki_writing_spec.md. 1-5 (1=poor,5=excellent), N/A where not applicable.
+# Outputs at evaluation/runs/phase1_qwen2_0.5b/outputs.jsonl (180 max_new_tokens, temp 0.8 top_p 0.95 rep 1.1 seed 42, CPU float32)
+evaluation_run: "evaluation/runs/phase1_qwen2_0.5b"
+model: "Qwen/Qwen2-0.5B-Instruct"
+evaluator: "Miyuki Lab (automated + human review)"
+date: "2026-09-24"
+generation_config: { temperature: 0.8, top_p: 0.95, max_new_tokens: 180, repetition_penalty: 1.1, seed: 42 }
+
+outputs:
+  - prompt_id: "continuation-01"
+    category: "continuation"
+    ratings:
+      prose_quality: { score: 2, notes: "Grammatical but clichéd filler: 'wind of history that had long since faded', 'mix of excitement and trepidation'. Sentences_byte but repetitive rhythm." }
+      naturalness: { score: 2, notes: "Reads like generic AI filler; 'children looked up with wonder... small nod of approval' is implausible/staged." }
+      character_consistency: { score: 2, notes: "Mara's voice not distinct; invented children/parents not in prior context." }
+      dialogue_quality: { score: null, notes: "N/A — no dialogue." }
+      pacing: { score: 2, notes: "Rushed montage (bridge→children→cottage→bed) instead of staying with the beam reveal. Truncated mid-sentence at token limit: 'Over the next few days, she'." }
+      creativity: { score: 2, notes: "Generic small-town homecoming; no lighthouse mystery payoff." }
+      instruction_adherence: { score: 2, notes: "Did not keep POV/tense tightly nor focus on beam knowledge; swerved to invented town square." }
+      continuity: { score: 2, notes: "Ignores lighthouse as central image after first clause; introduces unease without setup." }
+      overall_usefulness: { score: 2, notes: "Needs heavy edit; paragraph-leading metaphors are weak." }
+    raw_notes: "Coherent but generic. Would not keep as is; demonstrates small-model fluency without scene grounding."
+    keep_edit_discard: "edit"
+
+  - prompt_id: "dialogue-01"
+    category: "dialogue"
+    ratings:
+      prose_quality: { score: 2, notes: "Dialogue is grammatically correct but unnatural, no action tags beyond colon." }
+      naturalness: { score: 1, notes: "Robotic and expository: 'It's been five years since I last saw you!' (on-the-nose). Roles confused Sister/Bret swapped." }
+      character_consistency: { score: 1, notes: "Siblings indistinguishable; both speak in same stilted explanatory style. Younger sister not weary/loyal, older not abrupt." }
+      dialogue_quality: { score: 1, notes: "Flat, repetitive, no contractions nuance, no subtext, no distinct diction. Fails Miyuki spec 'no on-the-nose exposition'." }
+      pacing: { score: 2, notes: "Exposition dump, no beats; conversation loops on 'where has she been'." }
+      creativity: { score: 1, notes: "No humor or texture; generic family problems." }
+      instruction_adherence: { score: 1, notes: "Failed 'only dialogue and brief action tags, no narration' — it is pure dialogue but without tags; also failed 'distinct, no exposition'." }
+      continuity: { score: 1, notes: "Invented Mom death contradicting 'estranged at kitchen table' alive context." }
+      overall_usefulness: { score: 1, notes: "Discard-level; would rewrite entirely." }
+    raw_notes: "Produces dialogue shape but not believable sibling reconciliation. Flat and AI-like."
+    keep_edit_discard: "discard"
+
+  - prompt_id: "scene-writing-01"
+    category: "scene_writing"
+    ratings:
+      prose_quality: { score: 3, notes: "Better sensory attempt: 'dripping tea spoons against wood', 'damp leaves', 'salty taste of rainwater'. Some purple ('raindrops danced')." }
+      naturalness: { score: 3, notes: "Most natural of the set; reads like scene, not essay." }
+      character_consistency: { score: 2, notes: "Writer character not grounded: 'engrossed in a book, eyes closed' contradiction; no internal writer state." }
+      dialogue_quality: { score: null, notes: "N/A — no dialogue requested." }
+      pacing: { score: 3, notes: "Lingers on sensory, slight stall on 'slouched, fingers clasped' but not rushed. Truncated mid-thought at token limit." }
+      creativity: { score: 2, notes: "Cobblestones+cushions+books is generic Kyoto collage; not specific to this apartment." }
+      instruction_adherence: { score: 3, notes: "Focuses on sensory/mood as asked, but slips into travel-brochure listing and adds unexplained 'breeze blew past'." }
+      continuity: { score: 3, notes: "Respects rain/Kyoto/tea but adds unsupported 'cobblestone streets' outside assumption." }
+      overall_usefulness: { score: 3, notes: "Closest to keep/edit; needs trimming and writer interiority." }
+    raw_notes: "Best of the batch for description; shows model can do quiet sensory when prompted."
+    keep_edit_discard: "edit"
+
+  - prompt_id: "character-interaction-01"
+    category: "character_interaction"
+    ratings:
+      prose_quality: { score: 1, notes: "Essay-like exposition: 'The mentor has been teaching for years and is known for his wisdom...' — lore dump, not scene." }
+      naturalness: { score: 1, notes: "Robotic framing; reads like character sheet summary before dialogue." }
+      character_consistency: { score: 1, notes: "Mentor 'calm demeanor from within' vs Student 'struggling with reading' irrelevant; voices not distinct. Mentor calls Student 'my dear' generic." }
+      dialogue_quality: { score: 2, notes: "Student line 'they have no idea what I am doing! I've only just arrived!' is plausible but brief and trailing off." }
+      pacing: { score: 1, notes: "Front-loads exposition dump, then only 3 lines of dialogue before cutoff." }
+      creativity: { score: 1, notes: "No power dynamic shown; tells traits instead of dramatizing." }
+      instruction_adherence: { score: 1, notes: "Failed 'show power dynamic and voice clearly' — it told it. Confrontation not staged." }
+      continuity: { score: 2, notes: "Keeps mentor/student roles but invents 'reading struggles' not in context." }
+      overall_usefulness: { score: 1, notes: "Discard; would replace with true confrontation scene." }
+    raw_notes: "Typical small-model failure: summarizes instead of scenes. Miyuki spec requires dramatized confrontation."
+    keep_edit_discard: "discard"
+
+  - prompt_id: "emotional-scene-01"
+    category: "emotional_scene"
+    ratings:
+      prose_quality: { score: 2, notes: "'heart pounding as they open the envelope' cliché; 'thoughts raced' generic; mis-tenses 'has been... they open'." }
+      naturalness: { score: 2, notes: "Flat summary tone, not embodied emotion." }
+      character_consistency: { score: 2, notes: "Uses third-person 'character/ they' placeholder instead of a person; no continuity." }
+      dialogue_quality: { score: 2, notes: "Letter text is generic 'I miss you dearly, we can still talk...' not surprising contents." }
+      pacing: { score: 2, notes: "Rushes from dread to relief in 2 paragraphs without earned escalation; 'wonderful!' instant." }
+      creativity: { score: 1, notes: "Rumors about 'man at work' invented; not what was asked." }
+      instruction_adherence: { score: 1, notes: "Failed 'show emotion through action/body, not naming emotion' — it narrates 'sense of relief wash over them'. Also melodramatic." }
+      continuity: { score: 2, notes: "Dreaded letter from former partner → generic friendly note does satisfy 'not what expected' but weightless." }
+      overall_usefulness: { score: 1, notes: "Discard; needs complete rewrite with specific body action." }
+    raw_notes: "Demonstrates need for Miyuki spec guidance on emotional progression."
+    keep_edit_discard: "discard"
+
+  - prompt_id: "action-scene-01"
+    category: "action_scene"
+    ratings:
+      prose_quality: { score: 1, notes: "Repetitive 'She's trying... but they keep following'; past tense clutter, mis-maintains night market location vs 'on her way to school'." }
+      naturalness: { score: 1, notes: "Confusing spatial: runs into security guards, pushes open door behind stall, captured then 'run past them' contradictory." }
+      character_consistency: { score: 1, notes: "Teenage girl has no voice; generic action figure." }
+      dialogue_quality: { score: null, notes: "N/A — no dialogue requested, none given." }
+      pacing: { score: 1, notes: "Told pace, not shown; sentences long and explanatory, not quick short beats. Fails 'quick, short sentences'." }
+      creativity: { score: 1, notes: "Stolen notebook retrieval is incoherent (pulls from pocket, then captured)." }
+      instruction_adherence: { score: 1, notes: "Failed 'retrieve without violence, spatially clear, quick pacing' — she is captured and vague." }
+      continuity: { score: 1, notes: "Night market in Taipei → school/home invented steps." }
+      overall_usefulness: { score: 1, notes: "Discard; would block out fresh." }
+    raw_notes: "Action scene unreadable; small model cannot track spatial causality well."
+    keep_edit_discard: "discard"
+
+  - prompt_id: "quiet-scene-01"
+    category: "quiet_scene"
+    ratings:
+      prose_quality: { score: 1, notes: "Not prose at all — meta summary: 'The answer is: The two old friends are discussing...'." }
+      naturalness: { score: 1, notes: "Robotic analysis, not scene." }
+      character_consistency: { score: 1, notes: "No characters embodied." }
+      dialogue_quality: { score: 1, notes: "No dialogue; analysis instead." }
+      pacing: { score: 1, notes: "No pacing; summary sentence." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 1, notes: "Complete failure: 'Write what is not said, subtext over exposition' → it produced exposition." }
+      continuity: { score: 1, notes: "Mentions awkward/distant but not dusk platform." }
+      overall_usefulness: { score: 1, notes: "Discard; demonstrates model interpreting creative instruction as Q&A." }
+    raw_notes: "Systematic failure on 'quiet scene with subtext' — appears across all sweep temps, indicating prompt framing / model capacity issue, not sampling."
+    keep_edit_discard: "discard"
+
+  - prompt_id: "description-01"
+    category: "description"
+    ratings:
+      prose_quality: { score: 2, notes: "Grammatical but generic mountaintop: 'rugged landscape, jagged rocks, deep purple sky' stock images." }
+      naturalness: { score: 2, notes: "Adult travel description, not child's voice." }
+      character_consistency: { score: 1, notes: "No child's perspective: 'sense of awe wash over him' tells, not child noticing scale/sound." }
+      dialogue_quality: { score: null, notes: "N/A — correctly no dialogue, but that's the only adherence." }
+      pacing: { score: 2, notes: "Lists elements without lingering; 'stars twinkled' cutoff." }
+      creativity: { score: 1, notes: "Encyclopaedic list, violates spec 'selective, not encyclopaedic'." }
+      instruction_adherence: { score: 1, notes: "Failed 'evocative tied to child's perspective, not generic list'." }
+      continuity: { score: 2, notes: "Respects abandoned observatory/mountain/child." }
+      overall_usefulness: { score: 1, notes: "Discard; needs rewrite through 10-year-old eyes." }
+    raw_notes: "Shows 0.5B struggles with POV-anchored description."
+    keep_edit_discard: "discard"
+
+  - prompt_id: "rewriting-01"
+    category: "rewriting"
+    ratings:
+      prose_quality: { score: 1, notes: "Only one sentence: 'I found myself walking... sense of unease. Air thick with tension.' Generic, adds melodrama." }
+      naturalness: { score: 1, notes: "First-person swap unexplained; asks to rewrite third-person paragraph vividly, it collapsed to abstract tension." }
+      character_consistency: { score: null, notes: "N/A" }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 1, notes: "Too short; no improvement in rhythm/sensory." }
+      creativity: { score: 1, notes: "No vivid specificity; actually less specific than original." }
+      instruction_adherence: { score: 1, notes: "Failed 'more vivid/specific without new plot, keep core beat' — it changed POV and added unease not in original." }
+      continuity: { score: 1, notes: "Loses 'him sad, she doesn't know what to say'." }
+      overall_usefulness: { score: 1, notes: "Discard; trivial output (29 tokens) suggests model treated rewrite as completion rather than edit." }
+    raw_notes: "Rewriting is weakest: model doesn't perform edit operation well."
+    keep_edit_discard: "discard"
+
+  - prompt_id: "character-consistency-01"
+    category: "character_consistency"
+    ratings:
+      prose_quality: { score: 1, notes: "Truncated: '\"Jinx, I know it sounds ridiculous but...\"' only 12 tokens, cut off." }
+      naturalness: { score: 1, notes: "Incomplete; cannot judge." }
+      character_consistency: { score: 1, notes: "Voice not continued: Jinx should be witty/blunt/dry humor, but output is earnest apology start, opposite of spec. Abrupt break." }
+      dialogue_quality: { score: 1, notes: "No dry humor; opposite." }
+      pacing: { score: 1, notes: "No pacing due to truncation; rep penalty maybe cut off? Output 12 tokens vs expected 180 indicates early EOS." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 1, notes: "Failed 'stay in character, witty/blunt'." }
+      continuity: { score: 1, notes: "Misnames addressee as Jinx (she IS Jinx)." }
+      overall_usefulness: { score: 1, notes: "Discard; indicates model mis-handled prompt with embedded quotes." }
+    raw_notes: "Prompt with embedded dialogue quote may have confused chat template; truncation suggests model emitted eos early. Needs prompt engineering."
+    keep_edit_discard: "discard"
+
+  - prompt_id: "tone-consistency-01"
+    category: "tone_consistency"
+    ratings:
+      prose_quality: { score: 1, notes: "Meta essay: 'The literary fiction tone is described as...' — analysis, not continuation." }
+      naturalness: { score: 1, notes: "Robotic academic tone, opposite of restrained literary." }
+      character_consistency: { score: null, notes: "N/A" }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 1, notes: "No narrative pacing." }
+      creativity: { score: 1, notes: "Offers generic 'I have been pondering... snowy night' cliché after analysis." }
+      instruction_adherence: { score: 1, notes: "Complete failure: 'Match quiet, restrained, melancholic tone' → it explained tone instead." }
+      continuity: { score: 1, notes: "Did not continue courtyard image." }
+      overall_usefulness: { score: 1, notes: "Discard." }
+    raw_notes: "Same meta-answer pattern as quiet-scene/rewrite — model interprets literary instruction as definition task."
+    keep_edit_discard: "discard"
+
+  - prompt_id: "context-retention-01"
+    category: "context_retention"
+    ratings:
+      prose_quality: { score: 1, notes: "Meta analysis: 'Elena's reaction could be one of surprise... It depends on...' — hedged essay, not scene." }
+      naturalness: { score: 1, notes: "Fence-sitting 'perhaps', 'could be', 'depends' violates spec anti-pattern." }
+      character_consistency: { score: 1, notes: "No Elena voice; generic sociology." }
+      dialogue_quality: { score: 1, notes: "No dialogue; analysis." }
+      pacing: { score: 1, notes: "No pacing." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 1, notes: "Failed binary: must respect chipped blue mug (grandmother's) and lavender hate — it does not mention mug or refusal; hedges." }
+      continuity: { score: 1, notes: "FAIL — does not have Elena use her mug or decline lavender; contradicts future context retention requirement." }
+      overall_usefulness: { score: 1, notes: "Discard; critical failure for Story Brain continuity." }
+    raw_notes: "Most concerning failure: context retention is load-bearing for Miyuki. 0.5B fails binary adherence even with explicit prompt."
+    keep_edit_discard: "discard"
+
+overall_summary:
+  notes: |
+    Qwen2-0.5B-Instruct (494M) is a real instruct baseline: grammatical, non-random, but **not yet a Miyuki writer**.
+    Strengths: single best output was scene-writing-01 (Kyoto rain/tea) — showed it can produce sensory mood when well-framed.
+    Systemic weaknesses (9/12 discard, 3/12 edit):
+    - Instruction → meta-answer confusion (quiet, tone, rewrite, context) — model explains task rather than performs it. Varying temp/top_p/rep (0.7-1.0) does not fix; prompt framing and model capacity are root causes.
+    - Generic AI phrasing, clichés, exposition dumps over dramatized scenes (character-interaction, emotional, action).
+    - Flat dialogue, no distinct voices, lore dumps.
+    - Weak continuity: invents children/parents, confuses roles, loses spatial causality.
+    - Truncation issues on two prompts (character-consistency 12 tokens) — possibly chat template quoting edge case.
+
+    Distance to docs/miyuki_writing_spec.md is substantial. Next work should be: improve prompt framing (system vs user, explicit 'write scene, do not explain') + curate Miyuki writing dataset (Phase 2) for instruction following, before any LoRA. 0.5B proves infra but not story quality; consider evaluating 1B+ after dataset, not now.
+  avg_usefulness: "discard-heavy (9 discard, 3 edit, 0 keep)"
+  sweep_findings: "temperature/top_p sweeps (A 0.7/0.9, B 0.8/0.95, C 1.0) on subset 4 prompts showed no qualitative change in failure modes; conservative slightly more deterministic but still generic. Decoding params are not the lever — prompt/model size is."

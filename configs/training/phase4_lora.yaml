@@ -1,0 +1,59 @@
+# Phase 4 — Larger dataset + correct assistant-only loss
+# Base: Qwen/Qwen2-0.5B-Instruct, dataset miyuki-writing-0.2 (120 ex, 38 from 0.1 + 82 new targeted), LoRA r16, CPU, assistant_only_loss true
+# Derived from best-supported Phase 3B config (r16 alpha32, batch1 accum8, max_seq1024, lr2e-4, 3 epochs, seed42) but with larger dataset and correct loss masking
+model:
+  name: "Qwen/Qwen2-0.5B-Instruct"
+  family: "qwen2"
+  tokenizer: "Qwen/Qwen2-0.5B-Instruct"
+  context_length: 4096
+  trust_remote_code: false
+
+runtime:
+  device: "auto"
+  dtype: "auto"
+  quantization: null
+  attn_implementation: null
+
+generation:
+  temperature: 0.8
+  top_p: 0.95
+  top_k: null
+  max_new_tokens: 180
+  repetition_penalty: 1.1
+  do_sample: true
+  seed: 42
+
+adapter:
+  type: "lora"
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: null  # auto qwen2 [q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj]
+  enabled: true
+
+training:
+  output_dir: "checkpoints/phase4-miyuki-0.2"
+  num_epochs: 3
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 8
+  learning_rate: 0.0002
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  lr_scheduler_type: "cosine"
+  logging_steps: 1
+  save_steps: 5
+  eval_steps: 5
+  save_total_limit: 2
+  max_seq_length: 1024
+  bf16: false
+  fp16: false
+  gradient_checkpointing: false
+  seed: 42
+  resume_from_checkpoint: null
+  push_to_hub: false
+  report_to: "none"
+  assistant_only_loss: true  # Phase 4 fix: only assistant tokens contribute (was false for 0001-0005)
+
+version: "0.2.0-phase4"
+description: "Phase 4: Qwen2-0.5B + miyuki-writing-0.2 (120 ex, 38+82 targeted, SHA 8cda31...), LoRA r16 alpha32, 3 epochs, lr2e-4, batch1 accum8, max_seq1024, seed42, CPU, assistant_only_loss true. Tests whether larger deliberately curated data + correct loss improves writing enough to justify 0.5B."

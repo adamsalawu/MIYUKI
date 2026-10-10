@@ -1,0 +1,73 @@
+{
+  "run_name": "2026-09-26_Qwen_Qwen2.5-1.5B-Instruct",
+  "timestamp": "2026-09-26T20:46:52.460410+00:00",
+  "model": {
+    "model": {
+      "name": "Qwen/Qwen2.5-1.5B-Instruct",
+      "family": "qwen2",
+      "tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+      "context_length": 32768,
+      "trust_remote_code": false
+    },
+    "runtime": {
+      "device": "auto",
+      "dtype": "auto",
+      "quantization": null,
+      "attn_implementation": null
+    },
+    "generation": {
+      "temperature": 0.8,
+      "top_p": 0.95,
+      "top_k": null,
+      "max_new_tokens": 180,
+      "repetition_penalty": 1.1,
+      "do_sample": true,
+      "seed": 42
+    },
+    "adapter": {
+      "type": null,
+      "r": 16,
+      "alpha": 32,
+      "dropout": 0.05,
+      "target_modules": null,
+      "enabled": false
+    },
+    "training": {
+      "output_dir": "checkpoints/scale-1.5b-unused",
+      "num_epochs": 3,
+      "per_device_train_batch_size": 1,
+      "per_device_eval_batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.03,
+      "lr_scheduler_type": "cosine",
+      "logging_steps": 10,
+      "save_steps": 100,
+      "eval_steps": 100,
+      "save_total_limit": 3,
+      "max_seq_length": 1024,
+      "bf16": false,
+      "fp16": false,
+      "gradient_checkpointing": false,
+      "seed": 42,
+      "resume_from_checkpoint": null,
+      "push_to_hub": false,
+      "report_to": "none",
+      "assistant_only_loss": false
+    },
+    "version": "0.1.0-scale-test",
+    "description": "Scale test only: Qwen2.5-1.5B-Instruct base (1.54B params, 32K context) for direct benchmark vs Phase 4 Qwen2-0.5B adapter. No LoRA training in this milestone."
+  },
+  "prompts_file": "evaluation\\prompts\\targeted_scale.jsonl",
+  "num_prompts": 5,
+  "num_outputs": 5,
+  "num_errors": 0,
+  "generation_overrides": {},
+  "elapsed_s": 490.7374336719513,
+  "load_s": 16.878528356552124,
+  "load_error": null,
+  "model_params": 1543714304,
+  "run_dir": "C:\\Aether\\RisingStar\\MIYUKI\\evaluation\\runs\\model-scale-qwen2.5-1.5b-targeted\\2026-09-26_Qwen_Qwen2.5-1.5B-Instruct",
+  "outputs_path": "C:\\Aether\\RisingStar\\MIYUKI\\evaluation\\runs\\model-scale-qwen2.5-1.5b-targeted\\2026-09-26_Qwen_Qwen2.5-1.5B-Instruct\\outputs.jsonl"
+}

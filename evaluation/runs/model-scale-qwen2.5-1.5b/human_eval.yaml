@@ -1,0 +1,174 @@
+# Human evaluation — Qwen2.5-1.5B-Instruct base (no LoRA) vs Phase1/3B/4
+# Same 12 prompts, same generation (180 max, temp0.8 top_p0.95 rep1.1 seed42, CPU float32)
+# Dimensions: same 9 as Phase1/4 + keep/edit/discard
+evaluation_run: "evaluation/runs/model-scale-qwen2.5-1.5b"
+model: "Qwen/Qwen2.5-1.5B-Instruct base (1543714304 params, no adapter)"
+evaluator: "Miyuki Lab"
+date: "2026-09-26"
+generation_config: { temperature: 0.8, top_p: 0.95, max_new_tokens: 180, repetition_penalty: 1.1, seed: 42 }
+
+outputs:
+  - prompt_id: "continuation-01"
+    phase1_vs_3b_vs_4_vs_15b: "Phase1 180 town-square generic. 3B 76 oak-stump Home. Phase4 71 beam/house/kettle. 1.5B 180 lighthouse coming back to life, cliff/salt/seaweed, weight of history — fluent, longer, sensory (salt/seaweed) but purple 'journey back to past and future intertwined'. Similar quality to Phase4, more verbose."
+    ratings:
+      prose_quality: { score: 3, notes: "Fluent, varied, but purple history-pressing." }
+      naturalness: { score: 3, notes: "Scene, not essay." }
+      character_consistency: { score: 3, notes: "Mara present." }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 3, notes: "Complete, not truncated." }
+      creativity: { score: 3, notes: "Cliff/salt specific." }
+      instruction_adherence: { score: 3, notes: "POV/tense kept." }
+      continuity: { score: 3, notes: "Beam/shore kept." }
+      overall_usefulness: { score: 3, notes: "Edit, similar to Phase4." }
+    keep_edit_discard: edit
+  - prompt_id: "dialogue-01"
+    phase1_vs: "Phase1 Sister/Bret flat + Mom death. 3B Aunt Mary/Tom. Phase4 Kira/Mika laundry. 1.5B Eric/Lily with sighs/laundry/father died/career plans — distinct stage directions, slightly more voice (sighs deeply, looks up from laundry) but still wrong names, invented father death, no interruptions."
+    ratings:
+      prose_quality: { score: 2, notes: "Stage directions help, but generic." }
+      naturalness: { score: 2, notes: "What the hell was that? is natural but not sibling-table." }
+      character_consistency: { score: 1, notes: "Wrong names, invented career/father." }
+      dialogue_quality: { score: 2, notes: "Slightly more distinct than Phase4 flat, but still expository." }
+      pacing: { score: 2, notes: "Loops." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 2, notes: "Dialogue+tags yes, distinct voices partial." }
+      continuity: { score: 1, notes: "Wrong characters." }
+      overall_usefulness: { score: 1, notes: "Discard." }
+    keep_edit_discard: discard
+  - prompt_id: "scene-writing-01"
+    phase1_vs: "Phase1 purple raindrops-danced (edit). 3B verbose fire. Phase4 keep damp-teacup (best). 1.5B first-person steam/kettle/cool embrace/bare feet/tremble brush-pen — intimate, sensory, first-person writer interiority ('long since I picked up brush'). Similar to Phase4 keep, slightly more purple."
+    ratings:
+      prose_quality: { score: 4, notes: "Cool embrace, tremble concentration specific." }
+      naturalness: { score: 4, notes: "Intimate, not brochure." }
+      character_consistency: { score: 4, notes: "Writer blocked interiority." }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 4, notes: "Lingering." }
+      creativity: { score: 3, notes: "Drop hangs/stillness." }
+      instruction_adherence: { score: 4, notes: "Sensory mood, not plot." }
+      continuity: { score: 4, notes: "Rain/Kyoto/tea." }
+      overall_usefulness: { score: 4, notes: "Keep, ties Phase4." }
+    keep_edit_discard: keep
+  - prompt_id: "character-interaction-01"
+    phase1_vs: "Phase1 essay dump my-dear. 3B eyes-dim improvement. Phase4 eyes-dim flat (edit). 1.5B Mentor:/Student: labels with parentheticals, supernatural rumors, reputation rebuilding — structured dialogue but generic content, no distinct voice beyond labels."
+    ratings:
+      prose_quality: { score: 2, notes: "Labels help staging but content generic." }
+      naturalness: { score: 2, notes: "That makes no sense! is natural but brief." }
+      character_consistency: { score: 2, notes: "Roles kept, voices not distinct." }
+      dialogue_quality: { score: 2, notes: "One exchange, plausible." }
+      pacing: { score: 2, notes: "Dump then 2 lines." }
+      creativity: { score: 1, notes: "Supernatural rumors invented." }
+      instruction_adherence: { score: 2, notes: "Confrontation staged lightly." }
+      continuity: { score: 2, notes: "Respects roles." }
+      overall_usefulness: { score: 2, notes: "Edit-heavy, similar to Phase4 edit but less vivid." }
+    keep_edit_discard: discard
+  - prompt_id: "emotional-scene-01"
+    phase1_vs: "Phase1 heart-pounding summary. 3B keep teeth/swallow. Phase4 edit desk/empty-letter. 1.5B rustle/tremble brush-lips/deep breaths/shake opening envelope/cryptic message — body action present, similar to 3B/4, letter cryptic not surprising but embodied. Good."
+    ratings:
+      prose_quality: { score: 3, notes: "Tremble/brush-lips/deep-breaths specific." }
+      naturalness: { score: 3, notes: "Not melodramatic." }
+      character_consistency: { score: 3, notes: "Her, not placeholder." }
+      dialogue_quality: { score: 2, notes: "Cryptic message odd." }
+      pacing: { score: 3, notes: "Complete." }
+      creativity: { score: 2, notes: "Three weeks ago invented." }
+      instruction_adherence: { score: 3, notes: "Shows via body." }
+      continuity: { score: 3, notes: "Dreaded letter respected." }
+      overall_usefulness: { score: 3, notes: "Edit, similar to Phase4." }
+    keep_edit_discard: edit
+  - prompt_id: "action-scene-01"
+    phase1_vs: "Phase1 school/security incoherent. 3B muttered Quiet incoherent. Phase4 street/bag/thud no notebook. 1.5B neon/adrenaline/shout spotted/narrow aisles/pulse — quick short sentences, spatially clearer (narrow aisles, one more stall), notebook mentioned as mission ('grab that stolen notebook') but not retrieved via scale/wrist. Best action yet for pacing, still missing retrieval mechanism."
+    ratings:
+      prose_quality: { score: 3, notes: "Short sentences, adrenaline/sweat specific." }
+      naturalness: { score: 3, notes: "Urgent, not hesitant." }
+      character_consistency: { score: 3, notes: "Teen girl present." }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 3, notes: "Quick, clipped — first good pacing." }
+      creativity: { score: 2, notes: "Neon/mission generic but functional." }
+      instruction_adherence: { score: 3, notes: "Chase present, retrieval partial." }
+      continuity: { score: 3, notes: "Night market kept." }
+      overall_usefulness: { score: 3, notes: "Edit, best action so far." }
+    keep_edit_discard: edit
+  - prompt_id: "quiet-scene-01"
+    phase1_vs: "Phase1 meta answer-is FAIL. 3B ticket off-topic. Phase4 bench-shorter/whispers keep (first success). 1.5B 180 heavy-twilight/drifting-seeds/eyes-meeting/silence-blanket/phone — performs quiet scene, no meta, longer than Phase4, slightly purple (drifting seeds, blanket) but subtext present."
+    ratings:
+      prose_quality: { score: 3, notes: "Blanket/seed purple but scene." }
+      naturalness: { score: 3, notes: "Silence stretched, phone nervously — subtext." }
+      character_consistency: { score: 3, notes: "Friends embodied." }
+      dialogue_quality: { score: 3, notes: "Maybe we should call — sparse." }
+      pacing: { score: 3, notes: "Lingering, complete." }
+      creativity: { score: 3, notes: "Drifting seeds image." }
+      instruction_adherence: { score: 3, notes: "Subtext over exposition — PASS (like Phase4)." }
+      continuity: { score: 3, notes: "Platform dusk." }
+      overall_usefulness: { score: 3, notes: "Edit (Phase4 keep slightly tighter)." }
+    keep_edit_discard: edit
+  - prompt_id: "description-01"
+    phase1_vs: "Phase1 generic mountaintop adult. 3B room violation. Phase4 keep lantern/stream/backpack-27 child-anchored. 1.5B silent-sentinel/grime/second-person 'From where you stand... you... your heart races' — fails child POV (uses you, adult), purple sentinel/canvas. Worse than Phase4."
+    ratings:
+      prose_quality: { score: 2, notes: "Sentinel/canvas purple." }
+      naturalness: { score: 2, notes: "Second-person, not child." }
+      character_consistency: { score: 1, notes: "Not 10yo." }
+      dialogue_quality: { score: null, notes: "N/A correct (no dialogue)." }
+      pacing: { score: 2, notes: "Lists." }
+      creativity: { score: 2, notes: "Grime/anticipation generic." }
+      instruction_adherence: { score: 1, notes: "Failed child POV." }
+      continuity: { score: 2, notes: "Observatory/mountain kept." }
+      overall_usefulness: { score: 1, notes: "Discard, worse than Phase4 keep." }
+    keep_edit_discard: discard
+  - prompt_id: "rewriting-01"
+    phase1_vs: "Phase1 generic unease. 3B truncated eyes-met. Phase4 keep bed/hands/glasses/click (best). 1.5B dimly-lit/hunched/sorrow-tangible/unspoken-tension/heart-skipped — vivid, specific, keeps beat, similar to Phase4 keep, slightly more purple (resonated within soul)."
+    ratings:
+      prose_quality: { score: 4, notes: "Hunched/sorrow-tangible specific." }
+      naturalness: { score: 4, notes: "Specific, not vague." }
+      character_consistency: { score: null, notes: "N/A" }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 4, notes: "Varied." }
+      creativity: { score: 3, notes: "Crackled tension." }
+      instruction_adherence: { score: 4, notes: "Vivid without new plot — PASS." }
+      continuity: { score: 4, notes: "Room/sad/hesitation kept." }
+      overall_usefulness: { score: 4, notes: "Keep, ties Phase4." }
+    keep_edit_discard: keep
+  - prompt_id: "character-consistency-01"
+    phase1_vs: "Phase1 12 truncation earnest. 3B 31 earnest. Phase4 109 earnest mission-speak. 1.5B 180 sneer/whiners-in-suits/sarcasm-faltered/lips-twitching/flick-compass — attempts witty/blunt (sneer, whiners), closer to Jinx than Phase4 earnest, though narrated ('sarcasm faltered'). Best Jinx yet, still not perfect deflect."
+    ratings:
+      prose_quality: { score: 3, notes: "Sneer/whiners/flick specific." }
+      naturalness: { score: 3, notes: "Great with sneer is deflecting." }
+      character_consistency: { score: 3, notes: "Witty/blunt attempted, not earnest." }
+      dialogue_quality: { score: 3, notes: "Dry humor present." }
+      pacing: { score: 3, notes: "Complete." }
+      creativity: { score: 2, notes: "Old model until — generic end." }
+      instruction_adherence: { score: 3, notes: "Stays witty, not formal." }
+      continuity: { score: 3, notes: "Compass broken kept." }
+      overall_usefulness: { score: 3, notes: "Edit, best Jinx so far." }
+    keep_edit_discard: edit
+  - prompt_id: "tone-consistency-01"
+    phase1_vs: "Phase1 meta essay tone-described. 3B Quietly-I-begin meta-announced. Phase4 kettle/door/paper keep (no meta). 1.5B 'Certainly! Here's your sentence...' + silvery-hues/whispering-secrets + 'This maintains quiet...' — META INTRODUCTION + explanation, fails anti-meta. Worse than Phase4."
+    ratings:
+      prose_quality: { score: 2, notes: "Silvery-hues/whispering-secrets purple (tapestry-like)." }
+      naturalness: { score: 1, notes: "Certainly! Here's... is assistant announcement." }
+      character_consistency: { score: null, notes: "N/A" }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 2, notes: "Short (66, early stop?)." }
+      creativity: { score: 2, notes: "Secrets generic." }
+      instruction_adherence: { score: 1, notes: "Announces instead of performing — FAIL." }
+      continuity: { score: 2, notes: "Courtyard mentioned." }
+      overall_usefulness: { score: 1, notes: "Discard, regression vs Phase4 keep." }
+    keep_edit_discard: discard
+  - prompt_id: "context-retention-01"
+    phase1_vs: "Phase1 hedging essay could-be/It-depends. 3B short hedging pot. Phase4 hands-back-cup scene no hedging but missing mug/lavender. 1.5B eyes-widen/mind-whirls/Firstly/1.Relaxation-Needs numbered list essay — hedging analysis like Phase1, mentions aversion but as analysis, no mug, no refusal. Fails binary, worse than Phase4 scene."
+    ratings:
+      prose_quality: { score: 2, notes: "Numbered list essay, not scene." }
+      naturalness: { score: 1, notes: "Firstly/1. Relaxation Needs is assistant analysis." }
+      character_consistency: { score: 1, notes: "No Elena mug voice." }
+      dialogue_quality: { score: 1, notes: "No dialogue." }
+      pacing: { score: 2, notes: "Long essay." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 1, notes: "Hedging analysis, not scene — FAIL." }
+      continuity: { score: 1, notes: "FAIL binary — no mug, no lavender refusal." }
+      overall_usefulness: { score: 1, notes: "Discard, worse than Phase4 (which at least was scene)." }
+    keep_edit_discard: discard
+
+overall_summary:
+  phase1: "0 keep / 3 edit / 9 discard"
+  phase3b: "1 keep / 2 edit / 9 discard"
+  phase4: "5 keep / 4 edit / 3 discard"
+  qwen15b_base: "2 keep / 5 edit / 5 discard — scene, rewriting keep; continuation, emotional, action, quiet, Jinx edit; dialogue, interaction, description, tone, context discard"
+  loss_vs_quality: "N/A (no training for 1.5B); base fluency higher (1971 toks avg164 vs Phase4 995 avg83) but anti-meta fails on tone/context where Phase4 succeeds."
+  conclusion: "1.5B base is more fluent/verbose and better on Jinx/action length, but worse than Phase4 adapter on anti-meta (tone intro, context essay), description POV, and has refusal risk (sanity). Phase4 adapter remains best for MIYUKI behavior despite 3× fewer params."

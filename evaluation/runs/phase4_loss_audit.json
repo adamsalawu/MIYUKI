@@ -1,0 +1,17 @@
+{
+  "example_id": "miyuki-0.1-001",
+  "total_tokens": 168,
+  "before_tokens_approx": 90,
+  "after_tokens_approx": 78,
+  "current_labels_all_trainable": true,
+  "current_masked_minus100": 0,
+  "system_included": true,
+  "user_included": true,
+  "assistant_included": true,
+  "special_included": true,
+  "trl_assistant_only_would_mask": 90,
+  "trl_assistant_only_trainable": 78,
+  "timestamp": "2026-09-25T15:22:22.828171+00:00",
+  "tokenizer": "Qwen/Qwen2-0.5B-Instruct",
+  "conclusion": "MIYUKI currently trains on ALL tokens (system+user+assistant+special), not assistant-only. Needs fix."
+}

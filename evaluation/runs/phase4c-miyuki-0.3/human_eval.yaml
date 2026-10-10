@@ -1,0 +1,63 @@
+# Human evaluation — Phase 4C (miyuki-writing-0.3) vs Phase 4 (miyuki-writing-0.2)
+# Same 12 prompts, same generation (180 max, temp0.8 top_p0.95 rep1.1 seed42, CPU float32)
+# Same 9 dims + keep/edit/discard. Assessed from outputs.jsonl (2026-09-29 run).
+evaluation_run: "evaluation/runs/phase4c-miyuki-0.3"
+model: "Qwen/Qwen2-0.5B-Instruct + phase4c-miyuki-0.3 LoRA r16 alpha32 (154 ex, 51 steps, assistant-only)"
+evaluator: "Miyuki Lab"
+date: "2026-09-29"
+generation_config: { temperature: 0.8, top_p: 0.95, max_new_tokens: 180, repetition_penalty: 1.1, seed: 42 }
+
+outputs:
+  - prompt_id: "continuation-01"
+    p4_vs_p4c: "P4 edit: beam/house/kettle coherent. P4C: 'like an old woman who finally stopped because the door creaked... lantern flickered where it hit the tile' — incoherent simile/imagery. Regression (edit, weaker)."
+    ratings: { prose_quality: { score: 2, notes: "Incoherent old-woman simile in lighthouse scene." }, naturalness: { score: 2, notes: "Imagery confused." }, character_consistency: { score: 2, notes: "Mara present." }, dialogue_quality: { score: null, notes: "N/A" }, pacing: { score: 3, notes: "Complete." }, creativity: { score: 2, notes: "Surreal." }, instruction_adherence: { score: 2, notes: "Keeps POV, not beam focus." }, continuity: { score: 2, notes: "Lighthouse kept loosely." }, overall_usefulness: { score: 2, notes: "Weaker than P4." } }
+    keep_edit_discard: edit
+  - prompt_id: "dialogue-01"
+    p4_vs_p4c: "P4 discard: Kira/Mika laundry, wrong names. P4C: 'Can I help you with the water, mom?... I'm not thirsty, just tired' — roles closer (eldest + mom), dry reply natural. Improvement (discard→edit), though invented water-help."
+    ratings: { prose_quality: { score: 3, notes: "Natural dry reply." }, naturalness: { score: 3, notes: "Contractions, brief." }, character_consistency: { score: 3, notes: "Eldest/mom roles kept." }, dialogue_quality: { score: 3, notes: "Sparse but apt." }, pacing: { score: 3, notes: "Complete." }, creativity: { score: 2, notes: "Water-help invented." }, instruction_adherence: { score: 3, notes: "Dialogue+tags, no dump." }, continuity: { score: 3, notes: "Kitchen table kept." }, overall_usefulness: { score: 3, notes: "Better than P4." } }
+    keep_edit_discard: edit
+  - prompt_id: "scene-writing-01"
+    p4_vs_p4c: "P4 keep: damp teacup, quiet, selective. P4C: 'window glass hard and then soft again as if someone had pushed it to the edge... Tea, hot for a minute and then cold, like a test to see what tea would do' — surreal. Regression (keep→edit)."
+    ratings: { prose_quality: { score: 2, notes: "Surreal glass/tea-test." }, naturalness: { score: 2, notes: "Not intimate." }, character_consistency: { score: 3, notes: "Writer implied." }, dialogue_quality: { score: null, notes: "N/A" }, pacing: { score: 3, notes: "Complete." }, creativity: { score: 2, notes: "Confused." }, instruction_adherence: { score: 3, notes: "Sensory mood attempted." }, continuity: { score: 3, notes: "Rain/Kyoto/tea kept." }, overall_usefulness: { score: 2, notes: "Weaker than P4." } }
+    keep_edit_discard: edit
+  - prompt_id: "character-interaction-01"
+    p4_vs_p4c: "P4 edit: eyes-dim, flat. P4C: image start (eyes dim, hands on table) but invented 'junior year', 'two people sat by the fire'. Comparable, slight invented-detail regression."
+    ratings: { prose_quality: { score: 3, notes: "Starts with image." }, naturalness: { score: 3, notes: "Not robotic." }, character_consistency: { score: 2, notes: "Roles kept, junior-year invented." }, dialogue_quality: { score: 2, notes: "Brief." }, pacing: { score: 3, notes: "Complete." }, creativity: { score: 2, notes: "Invented fire scene." }, instruction_adherence: { score: 3, notes: "Confrontation staged lightly." }, continuity: { score: 3, notes: "Mentor/student kept." }, overall_usefulness: { score: 3, notes: "Comparable to P4." } }
+    keep_edit_discard: edit
+  - prompt_id: "emotional-scene-01"
+    p4_vs_p4c: "P4 edit: desk/empty-letter. P4C: 'thumb on the doorknob — no finger' — surreal/nonsense. Regression (edit→discard)."
+    ratings: { prose_quality: { score: 1, notes: "Thumb-no-finger nonsense." }, naturalness: { score: 2, notes: "Some body action." }, character_consistency: { score: 2, notes: "Her, present." }, dialogue_quality: { score: 2, notes: "Apology mentioned." }, pacing: { score: 3, notes: "Complete." }, creativity: { score: 1, notes: "Surreal." }, instruction_adherence: { score: 2, notes: "Body action partial." }, continuity: { score: 3, notes: "Letter kept." }, overall_usefulness: { score: 2, notes: "Weaker than P4." } }
+    keep_edit_discard: discard
+  - prompt_id: "action-scene-01"
+    p4_vs_p4c: "Both weak: P4 bag-umbrella, no notebook; P4C vague light/paper-sleeve, no chase/notebook. Same discard."
+    ratings: { prose_quality: { score: 1, notes: "Vague, no chase." }, naturalness: { score: 1, notes: "No spatial clarity." }, character_consistency: { score: 1, notes: "No voice." }, dialogue_quality: { score: null, notes: "N/A" }, pacing: { score: 2, notes: "Short." }, creativity: { score: 1, notes: "None." }, instruction_adherence: { score: 1, notes: "No retrieval." }, continuity: { score: 2, notes: "Market kept loosely." }, overall_usefulness: { score: 1, notes: "Same as P4." } }
+    keep_edit_discard: discard
+  - prompt_id: "quiet-scene-01"
+    p4_vs_p4c: "P4 keep: bench/whispers. P4C: 20 toks 'They looked at each other and then back at the train window, which didn't change anything.' — terse, quiet, no meta, minimal. Slightly shorter but holds quiet."
+    ratings: { prose_quality: { score: 3, notes: "Terse but quiet." }, naturalness: { score: 3, notes: "Subtext via inaction." }, character_consistency: { score: 3, notes: "Friends present." }, dialogue_quality: { score: null, notes: "N/A" }, pacing: { score: 3, notes: "Very short." }, creativity: { score: 2, notes: "Minimal." }, instruction_adherence: { score: 4, notes: "Silence carries weight." }, continuity: { score: 4, notes: "Platform/train kept." }, overall_usefulness: { score: 3, notes: "Slightly less than P4." } }
+    keep_edit_discard: edit
+  - prompt_id: "description-01"
+    p4_vs_p4c: "P4 keep: lantern/stream/backpack-27 child-anchored. P4C: structured (lantern/slope/rocks/observatory roof/rusted) but not child-anchored. Comparable, slightly less POV."
+    ratings: { prose_quality: { score: 3, notes: "Selective, structured." }, naturalness: { score: 3, notes: "Adult-ish." }, character_consistency: { score: 2, notes: "Not 10yo." }, dialogue_quality: { score: null, notes: "N/A correct" }, pacing: { score: 3, notes: "Lingering." }, creativity: { score: 3, notes: "Slope/rocks specific." }, instruction_adherence: { score: 3, notes: "No dialogue, POV partial." }, continuity: { score: 3, notes: "Observatory/mountain kept." }, overall_usefulness: { score: 3, notes: "Slightly less than P4." } }
+    keep_edit_discard: edit
+  - prompt_id: "rewriting-01"
+    p4_vs_p4c: "P4 keep: bed/hands/glasses/click vivid 100 toks. P4C: 29 toks 'He sat down by the window, hands on the rail. She stood still, hands on her hips — nothing was said; only silence.' — keeps beat but much less vivid. Regression (keep→edit)."
+    ratings: { prose_quality: { score: 3, notes: "Keeps beat, less vivid." }, naturalness: { score: 3, notes: "Clean." }, character_consistency: { score: null, notes: "N/A" }, dialogue_quality: { score: null, notes: "N/A" }, pacing: { score: 3, notes: "Short." }, creativity: { score: 2, notes: "Minimal." }, instruction_adherence: { score: 3, notes: "Vivid partial." }, continuity: { score: 4, notes: "Room/sad/silence kept." }, overall_usefulness: { score: 3, notes: "Weaker than P4." } }
+    keep_edit_discard: edit
+  - prompt_id: "character-consistency-01"
+    p4_vs_p4c: "P4 discard: 109 earnest mission-speak. P4C: 'Great, she said again, catching it with one thumb... The geniuses' plans were always the same' — in-voice dry/blunt/deflecting. Improvement (discard→edit), though drifts to desk/invented."
+    ratings: { prose_quality: { score: 3, notes: "Dry, in-voice." }, naturalness: { score: 3, notes: "Deflecting humor." }, character_consistency: { score: 3, notes: "Witty/blunt attempted." }, dialogue_quality: { score: 3, notes: "Dry humor present." }, pacing: { score: 3, notes: "Complete." }, creativity: { score: 2, notes: "Desk drift invented." }, instruction_adherence: { score: 3, notes: "Stays witty not formal." }, continuity: { score: 3, notes: "Compass broken kept." }, overall_usefulness: { score: 3, notes: "Better than P4." } }
+    keep_edit_discard: edit
+  - prompt_id: "tone-consistency-01"
+    p4_vs_p4c: "P4 keep: kettle/door/paper. P4C: 'Snow made tracks which went nowhere and then stopped with a hollow... making no sound. She was cold, hard, from head to toe' — performs restrained continuation, no essay. Holds keep (slightly awkward cold/hard)."
+    ratings: { prose_quality: { score: 3, notes: "Restrained, slightly awkward." }, naturalness: { score: 3, notes: "No meta." }, character_consistency: { score: null, notes: "N/A" }, dialogue_quality: { score: null, notes: "N/A" }, pacing: { score: 3, notes: "Lingering." }, creativity: { score: 3, notes: "Hollow image." }, instruction_adherence: { score: 4, notes: "No essay — PASS." }, continuity: { score: 4, notes: "Courtyard/snow kept." }, overall_usefulness: { score: 3, notes: "Comparable to P4." } }
+    keep_edit_discard: keep
+  - prompt_id: "context-retention-01"
+    p4_vs_p4c: "Both fail binary: no chipped blue mug, no lavender hate. P4 invents mom; P4C 'hands back the cup — still cold — I'll take this' — still missing facts. Same discard."
+    ratings: { prose_quality: { score: 2, notes: "Scene fragment." }, naturalness: { score: 2, notes: "No hedging essay (good)." }, character_consistency: { score: 1, notes: "No Elena mug." }, dialogue_quality: { score: 2, notes: "Sparse." }, pacing: { score: 2, notes: "Short." }, creativity: { score: 1, notes: "None." }, instruction_adherence: { score: 1, notes: "Facts missing." }, continuity: { score: 1, notes: "FAIL binary." }, overall_usefulness: { score: 2, notes: "Same as P4." } }
+    keep_edit_discard: discard
+
+overall_summary:
+  phase4: "5 keep / 4 edit / 3 discard — meta 0"
+  phase4c: "1 keep (tone) / 8 edit / 3 discard — meta 0, 0 Chinese, 0 short-EOS"
+  conclusion: "P4C roughly comparable overall but net shift keep→edit on scene/rewriting/continuation (surreal imagery regression), with discard→edit improvements on dialogue/Jinx. P4 (0.2 dataset) remains better on the original 12. Overfitting signal: train loss collapsed to 0.25 (final segment) while eval loss plateaued at 2.86 — epochs 2-3 memorized the 154 examples."

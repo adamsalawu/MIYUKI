@@ -1,0 +1,152 @@
+# Phase 1 Failure → Dataset Response Mapping (miyuki-writing-0.1)
+# Each major Phase 1 failure either has a planned dataset response or is explicitly marked not addressable by dataset alone.
+
+phase1_run: "evaluation/runs/phase1_qwen2_0.5b"
+human_eval: "evaluation/runs/phase1_qwen2_0.5b/human_eval.yaml"
+dataset: "miyuki-writing-0.1 (38 exemplars)"
+
+mappings:
+  - failure: "Meta-analysis / explaining instead of writing ('The answer is:', 'The literary tone is described as...')"
+    severity: "critical (4/12 prompts)"
+    dataset_response:
+      - id: miyuki-0.1-007
+        note: "Train platform quiet scene must be pure scene with silence, not analysis — direct anti-meta"
+      - id: miyuki-0.1-011
+        note: "Snow courtyard must continue image (laundry line, kettle) not essay about tone"
+      - id: miyuki-0.1-016
+        note: "Explicit anti-meta instruction: 'Do not say Here is a scene' → scene"
+      - id: miyuki-0.1-017
+        note: "Paired before/after concept (essay vs restrained image) — target is image"
+      - id: miyuki-0.1-036
+        note: "Second snow courtyard variant, same anti-meta"
+    addressable_by_dataset: true
+    notes: "5 dedicated exemplars; all other scene examples also reinforce perform-not-explain."
+
+  - failure: "Flat dialogue, indistinguishable voices, on-the-nose exposition"
+    severity: "high (dialogue-01 scored 1)"
+    dataset_response:
+      - id: miyuki-0.1-002
+        note: "Siblings kitchen: Mika curt vs Bren hedging, chipped mug tag, dripping tap, no 'five years!'"
+      - id: miyuki-0.1-018
+        note: "Interruptions, overlapping, contractions (Mina breathless vs Haru curt)"
+      - id: miyuki-0.1-019
+        note: "Subtext via map folding and chipped mug callback, not direct statement"
+      - id: miyuki-0.1-020
+        note: "Toma/Lira power shift dramatized via sitting vs standing"
+      - id: miyuki-0.1-027
+        note: "Jinx dry humor scryglass — character-borne humor vs joke"
+      - id: miyuki-0.1-038
+        note: "Compass drawer bills — natural reveal vs 'As you know...'"
+    addressable_by_dataset: true
+    notes: "6 dialogue exemplars with distinct diction templates."
+
+  - failure: "Lore dumping / exposition dump ('The mentor has been teaching for years...')"
+    severity: "high (character-interaction-01)"
+    dataset_response:
+      - id: miyuki-0.1-004
+        note: "Mentor/student confrontation: no essay, hearth stirring, clipped lines"
+      - id: miyuki-0.1-029
+        note: "Aureline voidtide lore via boot sink + lumenweave ribbons, not dump"
+      - id: miyuki-0.1-037
+        note: "Scryglass workshop: terms grounded in tongs/felt tick"
+    addressable_by_dataset: true
+
+  - failure: "Context retention hedging ('It could be the lavender mug, depending...')"
+    severity: "critical (context-retention-01 binary fail)"
+    dataset_response:
+      - id: miyuki-0.1-012
+        note: "Elena chipped blue mug grandmother's + lavender hate — correct binary commit (mug nick, wrinkle, half step)"
+      - id: miyuki-0.1-015
+        note: "Elena second scene market stall — same mug/cookies consistent"
+      - id: miyuki-0.1-030
+        note: "Blue scarf lost yesterday — empty nail, collar up, Haru callback"
+    addressable_by_dataset: true
+    notes: "3 continuity exemplars with explicit 'do not hedge' instruction."
+
+  - failure: "Weak character voices / personality drift (Jinx earnest instead of witty)"
+    severity: "high (character-consistency-01 truncation + voice loss)"
+    dataset_response:
+      - id: miyuki-0.1-010
+        note: "Jinx broken compass witty blunt deflect → 'points to insecurities', river smell wrong"
+      - id: miyuki-0.1-031
+        note: "Jinx second scene vault ghost competent, 'we're even?' loyalty"
+      - id: miyuki-0.1-027
+        note: "Jinx scryglass crack two futures — dry humor timing"
+    addressable_by_dataset: true
+
+  - failure: "Weak scene grounding / generic AI prose ('wind of history', 'mix of excitement and trepidation')"
+    severity: "medium (continuation-01, emotional-01)"
+    dataset_response:
+      - id: miyuki-0.1-001
+        note: "Lighthouse continuation concrete shingle/wind/lantern figure, no children montage"
+      - id: miyuki-0.1-003
+        note: "Kyoto tea pour by ear, bead of water, notebook blank half-page"
+      - id: miyuki-0.1-005
+        note: "Emotional letter: thumb cuff thin, tea slop, mouth pressed — not named relief"
+      - id: miyuki-0.1-021
+        note: "Sweater cedar, fold/unfold, nothing on top"
+    addressable_by_dataset: true
+
+  - failure: "Action/spatial incoherence (chase captured then run past, school/home invented)"
+    severity: "high (action-scene-01)"
+    dataset_response:
+      - id: miyuki-0.1-006
+        note: "Milk-crate vault, awning pole, palm notebook, temple steps kneel"
+      - id: miyuki-0.1-022
+        note: "Pacing control: Steps. Air. vs lanterns swaying alone — spatial anchors"
+    addressable_by_dataset: true
+    notes: "Clipped sentences + spatial markers teach causality."
+
+  - failure: "Premature EOS / truncation (character-consistency 12 toks, 'Jinx, I know...')"
+    severity: "medium"
+    dataset_response:
+      - id: miyuki-0.1-010
+        note: "Same Jinx prompt but full 50+ tok completion demonstrates EOS should not fire early"
+    addressable_by_dataset: partially
+    notes: "Dataset shows correct length; but EOS timing is also decoding/model issue — may need generation param tuning (not dataset alone). Marked partially addressable."
+
+  - failure: "Excessive exposition / repetitive adjectives ('ancient, crumbling, moss-covered')"
+    severity: "medium"
+    dataset_response:
+      - id: miyuki-0.1-025
+        note: "Lumenweave selective: one thread amber, next dull"
+      - id: miyuki-0.1-033
+        note: "Wall low, moss seams, hair crack — two details"
+    addressable_by_dataset: true
+
+  - failure: "Generic moralizing / summarizing instead of scene ending ('and so they learned...')"
+    severity: "medium"
+    dataset_response:
+      - id: miyuki-0.1-032
+        note: "Ends on keys where left, room quiet — no moral"
+      - id: miyuki-0.1-034
+        note: "Road fork gate empty — image not lesson"
+    addressable_by_dataset: true
+
+  - failure: "Rewriting not vivid / POV swap ('thick with tension')"
+    severity: "medium (rewriting-01)"
+    dataset_response:
+      - id: miyuki-0.1-009
+        note: "Two fingers door, cold cup, light cut cheek"
+      - id: miyuki-0.1-023
+        note: "Same but push door two fingers, window light/shadow"
+      - id: miyuki-0.1-024
+        note: "Tight: rust-flaked gaping where panel slipped — no new plot"
+    addressable_by_dataset: true
+
+  - failure: "Poor emotional subtext (tells 'sense of relief', 'heart pounding')"
+    severity: "medium"
+    dataset_response:
+      - id: miyuki-0.1-005
+        note: "Thumb edge, cup jump, tea slop, mouth pressed"
+      - id: miyuki-0.1-021
+        note: "Cedar sweater fold/unfold"
+    addressable_by_dataset: true
+
+not_addressable_by_dataset_alone:
+  - item: "Model capacity for long-range spatial tracking (complex night market with multiple agents)"
+    note: "Dataset can teach better grounding, but 0.5B may need larger model or retrieval for full coherence. Phase 2 improves but not solves."
+  - item: "Premature EOS on quoted prompts with nested quotes"
+    note: "Partially dataset (show correct length), partially tokenizer/generation (chat template quoting). May need prompt engineering."
+  - item: "Tokenizer efficiency for invented terms (lumenweave 4 toks)"
+    note: "Dataset alone cannot fix; tokenizer adaptation would, but benefit is small (5.8% overall). Recommended to keep Qwen tokenizer."

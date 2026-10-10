@@ -1,0 +1,28 @@
+{
+  "run_name": "phase3b-miyuki-0.1",
+  "model": "Qwen/Qwen2-0.5B-Instruct + LoRA phase3b r16 alpha32 3 epochs",
+  "base_model": "Qwen/Qwen2-0.5B-Instruct",
+  "adapter": "checkpoints/phase3b-miyuki-0.1",
+  "dataset": "miyuki-writing-0.1",
+  "dataset_sha": "9e1b97461f98948254bc45906cb275f111318f5d5adfc9e7139ab9c35c200d5e",
+  "generation_config": {
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "top_k": null,
+    "max_new_tokens": 180,
+    "repetition_penalty": 1.1,
+    "do_sample": true,
+    "seed": 42
+  },
+  "num_prompts": 12,
+  "total_prompt_tokens": 956,
+  "total_output_tokens": 996,
+  "avg_tokens_per_sec": 3.4,
+  "total_generation_s": 281.1,
+  "elapsed_s": 292.9674837589264,
+  "load_s": 8.604478359222412,
+  "phase1_total_output": 1538,
+  "phase3_total_output": 1698,
+  "phase1_avg_tps": 2.84,
+  "phase3_avg_tps": 3.31
+}

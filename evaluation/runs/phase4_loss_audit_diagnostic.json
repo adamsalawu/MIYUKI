@@ -1,0 +1,16 @@
+{
+  "tested_examples": 3,
+  "example_id": "miyuki-0.1-001",
+  "full_len_example1": 168,
+  "mask_len_example1": 93,
+  "assistant_len_example1": 75,
+  "system_user_included_in_current": false,
+  "assistant_included": true,
+  "special_before_masked": true,
+  "special_after_trainable": true,
+  "no_prompt_becomes_target": true,
+  "no_assistant_masked": true,
+  "timestamp": "2026-09-25T15:24:59.482921+00:00",
+  "tokenizer": "Qwen/Qwen2-0.5B-Instruct",
+  "conclusion": "Assistant-only masking verified: user/system tokens -100, assistant trainable, special handling correct"
+}

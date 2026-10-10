@@ -1,0 +1,26 @@
+{
+  "base_stats": {
+    "num": 12,
+    "total_chars": 7185,
+    "avg_chars": 598.75,
+    "total_tokens": 1538,
+    "avg_tokens": 128.16666666666666,
+    "avg_tps": 2.84
+  },
+  "phase3b_stats": {
+    "num": 12,
+    "total_chars": 4084,
+    "avg_chars": 340.3333333333333,
+    "total_tokens": 996,
+    "avg_tokens": 83.0,
+    "avg_tps": 3.3991666666666664
+  },
+  "phase4_stats": {
+    "num": 12,
+    "total_chars": 4132,
+    "avg_chars": 344.3333333333333,
+    "total_tokens": 995,
+    "avg_tokens": 82.91666666666667,
+    "avg_tps": 2.2758333333333334
+  }
+}

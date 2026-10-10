@@ -1,0 +1,41 @@
+{
+  "run_name": "2026-09-24_Qwen_Qwen2-0.5B-Instruct",
+  "timestamp": "2026-09-24T21:52:59.868691+00:00",
+  "model": "Qwen/Qwen2-0.5B-Instruct",
+  "model_version": "0.1.0-phase3",
+  "num_prompts": 12,
+  "num_errors": 0,
+  "elapsed_s": 514.9284386634827,
+  "load_s": 9.089439392089844,
+  "categories": [
+    "action_scene",
+    "character_consistency",
+    "character_interaction",
+    "context_retention",
+    "continuation",
+    "description",
+    "dialogue",
+    "emotional_scene",
+    "quiet_scene",
+    "rewriting",
+    "scene_writing",
+    "tone_consistency"
+  ],
+  "prompt_ids": [
+    "continuation-01",
+    "dialogue-01",
+    "scene-writing-01",
+    "character-interaction-01",
+    "emotional-scene-01",
+    "action-scene-01",
+    "quiet-scene-01",
+    "description-01",
+    "rewriting-01",
+    "character-consistency-01",
+    "tone-consistency-01",
+    "context-retention-01"
+  ],
+  "outputs_path": "C:\\Aether\\RisingStar\\MIYUKI\\evaluation\\runs\\phase3-miyuki-0.1\\2026-09-24_Qwen_Qwen2-0.5B-Instruct\\outputs.jsonl",
+  "metadata_path": "C:\\Aether\\RisingStar\\MIYUKI\\evaluation\\runs\\phase3-miyuki-0.1\\2026-09-24_Qwen_Qwen2-0.5B-Instruct\\metadata.json",
+  "notes": "Automated generation complete. Fill human_template.yaml for qualitative ratings."
+}

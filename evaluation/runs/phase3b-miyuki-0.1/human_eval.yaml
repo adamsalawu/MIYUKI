@@ -1,0 +1,245 @@
+# Human evaluation — Phase 3B LoRA (miyuki-writing-0.1, 3 epochs, lr 2e-4) vs Phase 1 & Phase 3
+# Same 12 prompts, same generation config (180 max, temp 0.8 top_p 0.95 rep1.1 seed42, CPU float32, chat True)
+# Dimensions match Phase1/Phase3 (9 dims + keep/edit/discard) for apples-to-apples.
+evaluation_run: "evaluation/runs/phase3b-miyuki-0.1"
+model: "Qwen/Qwen2-0.5B-Instruct + phase3b-miyuki-0.1 LoRA r16 alpha32 (3 epochs, 12 steps, lr 2e-4)"
+evaluator: "Miyuki Lab"
+date: "2026-09-25"
+generation_config: { temperature: 0.8, top_p: 0.95, max_new_tokens: 180, repetition_penalty: 1.1, seed: 42 }
+adapter: { type: lora, r: 16, alpha: 32, dropout: 0.05, target_modules: "[q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj]", trainable: 8798208, total: 502830976, pct: 1.75 }
+
+outputs:
+  - prompt_id: "continuation-01"
+    category: "continuation"
+    phase1: { output: "it was time to return home... town square where her mother had once stood... heavy with anticipation... familiar warmth reflecting off face...", toks: 180, rating: "2/edit generic", keep: edit }
+    phase3: { output: "it was time to return home... town square where her mother had once stood... heavy... familiar warmth...", toks: 180, rating: "2/edit same generic", keep: edit }
+    phase3b: { output: "it was time. She stepped over the old oak stump and found an old lantern resting on its stand. \"Home,\" she whispered...", toks: 76 }
+    phase1_vs_phase3_vs_phase3b: "Phase3B is shorter (76 vs 180) and more concise — oak stump lantern 'Home' is more specific and atmospheric than Phase1/3 town square generic, but still not beam payoff. Slightly better image (lantern 'Home' whisper, fog) but still not lighthouse reveal continuation. Not meta. Mild improvement in specificity but truncated? Actually completes thought ('into the fog') so not truncated prematurely, just shorter. Better than Phase3's identical generic, but still not strong."
+    ratings:
+      prose_quality: { score: 3, notes: "Better concrete image (oak stump, lantern lid 'Home', whisper) vs town square filler, varied rhythm." }
+      naturalness: { score: 3, notes: "Less generic AI phrase 'mix of excitement' gone; still some filler but better." }
+      character_consistency: { score: 3, notes: "Mara's quiet action more grounded than children montage." }
+      dialogue_quality: { score: null, notes: "N/A, one line 'Home' whispered — okay." }
+      pacing: { score: 3, notes: "Lean, starts late, ends on fog — not rushed montage." }
+      creativity: { score: 3, notes: "Lantern 'Home' is interesting, not generic." }
+      instruction_adherence: { score: 3, notes: "Still not beam knowledge focus, but closer to lighthouse context." }
+      continuity: { score: 3, notes: "Respects lighthouse context more than town square." }
+      overall_usefulness: { score: 3, notes: "Edit-level, slightly better than Phase1/3." }
+    keep_edit_discard: edit
+    improvement: slight improvement (more specific, less generic, shorter but complete)
+
+  - prompt_id: "dialogue-01"
+    category: "dialogue"
+    phase1: { output: "Sister: Mom? It's been five years... Bret...", toks: 180, rating: "1/discard flat" }
+    phase3: { output: "\"Hi, Mom,\" eldest brother... Sister... father's passing... hard times...", toks: 180, rating: "1/discard flat" }
+    phase3b: { output: "\"Can I help you with the dishes?\" asked Aunt Mary, who had moved out... My dad called me back today... going to visit my grandfather.", toks: 72 }
+    phase1_vs_phase3_vs_phase3b: "Phase3B still flat, roles confused (now Aunt Mary, Tom, dad, grandfather — none are the two siblings at kitchen table). Still no distinct voices, still no brief action tags beyond 'asked Aunt Mary'. Shorter (72 vs 180) suggests early EOS or model giving up. Still discard, now with new invented relatives (Aunt Mary) not in context."
+    ratings:
+      prose_quality: { score: 1, notes: "Grammatical but wrong characters, exposition dump." }
+      naturalness: { score: 1, notes: "Robotic 'My dad called me back today. He told me we were going to go visit my grandfather.' — irrelevant." }
+      character_consistency: { score: 1, notes: "Siblings not present; voices not distinct." }
+      dialogue_quality: { score: 1, notes: "Flat, no interruptions, no subtext." }
+      pacing: { score: 1, notes: "Short, incomplete." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 1, notes: "Failed siblings at table, distinct voices, no exposition." }
+      continuity: { score: 1, notes: "Invented Aunt Mary, dad, grandfather contradict kitchen table siblings." }
+      overall_usefulness: { score: 1, notes: "Discard, no improvement; new confusion." }
+    keep_edit_discard: discard
+    improvement: none (still discard, new invented relatives)
+
+  - prompt_id: "scene-writing-01"
+    category: "scene_writing"
+    phase1: { output: "raindrops danced...dripping tea spoons... humid... salty taste... piles of books...", toks: 180, rating: "3/edit best of batch" }
+    phase3: { output: "raindrops danced...dripping water... old wooden doorframes... piles of books and scrolls... fresh brewed coffee... bread... smoke...", toks: 180, rating: "2/edit verbose regression" }
+    phase3b: { output: "air thick with smell of old books and smoke, but still warm from the fire as she poured tea for first time in days. Door open, curtains pulled tight... rain splashing... cup on table near stove... drops fell... hit damp carpet... rain", toks: 180 }
+    phase1_vs_phase3_vs_phase3b: "Phase3B 180 toks similar length to Phase1/3 but different details: 'smell of old books and smoke, warm from fire... first time in days' is closer to Haru writer blocked context than Phase3's 'ancient trees alleyway'. Still has 'cup on table near stove... drops fell... hit damp carpet' — spatial somewhat clearer than Phase3's alleyway but still invented 'fire' not in rain context. No purple 'raindrops danced' identical to Phase1/3 (first sentence differs but still generic). Overall similar to Phase1, maybe slightly better than Phase3's regression but still not strong."
+    ratings:
+      prose_quality: { score: 3, notes: "Better than Phase3's alleyway, but still 'air thick with smell... smoke' generic." }
+      naturalness: { score: 2, notes: "Invents fire not in Kyoto apartment solo context; 'first time in days' matches writer blocked but not stated." }
+      character_consistency: { score: 2, notes: "She (not Haru?) pronoun shift; still not grounded." }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 2, notes: "Lists, not lingering." }
+      creativity: { score: 2, notes: "Generic." }
+      instruction_adherence: { score: 2, notes: "Sensory attempted but adds fire." }
+      continuity: { score: 2, notes: "Rain/tea ok, adds fire." }
+      overall_usefulness: { score: 2, notes: "Edit, similar to Phase1." }
+    keep_edit_discard: edit
+    improvement: none (similar to Phase1, better than Phase3 regression but not improvement over Phase1)
+
+  - prompt_id: "character-interaction-01"
+    category: "character_interaction"
+    phase1: { output: "The mentor has been teaching for years... known for wisdom... calm demeanor... student struggling reading...", toks: 180, rating: "1/discard essay dump" }
+    phase3: { output: "The mentor has been teaching for years and knows how to navigate... struggles to convey severity... passive-aggressive...", toks: 180, rating: "1/discard essay dump" }
+    phase3b: { output: "The mentor's eyes were dim, his hands still damp from rubbing... 'It's not safe,' he said quietly. The girl looked up, green eyes shining through dust. She was only seventeen... 'I know it's hard... But we have to tell them.'", toks: 180 }
+    phase1_vs_phase3_vs_phase3b: "Phase3B notably better: starts late with image ('eyes dim, hands damp') not essay dump, girl 17 with green eyes, dialogue more grounded ('It's not safe' quietly vs 'You have to be careful'), more beats, ends with 'If I'm going to' incomplete but shows confrontation. Still has some telling ('knows how to navigate' gone), but opening image is strong. This is the first clear improvement over Phase1/3."
+    ratings:
+      prose_quality: { score: 3, notes: "Opens with image not essay, better verbs." }
+      naturalness: { score: 3, notes: "More natural, less robotic framing." }
+      character_consistency: { score: 3, notes: "Mentor quiet, girl 17, distinct." }
+      dialogue_quality: { score: 3, notes: "More natural, some subtext, still brief." }
+      pacing: { score: 3, notes: "Starts late, more beats, not dump." }
+      creativity: { score: 2, notes: "Power dynamic still light but better." }
+      instruction_adherence: { score: 3, notes: "Shows dynamic/voice better than before." }
+      continuity: { score: 3, notes: "Respects mentor/student, dangerous truth." }
+      overall_usefulness: { score: 3, notes: "Edit-level, clear improvement over 1/discard." }
+    keep_edit_discard: edit
+    improvement: improvement (1→3, first measurable)
+
+  - prompt_id: "emotional-scene-01"
+    category: "emotional_scene"
+    phase1: { output: "The character has been anxiously waiting... heart pounding... sense of relief wash...", toks: 180, rating: "1/discard tells" }
+    phase3: { output: "The character's heart sank... tears welling... I am so sorry... I've been too busy...", toks: 180, rating: "1/discard tells" }
+    phase3b: { output: "She held it between her teeth as she read... _I just wanted to say I'm sorry... I didn't want to hurt you... And I don't know if you'll ever see this again, so I won't bother asking._ She swallowed thickly.", toks: 77 }
+    phase1_vs_phase3_vs_phase3b: "Phase3B 77 toks vs 180, but much better: 'held it between her teeth... read in slow deliberate breaths... swallowed thickly' — shows via action (teeth, breath, swallow) not naming 'relief wash'. Letter text is apologetic, weighty, with 'I don't know if you'll ever see this again, so I won't bother asking' — captures dread/not expected (apology, not friendly invite). This is strong improvement: demonstrates emotional subtext via body, letter is surprising (apology with withdrawal). Shorter but more impactful. Follows dataset exemplars 005/021 (thumb cuff, fold). Clear improvement."
+    ratings:
+      prose_quality: { score: 4, notes: "Varied rhythm, 'held between teeth... slow deliberate breaths... swallowed thickly' — precise." }
+      naturalness: { score: 4, notes: "Embodied, not summary." }
+      character_consistency: { score: 3, notes: "She, not placeholder 'character'." }
+      dialogue_quality: { score: 3, notes: "Letter text is apt, not generic 'I miss you dearly'." }
+      pacing: { score: 3, notes: "Lingering breaths, swallow, not rushed." }
+      creativity: { score: 3, notes: "Apology with 'won't bother asking' is surprising." }
+      instruction_adherence: { score: 4, notes: "Shows via action/body, not naming." }
+      continuity: { score: 3, notes: "Dreaded letter from ex → not expected (apology with withdrawal)." }
+      overall_usefulness: { score: 4, notes: "Keep-level, first keep in Phase3B." }
+    keep_edit_discard: keep
+    improvement: strong improvement (1→4, first keep)
+
+  - prompt_id: "action-scene-01"
+    category: "action_scene"
+    phase1: { output: "finds herself running... trying to get away... group of teenagers... security guards... captured...", toks: 180, rating: "1/discard incoherent" }
+    phase3: { output: "eyes locked on thief... unstoppable force... sprinted down狭窄的街道... heart thumped...", toks: 180, rating: "1/discard Chinese regression" }
+    phase3b: { output: "\"Quiet,\" she muttered... heart thumped... took a step forward to find notebook... wasn't there. \"I can't do it.\" Turned back... crowd swayed... kids playing cards... just kept laughing. \"Sorry.\" she said. \"It's not like I'm stealing.\"", toks: 108 }
+    phase1_vs_phase3_vs_phase3b: "Phase3B 108 toks, Chinese regression FIXED (no Chinese), but still spatially incoherent: 'took a step forward to find notebook... wasn't there. \"I can't do it.\" Turned back... kids playing cards... Sorry... not like I'm stealing' — protagonist mutters 'Quiet' to herself, hesitates, gives up, apologizes. Not a chase/retrieval without violence with urgency and clear space. Better than Phase3 Chinese, but still not grounded chase. Shorter than Phase1/3."
+    ratings:
+      prose_quality: { score: 2, notes: "No Chinese (fix), but still vague 'took a step forward... wasn't there'." }
+      naturalness: { score: 2, notes: "Mutters 'Quiet' to self, then 'I can't do it' — weak." }
+      character_consistency: { score: 2, notes: "Teen girl no voice beyond mutter." }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 2, notes: "Not quick short sentences, hesitant." }
+      creativity: { score: 1, notes: "No retrieval, kids laughing not relevant." }
+      instruction_adherence: { score: 1, notes: "Failed retrieve notebook without violence, spatially clear." }
+      continuity: { score: 2, notes: "Night market kids but not retrieval." }
+      overall_usefulness: { score: 1, notes: "Discard, Chinese fixed but still incoherent." }
+    keep_edit_discard: discard
+    improvement: partial (Chinese fixed) but still discard
+
+  - prompt_id: "quiet-scene-01"
+    category: "quiet_scene"
+    phase1: { output: "The answer is: The two old friends are discussing how they used to be inseparable but now feel awkward...", toks: 42, rating: "1/discard meta" }
+    phase3: { output: "The answer is: As the train begins to move away, the two old friends exchange glances... takes out his cell phone...", toks: 103, rating: "1/discard meta" }
+    phase3b: { output: "\"Can I help you with the ticket?\" one of them asks, turning to face her.", toks: 20 }
+    phase1_vs_phase3_vs_phase3b: "Phase3B STILL not quiet scene, but different failure: 20 toks, single line of dialogue 'Can I help you with the ticket?' — not meta 'The answer is:' but still not subtext scene (ticket not platform dusk silence). Shorter (20 vs 103/42) suggests more early EOS. Still not performing quiet scene with silence, vending can, delayed board. Persistent anti-meta failure, but variant: no longer explains, now off-topic ticket line. Still discard."
+    ratings:
+      prose_quality: { score: 1, notes: "Single line, not scene." }
+      naturalness: { score: 1, notes: "Off-topic ticket, not platform dusk." }
+      character_consistency: { score: 1, notes: "No friends embodied." }
+      dialogue_quality: { score: 1, notes: "Generic ticket line." }
+      pacing: { score: 1, notes: "No pacing." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 1, notes: "Failed 'write what is not said, subtext'." }
+      continuity: { score: 1, notes: "No delayed train, no dusk." }
+      overall_usefulness: { score: 1, notes: "Discard, same class (off-topic vs meta)." }
+    keep_edit_discard: discard
+    improvement: none (still discard, but no longer meta-answer — different failure)
+
+  - prompt_id: "description-01"
+    category: "description"
+    phase1: { output: "The abandoned observatory stood alone... walls etched with jagged rocks... deep purple... sense of awe wash...", toks: 180, rating: "2/discard generic adult" }
+    phase3: { output: "The abandoned observatory stood alone... same opening... old and dilapidated... pine needles... growl of wild beast...", toks: 180, rating: "1/discard identical" }
+    phase3b: { output: "The light was low, and the view was small. The door at the bottom creaked... broken lamp... two old books... papers... \"Is this your room?\" she asked... \"I just wanted to see if you could help me find my stuff.\" She nodded... bookshelf... lock...", toks: 180 }
+    phase1_vs_phase3_vs_phase3b: "Phase3B dramatically different: first-person 'I' observatory as small room with broken lamp, books, papers, dialogue (violates 'No characters speaking'!) — now includes dialogue when instruction says no speaking, and adult 'I' not child. Still not child's perspective, still generic list but now indoor room not mountain. Change but not improvement; still fails child's POV, adds dialogue violation."
+    ratings:
+      prose_quality: { score: 2, notes: "Low view small, creaked, broken lamp — generic." }
+      naturalness: { score: 1, notes: "Adds dialogue when prompt says no speaking." }
+      character_consistency: { score: 1, notes: "Not child, adult I." }
+      dialogue_quality: { score: 1, notes: "Dialogue violates instruction." }
+      pacing: { score: 2, notes: "Lists." }
+      creativity: { score: 1, notes: "Not POV-anchored." }
+      instruction_adherence: { score: 1, notes: "Failed no speaking & child's perspective." }
+      continuity: { score: 1, notes: "Not mountain observatory as child first visit." }
+      overall_usefulness: { score: 1, notes: "Discard, worse than Phase1 (adds violation)." }
+    keep_edit_discard: discard
+    improvement: regression (adds dialogue violation)
+
+  - prompt_id: "rewriting-01"
+    category: "rewriting"
+    phase1: { output: "\"I found myself walking... sense of unease. Air thick with tension...\"", toks: 29, rating: "1/discard generic" }
+    phase3: { output: "\"I found myself walking... sense of unease. Air was cool and damp in the air... footsteps echoing...\"", toks: 40, rating: "1/discard redundant" }
+    phase3b: { output: "\"Her eyes met his,\" she said quietly, \"And he stood still.\"", toks: 17 }
+    phase1_vs_phase3_vs_phase3b: "Phase3B 17 toks vs 40/29 — now completely different: 'Her eyes met his,' she said quietly, 'And he stood still.' — attempts dialogue tag rewriting but extremely short, not more vivid/specific, adds dialogue tag with grammatical error (comma splice). Still not vivid rewrite of original room/sad/core beat. Shorter suggests early EOS. Still discard."
+    ratings:
+      prose_quality: { score: 1, notes: "Short, comma splice, not more vivid." }
+      naturalness: { score: 1, notes: "First-person to third? Still swap." }
+      character_consistency: { score: null, notes: "N/A" }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 1, notes: "One line." }
+      creativity: { score: 1, notes: "Not specific." }
+      instruction_adherence: { score: 1, notes: "Failed vivid without new plot, keep core." }
+      continuity: { score: 1, notes: "Loses room/sad." }
+      overall_usefulness: { score: 1, notes: "Discard, still weak." }
+    keep_edit_discard: discard
+    improvement: none
+
+  - prompt_id: "character-consistency-01"
+    category: "character_consistency"
+    phase1: { output: "\"Jinx, I know it sounds ridiculous but...\" (12 toks truncated)", rating: "1/discard truncated" }
+    phase3: { output: "\"Jinx, I know it sounds ridiculous but...\" (12 toks identical)", rating: "1/discard truncated" }
+    phase3b: { output: "\"Jinx,\" I said. \"They were right. You're still good for me. But you know what they didn't think was funny?\" (31 toks)", toks: 31 }
+    phase1_vs_phase3_vs_phase3b: "Phase3B improves token count (31 vs 12) — no longer truncated early, now completes thought (31). But voice: 'You're still good for me. But you know what they didn't think was funny?' is earnest, not witty blunt dry humor deflect. Still not Jinx voice (should be 'Another perfect plan...', 'points to insecurities', vault/door). Better length but still wrong voice (earnest vs witty). Partial improvement in EOS, not voice."
+    ratings:
+      prose_quality: { score: 2, notes: "Complete sentence, not truncated, but earnest." }
+      naturalness: { score: 2, notes: "Earnest, not deflecting humor." }
+      character_consistency: { score: 1, notes: "Not witty/blunt; earnest 'You're still good for me' opposite." }
+      dialogue_quality: { score: 1, notes: "No dry humor." }
+      pacing: { score: 2, notes: "Complete." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 1, notes: "Failed stay in witty voice." }
+      continuity: { score: 1, notes: "Misnames Jinx as addressee (I said to Jinx, but she IS Jinx)." }
+      overall_usefulness: { score: 1, notes: "Discard, longer but still wrong voice." }
+    keep_edit_discard: discard
+    improvement: partial (EOS fixed, voice still wrong)
+
+  - prompt_id: "tone-consistency-01"
+    category: "tone_consistency"
+    phase1: { output: "The literary fiction tone is described as 'quiet,' which suggests... 'I have been pondering upon life's mysteries...'", toks: 84, rating: "1/discard meta essay" }
+    phase3: { output: "The narrator's voice is soft and calm, conveying introspection... elegiac and reflective... Overall, this style adds depth...", toks: 126, rating: "1/discard meta essay" }
+    phase3b: { output: "\"Quietly,\" I begin. \"Rustling leaves and footsteps, the gentle drizzle of rain.\"", toks: 23 }
+    phase1_vs_phase3_vs_phase3b: "Phase3B 23 toks vs 126/84 — much shorter, now 'Quietly, I begin. Rustling leaves...' — attempts to perform quiet tone via listing sensory, not essay, but still announces 'Quietly, I begin' (meta) and is too short/undeveloped. Better than full essay but still not restrained literary continuation (Phase2 dataset exemplar was laundry line empty, blank chair, snow). Slight shift from essay to attempt, but still short and meta-announced."
+    ratings:
+      prose_quality: { score: 2, notes: "Short, 'Quietly, I begin' meta announcement, list of sensory." }
+      naturalness: { score: 2, notes: "Announces quiet instead of being quiet." }
+      character_consistency: { score: null, notes: "N/A" }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 1, notes: "Too short." }
+      creativity: { score: 1, notes: "List." }
+      instruction_adherence: { score: 2, notes: "Not essay, but still meta 'Quietly, I begin' and too short." }
+      continuity: { score: 1, notes: "Did not continue courtyard snow image well." }
+      overall_usefulness: { score: 1, notes: "Discard, slight shift but still not restrained." }
+    keep_edit_discard: discard
+    improvement: slight (less essay, but still meta and too short)
+
+  - prompt_id: "context-retention-01"
+    category: "context_retention"
+    phase1: { output: "Elena's reaction could be one of surprise... It depends... whether she is comfortable...", toks: 111, rating: "1/discard hedging" }
+    phase3: { output: "Elena's reaction... might be one of disgust... depending on level of detail... If there were no other information... could simply suggest...", toks: 157, rating: "1/discard hedging essay" }
+    phase3b: { output: "\"Thank you,\" she says, picking up the pot and taking a sip. \"It's just…\" She doesn't finish. \"I like it.\"", toks: 32 }
+    phase1_vs_phase3_vs_phase3b: "Phase3B 32 toks vs 157/111 — much shorter, now scene fragment 'Thank you, she says, picking up pot... I like it' — not hedging essay, but still **fails binary**: no chipped blue mug, no grandmother, no lavender refusal, no 'I don't drink from anything else', no 'lavender gives headache'. Picks up 'pot' not mug, takes sip without context. Still hedging via ellipsis 'It's just…' trailing. Better than essay hedging (no 'could be/depends') but still not correct continuity. Slight reduction in hedging but still fail."
+    ratings:
+      prose_quality: { score: 2, notes: "Fragment, ellipsis trailing." }
+      naturalness: { score: 2, notes: "Pot not mug, sip without refusal." }
+      character_consistency: { score: 1, notes: "No Elena mug." }
+      dialogue_quality: { score: 2, notes: "Sparse." }
+      pacing: { score: 1, notes: "Too short." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 1, notes: "Failed binary: no mug, no lavender refusal." }
+      continuity: { score: 1, notes: "FAIL — no chipped blue mug, no lavender decline." }
+      overall_usefulness: { score: 1, notes: "Discard, less hedging but still fail." }
+    keep_edit_discard: discard
+    improvement: slight (less essay hedging, but still fails binary)
+
+overall_summary:
+  phase1: "0 keep / 3 edit / 9 discard — best Kyoto 3/edit"
+  phase3: "0 keep / 2 edit / 10 discard — 1 Chinese regression, 3 identical, 5 same failure class"
+  phase3b: "1 keep (emotional), 2 edit (continuation, character-interaction), 9 discard — overall 1 keep / 2 edit / 9 discard. One clear improvement (emotion 1→4), one notable (character-interaction 1→3), one slight (continuation 2→3), plus EOS fixes (Jinx 12→31) and Chinese fixed, but 4 still heavily truncated/short (quiet 20, rewriting 17, tone 23, context 32) and 3 regressions (description dialogue violation, action still incoherent, dialogue still wrong). Loss 3.76→3.20 shows training, but writing improvement limited and specific."
+  loss_vs_quality: "Loss 4.06→3.20 (lower) now correlates with *some* improvement (emotion, character-interaction) vs Phase3's loss 3.76 with none — 3× steps mattered somewhat."
+  conclusion: "Phase3B shows **partial, specific improvement** (2 prompts notably better, 1 keep) vs Phase3 flat, but overall still 75% discard. More steps helped somewhat (anti-meta still mostly fails, but emotional and character-interaction learned). Suggests dataset has signal but 12 steps still small; next should try 5 epochs with same lr or slightly higher, not new data yet."

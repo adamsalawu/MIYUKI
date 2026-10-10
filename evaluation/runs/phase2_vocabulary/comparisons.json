@@ -1,0 +1,395 @@
+[
+  {
+    "text": "Mara",
+    "base_tokens": 2,
+    "base_ids": [
+      44,
+      5059
+    ],
+    "base_toks": [
+      "M",
+      "ara"
+    ],
+    "exp_tokens": 1,
+    "exp_ids": [
+      1418
+    ],
+    "exp_toks": [
+      "Mara"
+    ],
+    "ratio": 0.5
+  },
+  {
+    "text": "Jinx",
+    "base_tokens": 2,
+    "base_ids": [
+      41,
+      20014
+    ],
+    "base_toks": [
+      "J",
+      "inx"
+    ],
+    "exp_tokens": 2,
+    "exp_ids": [
+      34,
+      397
+    ],
+    "exp_toks": [
+      "J",
+      "inx"
+    ],
+    "ratio": 1.0
+  },
+  {
+    "text": "Elena",
+    "base_tokens": 2,
+    "base_ids": [
+      36,
+      48021
+    ],
+    "base_toks": [
+      "E",
+      "lena"
+    ],
+    "exp_tokens": 1,
+    "exp_ids": [
+      1409
+    ],
+    "exp_toks": [
+      "Elena"
+    ],
+    "ratio": 0.5
+  },
+  {
+    "text": "Haru",
+    "base_tokens": 2,
+    "base_ids": [
+      26490,
+      84
+    ],
+    "base_toks": [
+      "Har",
+      "u"
+    ],
+    "exp_tokens": 1,
+    "exp_ids": [
+      315
+    ],
+    "exp_toks": [
+      "Haru"
+    ],
+    "ratio": 0.5
+  },
+  {
+    "text": "Aureline",
+    "base_tokens": 3,
+    "base_ids": [
+      32,
+      552,
+      1056
+    ],
+    "base_toks": [
+      "A",
+      "ure",
+      "line"
+    ],
+    "exp_tokens": 1,
+    "exp_ids": [
+      1399
+    ],
+    "exp_toks": [
+      "Aureline"
+    ],
+    "ratio": 0.3333333333333333
+  },
+  {
+    "text": "Kestrel",
+    "base_tokens": 3,
+    "base_ids": [
+      42,
+      477,
+      3748
+    ],
+    "base_toks": [
+      "K",
+      "est",
+      "rel"
+    ],
+    "exp_tokens": 3,
+    "exp_ids": [
+      35,
+      1004,
+      1677
+    ],
+    "exp_toks": [
+      "K",
+      "est",
+      "rel"
+    ],
+    "ratio": 1.0
+  },
+  {
+    "text": "lumenweave",
+    "base_tokens": 4,
+    "base_ids": [
+      75,
+      27899,
+      896,
+      523
+    ],
+    "base_toks": [
+      "l",
+      "umen",
+      "we",
+      "ave"
+    ],
+    "exp_tokens": 1,
+    "exp_ids": [
+      1509
+    ],
+    "exp_toks": [
+      "lumenweave"
+    ],
+    "ratio": 0.25
+  },
+  {
+    "text": "scryglass",
+    "base_tokens": 3,
+    "base_ids": [
+      2388,
+      884,
+      58436
+    ],
+    "base_toks": [
+      "sc",
+      "ry",
+      "glass"
+    ],
+    "exp_tokens": 4,
+    "exp_ids": [
+      66,
+      50,
+      250,
+      550
+    ],
+    "exp_toks": [
+      "s",
+      "c",
+      "ry",
+      "glass"
+    ],
+    "ratio": 1.3333333333333333
+  },
+  {
+    "text": "voidtide",
+    "base_tokens": 3,
+    "base_ids": [
+      1004,
+      83,
+      577
+    ],
+    "base_toks": [
+      "void",
+      "t",
+      "ide"
+    ],
+    "exp_tokens": 3,
+    "exp_ids": [
+      69,
+      62,
+      406
+    ],
+    "exp_toks": [
+      "v",
+      "o",
+      "idtide"
+    ],
+    "ratio": 1.0
+  },
+  {
+    "text": "Emberhearth",
+    "base_tokens": 4,
+    "base_ids": [
+      2269,
+      652,
+      383,
+      46501
+    ],
+    "base_toks": [
+      "Em",
+      "ber",
+      "he",
+      "arth"
+    ],
+    "exp_tokens": 6,
+    "exp_ids": [
+      29,
+      1016,
+      108,
+      81,
+      347,
+      55
+    ],
+    "exp_toks": [
+      "E",
+      "mb",
+      "er",
+      "he",
+      "art",
+      "h"
+    ],
+    "ratio": 1.5
+  },
+  {
+    "text": "genkan",
+    "base_tokens": 2,
+    "base_ids": [
+      4370,
+      8656
+    ],
+    "base_toks": [
+      "gen",
+      "kan"
+    ],
+    "exp_tokens": 2,
+    "exp_ids": [
+      1470,
+      1499
+    ],
+    "exp_toks": [
+      "gen",
+      "kan"
+    ],
+    "ratio": 1.0
+  },
+  {
+    "text": "The lighthouse had been dark",
+    "base_tokens": 6,
+    "base_ids": [
+      785,
+      326,
+      57909,
+      1030,
+      1012,
+      6319
+    ],
+    "base_toks": [
+      "The",
+      "Ġl",
+      "ighthouse",
+      "Ġhad",
+      "Ġbeen",
+      "Ġdark"
+    ],
+    "exp_tokens": 5,
+    "exp_ids": [
+      124,
+      735,
+      210,
+      525,
+      579
+    ],
+    "exp_toks": [
+      "The",
+      "Ġlighthouse",
+      "Ġhad",
+      "Ġbeen",
+      "Ġdark"
+    ],
+    "ratio": 0.8333333333333334
+  },
+  {
+    "text": "chipped blue mug",
+    "base_tokens": 4,
+    "base_ids": [
+      331,
+      6450,
+      6303,
+      51489
+    ],
+    "base_toks": [
+      "ch",
+      "ipped",
+      "Ġblue",
+      "Ġmug"
+    ],
+    "exp_tokens": 3,
+    "exp_ids": [
+      2137,
+      379,
+      452
+    ],
+    "exp_toks": [
+      "chipped",
+      "Ġblue",
+      "Ġmug"
+    ],
+    "ratio": 0.75
+  },
+  {
+    "text": "broken compass",
+    "base_tokens": 2,
+    "base_ids": [
+      48909,
+      23721
+    ],
+    "base_toks": [
+      "broken",
+      "Ġcompass"
+    ],
+    "exp_tokens": 4,
+    "exp_ids": [
+      49,
+      195,
+      1012,
+      529
+    ],
+    "exp_toks": [
+      "b",
+      "ro",
+      "ken",
+      "Ġcompass"
+    ],
+    "ratio": 2.0
+  },
+  {
+    "corpus_level": {
+      "vocab_size": 8192,
+      "total_chars": 21738,
+      "base_tokens": 5071,
+      "new_tokens": 4776,
+      "base_tok_per_char": 0.23327813046278406,
+      "new_tok_per_char": 0.21970742478608887,
+      "compression": 0.05817393019128377,
+      "expansion": -0.05817393019128377,
+      "new_vs_base_ratio": 0.9418260698087162
+    }
+  },
+  {
+    "corpus_level": {
+      "vocab_size": 16000,
+      "total_chars": 21738,
+      "base_tokens": 5071,
+      "new_tokens": 4776,
+      "base_tok_per_char": 0.23327813046278406,
+      "new_tok_per_char": 0.21970742478608887,
+      "compression": 0.05817393019128377,
+      "expansion": -0.05817393019128377,
+      "new_vs_base_ratio": 0.9418260698087162
+    }
+  },
+  {
+    "corpus_level": {
+      "vocab_size": 32000,
+      "total_chars": 21738,
+      "base_tokens": 5071,
+      "new_tokens": 4776,
+      "base_tok_per_char": 0.23327813046278406,
+      "new_tok_per_char": 0.21970742478608887,
+      "compression": 0.05817393019128377,
+      "expansion": -0.05817393019128377,
+      "new_vs_base_ratio": 0.9418260698087162
+    }
+  }
+]

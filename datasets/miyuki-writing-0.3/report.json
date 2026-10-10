@@ -1,0 +1,45 @@
+{
+  "total_examples": 154,
+  "total_characters": 75731,
+  "total_words": 8217,
+  "total_qwen_tokens": 21027,
+  "average_tokens_per_example": 136.53896103896105,
+  "maximum_tokens_per_example": 233,
+  "category_counts": {
+    "scene": 123,
+    "continuation": 1,
+    "quiet": 32,
+    "character_consistency": 39,
+    "dialogue": 33,
+    "subtext": 33,
+    "character_voice": 34,
+    "atmospheric": 4,
+    "description": 50,
+    "pacing": 40,
+    "emotion": 15,
+    "action": 15,
+    "anti_meta": 32,
+    "rewriting": 7,
+    "context_retention": 28,
+    "transitional": 13,
+    "instruction_following": 6,
+    "sensory_detail": 2,
+    "humor": 7,
+    "tension": 1,
+    "continuity": 4
+  },
+  "tag_counts": {
+    "instruction_following": 147,
+    "continuity": 20,
+    "prose_flow": 79,
+    "pacing": 10,
+    "character_consistency": 3,
+    "naturalness": 38,
+    "sensory_detail": 18,
+    "subtext": 1
+  },
+  "train_eval_split": {
+    "train": 138,
+    "eval": 16
+  }
+}

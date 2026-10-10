@@ -1,0 +1,8 @@
+name: "miyuki-eval-v0.1"
+version: "0.1.0"
+prompts_file: "evaluation/prompts/eval_v0.1.jsonl"
+output_dir: "evaluation/runs"
+report_dir: "evaluation/reports"
+generation_overrides:
+  temperature: 0.8
+  max_new_tokens: 256

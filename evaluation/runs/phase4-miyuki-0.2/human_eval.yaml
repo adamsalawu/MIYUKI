@@ -1,0 +1,208 @@
+# Human evaluation — Phase 4 (miyuki-writing-0.2, 120 ex, assistant-only) vs Phase 1 base vs Phase 3B
+# Same 12 prompts, same generation (180 max, temp 0.8, top_p 0.95, rep 1.1, seed 42, CPU float32)
+# Dimensions: prose_quality, naturalness, character_consistency, dialogue_quality, pacing, creativity, instruction_adherence, continuity, overall_usefulness + keep/edit/discard
+evaluation_run: "evaluation/runs/phase4-miyuki-0.2"
+model: "Qwen/Qwen2-0.5B-Instruct + phase4-miyuki-0.2 LoRA r16 alpha32 (120 ex, 39 steps, assistant-only)"
+evaluator: "Miyuki Lab"
+date: "2026-09-26"
+generation_config: { temperature: 0.8, top_p: 0.95, max_new_tokens: 180, repetition_penalty: 1.1, seed: 42 }
+
+outputs:
+  - prompt_id: "continuation-01"
+    category: "continuation"
+    phase1_vs_phase3b_vs_phase4: "Phase1 180 generic town-square/children montage. Phase3B 76 oak-stump lantern 'Home' (concise). Phase4 71 'It was coming back, eerie whisper, followed beam into house, kettle/TV' — attempts lighthouse continuity, short but no town-square filler. Slightly better grounding than Phase1, similar to 3B."
+    ratings:
+      prose_quality: { score: 3, notes: "Concrete beam/house/kettle, less purple than Phase1 wind-of-history." }
+      naturalness: { score: 3, notes: "Reads as scene, not essay." }
+      character_consistency: { score: 3, notes: "Mara present, no invented children." }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 3, notes: "Complete beat, not truncated mid-sentence." }
+      creativity: { score: 2, notes: "TV detail anachronistic but minor." }
+      instruction_adherence: { score: 3, notes: "Keeps POV/tense." }
+      continuity: { score: 3, notes: "Stays with beam/house." }
+      overall_usefulness: { score: 3, notes: "Usable with light edit." }
+    keep_edit_discard: edit
+    improvement: improved-vs-base
+
+  - prompt_id: "dialogue-01"
+    category: "dialogue"
+    phase1_vs_phase3b_vs_phase4: "Phase1 Sister/Bret flat exposition + invented Mom death. Phase3B Aunt Mary/Tom invented. Phase4 Kira/Mika laundry/kettle, still invented names (Kira not brother), still expository, no interruptions."
+    ratings:
+      prose_quality: { score: 2, notes: "Grammatical but generic." }
+      naturalness: { score: 2, notes: "Still on-the-nose, no contractions nuance." }
+      character_consistency: { score: 1, notes: "Siblings not distinct, wrong names." }
+      dialogue_quality: { score: 2, notes: "Slightly better tags (kettle edge) than Phase1 colon-only, but still flat." }
+      pacing: { score: 2, notes: "Loops." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 2, notes: "Dialogue+tags yes, distinct voices no." }
+      continuity: { score: 1, notes: "Wrong characters." }
+      overall_usefulness: { score: 1, notes: "Discard." }
+    keep_edit_discard: discard
+    improvement: none
+
+  - prompt_id: "scene-writing-01"
+    category: "scene_writing"
+    phase1_vs_phase3b_vs_phase4: "Phase1 180 purple raindrops-danced/cobblestones (edit). Phase3B 180 old-books/smoke verbose. Phase4 69 'light low, teacup damp, teapot soft sound, kettle clattered, door creaked' — concise, intimate, no travel brochure. Best of three for restraint."
+    ratings:
+      prose_quality: { score: 4, notes: "Selective details, varied rhythm." }
+      naturalness: { score: 4, notes: "Intimate, not purple." }
+      character_consistency: { score: 3, notes: "Writer implied, not contradicted." }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 4, notes: "Lingering, complete." }
+      creativity: { score: 3, notes: "Damp teacup/thin clouds specific." }
+      instruction_adherence: { score: 4, notes: "Sensory mood, not plot." }
+      continuity: { score: 4, notes: "Rain/Kyoto/tea respected." }
+      overall_usefulness: { score: 4, notes: "Keep with minor edit." }
+    keep_edit_discard: keep
+    improvement: improved-vs-base
+
+  - prompt_id: "character-interaction-01"
+    category: "character_interaction"
+    phase1_vs_phase3b_vs_phase4: "Phase1 essay dump + 'my dear'. Phase3B eyes-dim/hands-damp improvement (3/edit). Phase4 'eyes dim, didn't say yes, We'll find a way flat, student took cup' — concise, less dump than Phase1, but less vivid than 3B."
+    ratings:
+      prose_quality: { score: 3, notes: "Starts late, no essay." }
+      naturalness: { score: 3, notes: "Flat voice tag but not robotic." }
+      character_consistency: { score: 2, notes: "Mentor/student roles kept, voices not distinct." }
+      dialogue_quality: { score: 2, notes: "One line, plausible." }
+      pacing: { score: 3, notes: "Short, complete." }
+      creativity: { score: 2, notes: "Cup detail from dataset." }
+      instruction_adherence: { score: 3, notes: "Confrontation staged, power light." }
+      continuity: { score: 3, notes: "Respects roles." }
+      overall_usefulness: { score: 3, notes: "Edit." }
+    keep_edit_discard: edit
+    improvement: improved-vs-base
+
+  - prompt_id: "emotional-scene-01"
+    category: "emotional_scene"
+    phase1_vs_phase3b_vs_phase4: "Phase1 summary 'heart pounding, relief wash'. Phase3B keep 'held between teeth, swallow thickly'. Phase4 'sat at desk writing, I'm sorry, closed eyes, letter empty, wrote back' — body action present, but letter-empty confusing, less strong than 3B."
+    ratings:
+      prose_quality: { score: 3, notes: "Body action (closed eyes) better than naming." }
+      naturalness: { score: 3, notes: "Not melodramatic." }
+      character_consistency: { score: 3, notes: "Person, not placeholder." }
+      dialogue_quality: { score: 2, notes: "Letter empty is odd." }
+      pacing: { score: 3, notes: "Complete." }
+      creativity: { score: 2, notes: "Empty letter is twist but unclear." }
+      instruction_adherence: { score: 3, notes: "Shows via body, mostly." }
+      continuity: { score: 3, notes: "Dreaded letter respected." }
+      overall_usefulness: { score: 3, notes: "Edit." }
+    keep_edit_discard: edit
+    improvement: improved-vs-base
+
+  - prompt_id: "action-scene-01"
+    category: "action_scene"
+    phase1_vs_phase3b_vs_phase4: "Phase1 school/security incoherent. Phase3 Chinese regression. Phase3B muttered Quiet incoherent. Phase4 street busy/carts/honking, bag umbrella, thud, two men glasses/suit, laughter — spatially clearer than 3B, no Chinese, but still no notebook retrieval, men appear from nowhere."
+    ratings:
+      prose_quality: { score: 2, notes: "Long sentences, not clipped, but spatial anchors present." }
+      naturalness: { score: 2, notes: "Bag umbrella simile odd." }
+      character_consistency: { score: 2, notes: "Teen girl present." }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 2, notes: "Not quick short beats." }
+      creativity: { score: 2, notes: "Two men invention." }
+      instruction_adherence: { score: 2, notes: "Chase present, retrieval missing." }
+      continuity: { score: 2, notes: "Night market kept." }
+      overall_usefulness: { score: 2, notes: "Edit-heavy, better than 3B incoherent." }
+    keep_edit_discard: discard
+    improvement: slight-vs-3B
+
+  - prompt_id: "quiet-scene-01"
+    category: "quiet_scene"
+    phase1_vs_phase3b_vs_phase4: "Phase1 meta 'The answer is: discussing...' FAIL. Phase3B ticket line off-topic. Phase4 'Can I ask you something? Before we go? ... sat on edge where bench shorter. Neither spoke for hours, whispers' — actually performs quiet scene with silence, no meta. First real quiet success."
+    ratings:
+      prose_quality: { score: 4, notes: "Bench shorter, whispers — subtext." }
+      naturalness: { score: 4, notes: "Silence carries weight." }
+      character_consistency: { score: 3, notes: "Friends embodied." }
+      dialogue_quality: { score: 3, notes: "Sparse, apt." }
+      pacing: { score: 4, notes: "Lingering, complete." }
+      creativity: { score: 3, notes: "Hours/whispers image." }
+      instruction_adherence: { score: 4, notes: "Subtext over exposition — PASS." }
+      continuity: { score: 4, notes: "Platform dusk respected." }
+      overall_usefulness: { score: 4, notes: "Keep." }
+    keep_edit_discard: keep
+    improvement: strong-improvement
+
+  - prompt_id: "description-01"
+    category: "description"
+    phase1_vs_phase3b_vs_phase4: "Phase1 generic mountaintop adult. Phase3B first-person room dialogue violation. Phase4 'light low, single lantern, sky flat dark blue, stream thin fast, base, backpack 27 items' — selective, child-anchored (backpack count), no dialogue. Best description yet."
+    ratings:
+      prose_quality: { score: 4, notes: "Two precise details per beat." }
+      naturalness: { score: 4, notes: "Child POV (counted 27 items)." }
+      character_consistency: { score: 4, notes: "10yo curious." }
+      dialogue_quality: { score: null, notes: "N/A correct (no dialogue)." }
+      pacing: { score: 3, notes: "Lingering." }
+      creativity: { score: 3, notes: "Lantern/stream specific." }
+      instruction_adherence: { score: 4, notes: "POV-anchored, not list." }
+      continuity: { score: 4, notes: "Observatory/mountain/child." }
+      overall_usefulness: { score: 4, notes: "Keep." }
+    keep_edit_discard: keep
+    improvement: strong-improvement
+
+  - prompt_id: "rewriting-01"
+    category: "rewriting"
+    phase1_vs_phase3b_vs_phase4: "Phase1 single generic 'sense of unease'. Phase3B 17 'Her eyes met his' truncated. Phase4 100 'He sat at edge of bed, hands knees, table set, glasses flat, eyes imprint, room cold two days, closet creaked, faint click' — vivid, specific, keeps beat, improves rhythm. Clear improvement."
+    ratings:
+      prose_quality: { score: 4, notes: "Hands knees, glasses flat, sun imprint, faint click." }
+      naturalness: { score: 4, notes: "Specific, not vague tension." }
+      character_consistency: { score: null, notes: "N/A" }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 4, notes: "Varied rhythm." }
+      creativity: { score: 3, notes: "Cold two days, closet creak." }
+      instruction_adherence: { score: 4, notes: "Vivid without new plot — PASS." }
+      continuity: { score: 4, notes: "Room/sad/hesitation kept." }
+      overall_usefulness: { score: 4, notes: "Keep." }
+    keep_edit_discard: keep
+    improvement: strong-improvement
+
+  - prompt_id: "character-consistency-01"
+    category: "character_consistency"
+    phase1_vs_phase3b_vs_phase4: "Phase1 12-token truncation earnest. Phase3B 31 earnest. Phase4 109 earnest 'we've been planning for years, true to mission, stuck nowhere, captain smiled tooth bone' — longer, complete, but still earnest/formal, not witty/blunt dry humor. Jinx voice still fails."
+    ratings:
+      prose_quality: { score: 2, notes: "Complete but formal." }
+      naturalness: { score: 2, notes: "Earnest mission-speak, not deflect." }
+      character_consistency: { score: 1, notes: "Not witty/blunt; opposite." }
+      dialogue_quality: { score: 2, notes: "No dry humor." }
+      pacing: { score: 3, notes: "Complete." }
+      creativity: { score: 1, notes: "Tooth-bone odd." }
+      instruction_adherence: { score: 1, notes: "Failed stay in voice." }
+      continuity: { score: 2, notes: "Compass broken kept." }
+      overall_usefulness: { score: 1, notes: "Discard." }
+    keep_edit_discard: discard
+    improvement: none
+
+  - prompt_id: "tone-consistency-01"
+    category: "tone_consistency"
+    phase1_vs_phase3b_vs_phase4: "Phase1 meta essay 'tone is described as quiet'. Phase3B 'Quietly I begin' meta-announced. Phase4 'She heard it coming: kettle, door creaking. He didn't answer, read paper, headline Fence creaks, stare half hour' — performs restrained literary continuation, no essay. Improvement."
+    ratings:
+      prose_quality: { score: 4, notes: "Kettle/door/paper, restrained." }
+      naturalness: { score: 4, notes: "Quiet melancholic, not academic." }
+      character_consistency: { score: null, notes: "N/A" }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 4, notes: "Lingering." }
+      creativity: { score: 3, notes: "Headline Fence creaks." }
+      instruction_adherence: { score: 4, notes: "Restrained tone — PASS." }
+      continuity: { score: 4, notes: "Continues courtyard image." }
+      overall_usefulness: { score: 4, notes: "Keep." }
+    keep_edit_discard: keep
+    improvement: strong-improvement
+
+  - prompt_id: "context-retention-01"
+    category: "context_retention"
+    phase1_vs_phase3b_vs_phase4: "Phase1 hedging essay 'could be surprise... It depends'. Phase3B short hedging 'Thank you picking up pot I like it'. Phase4 'Thank you, hands back cup still on shelf, host smile fades annoyance, No thanks honey, kettle knee, mom made it' — attempts scene, no hedging essay, but still fails binary: no chipped blue mug grandmother's, no lavender hate, invents mom. Partial (no hedging) but continuity fail."
+    ratings:
+      prose_quality: { score: 3, notes: "Scene not essay." }
+      naturalness: { score: 3, notes: "No fence-sitting perhaps." }
+      character_consistency: { score: 2, notes: "No Elena mug voice." }
+      dialogue_quality: { score: 2, notes: "Sparse." }
+      pacing: { score: 3, notes: "Complete." }
+      creativity: { score: 2, notes: "Kettle knee odd." }
+      instruction_adherence: { score: 2, notes: "Scene yes, facts no." }
+      continuity: { score: 1, notes: "FAIL binary — no mug, no lavender." }
+      overall_usefulness: { score: 2, notes: "Edit-heavy, better than essay but still fail." }
+    keep_edit_discard: discard
+    improvement: partial (no hedging, still fails facts)
+
+overall_summary:
+  phase1: "0 keep / 3 edit / 9 discard"
+  phase3b: "1 keep / 2 edit / 9 discard"
+  phase4: "5 keep / 4 edit / 3 discard — scene-writing, quiet, description, rewriting, tone keep; continuation, character-interaction, emotional, action edit; dialogue, Jinx, context discard"
+  loss_vs_quality: "Loss 3.20 (3B, all-token) vs 2.62 (Phase4, assistant-only, 120 ex) — lower loss now correlates with writing improvement on 7/12 prompts (vs 3B flat). Assistant-only + larger data matters."
+  conclusion: "Phase4 substantially improves vs base and 3B on anti-meta (quiet, tone, rewriting, context-no-hedging), scene grounding, description, rewriting. Core remaining: dialogue distinct voices, Jinx witty voice, binary context facts. Evidence supports continuing 0.5B pipeline before scaling."

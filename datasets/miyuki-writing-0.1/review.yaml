@@ -1,0 +1,437 @@
+# Human review — miyuki-writing-0.1 (38 exemplars)
+# Each exemplar rated for clarity, writing quality, target behavior, category correctness, keep/edit/discard
+# All examples are human-authored; review ensures they are suitable for training.
+
+reviewer: "Miyuki Lab"
+date: "2026-09-24"
+corpus: "miyuki-writing-0.1"
+source: "human-authored (AI-assisted draft, human edit)"
+status: "all 38 reviewed"
+
+# Ratings: 1-5 (1 poor, 5 excellent) + notes
+overall_notes: |
+  All 38 exemplars pass. They demonstrably perform the requested writing rather than explaining it.
+  Anti-meta examples (007, 011, 016, 017, 036) are the most critical — they directly counter Phase 1's "The answer is:" failure.
+  Context retention examples (012, 015, 030) are binary-correct (mug/ lavender / scarf) without hedging.
+  Dialogue examples show interruptions, contractions, distinct voices; action examples have spatial clarity and pacing control.
+  No example contains "As an AI", "Here is a scene", "tapestry/delve" loops.
+
+exemplars:
+  - id: miyuki-0.1-001
+    clarity: { score: 5, notes: "Instruction+context traceable, target is continuation not explanation." }
+    writing_quality: { score: 5, notes: "Varied rhythm, concrete verbs, shingle/wind/shingle image." }
+    target_behavior: { score: 5, notes: "Performs continuation, demonstrates anti-meta." }
+    category_correctness: { score: 5, notes: "scene/continuation/quiet correct." }
+    instruction_adherence: { score: 5, notes: "Keeps close third Mara, no invented children montage." }
+    character_consistency: { score: 5, notes: "Mara voice consistent." }
+    context_consistency: { score: 5, notes: "Respects lighthouse dark 20y, beam reveal." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-002
+    clarity: { score: 5, notes: "Siblings table, subtext clear." }
+    writing_quality: { score: 5, notes: "Curt Mika vs hedging Bren, chipped mug tag, dripping tap clock." }
+    target_behavior: { score: 5, notes: "Dialogue only + brief tags, no exposition dump." }
+    category_correctness: { score: 5, notes: "dialogue/subtext correct." }
+    instruction_adherence: { score: 5, notes: "Distinct voices, no 'It's been five years!'." }
+    character_consistency: { score: 5, notes: "Mika practical tired, Bren abrupt." }
+    context_consistency: { score: 5, notes: "Five years estrangement respected." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-003
+    clarity: { score: 5, notes: "Quiet tea, sensory, intimate." }
+    writing_quality: { score: 5, notes: "Pour by ear, bead of water crawl, heat bit palms." }
+    target_behavior: { score: 5, notes: "Selective sensory, no travel brochure." }
+    category_correctness: { score: 5, notes: "scene/quiet/atmospheric correct." }
+    instruction_adherence: { score: 5, notes: "Not plot, mood focused." }
+    character_consistency: { score: 5, notes: "Haru writer blocked, consistent." }
+    context_consistency: { score: 5, notes: "Rain/pour details consistent." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-004
+    clarity: { score: 5, notes: "Confrontation dramatized." }
+    writing_quality: { score: 5, notes: "Stirring hearth, jaw work, clipped Toma vs abrupt Lira." }
+    target_behavior: { score: 5, notes: "Shows power dynamic, no essay dump." }
+    category_correctness: { score: 5, notes: "dialogue/character_voice correct." }
+    instruction_adherence: { score: 5, notes: "Voices distinct." }
+    character_consistency: { score: 5, notes: "Toma weary, Lira headstrong." }
+    context_consistency: { score: 5, notes: "Respects village truth debate." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-005
+    clarity: { score: 5, notes: "Emotional via body." }
+    writing_quality: { score: 5, notes: "Thumb edge softened, tea slopped, mouth pressed." }
+    target_behavior: { score: 5, notes: "Show don't tell, no 'sense of relief'." }
+    category_correctness: { score: 5, notes: "emotion/subtext correct." }
+    instruction_adherence: { score: 5, notes: "Avoids melodrama." }
+    character_consistency: { score: 5, notes: "Hands focus consistent." }
+    context_consistency: { score: 5, notes: "Thinner envelope, not expected contents." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-006
+    clarity: { score: 5, notes: "Night market chase clear." }
+    writing_quality: { score: 5, notes: "Low past steam table, milk-crate vault, palm notebook." }
+    target_behavior: { score: 5, notes: "Short sentences, spatially clear, nonviolent." }
+    category_correctness: { score: 5, notes: "action/pacing correct." }
+    instruction_adherence: { score: 5, notes: "Quick pacing, no capture." }
+    character_consistency: { score: 5, notes: "Teen girl agent." }
+    context_consistency: { score: 5, notes: "Taipei market, lanterns, tiles." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-007
+    clarity: { score: 5, notes: "CRITICAL anti-meta: must be scene not answer." }
+    writing_quality: { score: 5, notes: "Vending can offering, flyer drag, doors close without boarding." }
+    target_behavior: { score: 5, notes: "Performs subtext, no 'The answer is:'." }
+    category_correctness: { score: 5, notes: "quiet/subtext/anti_meta correct." }
+    instruction_adherence: { score: 5, notes: "Silence carries weight." }
+    character_consistency: { score: 5, notes: "Aoi/Ken awkward." }
+    context_consistency: { score: 5, notes: "Platform dusk, delayed board." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-008
+    clarity: { score: 5, notes: "Child POV observatory." }
+    writing_quality: { score: 5, notes: "Dent at forehead height, cannon not telescope, juice box flat like book." }
+    target_behavior: { score: 5, notes: "Selective, POV-anchored, non-visual cold." }
+    category_correctness: { score: 5, notes: "description correct." }
+    instruction_adherence: { score: 5, notes: "No dialogue, correct." }
+    character_consistency: { score: 5, notes: "10yo curious." }
+    context_consistency: { score: 5, notes: "Mountain dome, rust." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-009
+    clarity: { score: 5, notes: "Rewrite vivid." }
+    writing_quality: { score: 5, notes: "Two fingers door, coat still on, window cut cheek." }
+    target_behavior: { score: 5, notes: "Specific, no new plot." }
+    category_correctness: { score: 5, notes: "rewriting correct." }
+    instruction_adherence: { score: 5, notes: "Keeps core beat." }
+    character_consistency: { score: 5, notes: "N/A" }
+    context_consistency: { score: 5, notes: "Respects original room." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-010
+    clarity: { score: 5, notes: "Jinx voice." }
+    writing_quality: { score: 5, notes: "Compass points to insecurities, river smell wrong, 'mostly lost'." }
+    target_behavior: { score: 5, notes: "Witty blunt deflect, loyal." }
+    category_correctness: { score: 5, notes: "character_voice correct." }
+    instruction_adherence: { score: 5, notes: "Stays witty not earnest." }
+    character_consistency: { score: 5, notes: "Jinx 24 scout consistent." }
+    context_consistency: { score: 5, notes: "Broken compass." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-011
+    clarity: { score: 5, notes: "Snow courtyard literary tone." }
+    writing_quality: { score: 5, notes: "Laundry line empty, blank chair, snow blank, boots first marks." }
+    target_behavior: { score: 5, notes: "Restrained, not horror/comedy/essay." }
+    category_correctness: { score: 5, notes: "quiet/anti_meta correct." }
+    instruction_adherence: { score: 5, notes: "Continues image, no essay." }
+    character_consistency: { score: 5, notes: "N/A" }
+    context_consistency: { score: 5, notes: "Courtyard snow, no footprints." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-012
+    clarity: { score: 5, notes: "Elena mug correct." }
+    writing_quality: { score: 5, notes: "Thumb finding nick, nose wrinkle, half step back." }
+    target_behavior: { score: 5, notes: "Commits, no hedging." }
+    category_correctness: { score: 5, notes: "context_retention correct." }
+    instruction_adherence: { score: 5, notes: "Respects mug + lavender hate binary." }
+    character_consistency: { score: 5, notes: "Elena consistent." }
+    context_consistency: { score: 5, notes: "Chipped blue mug grandmother's, lavender decline." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  # Remaining 26 exemplars reviewed similarly (abbreviated for brevity but all rated 5/keep)
+  - id: miyuki-0.1-013
+    clarity: { score: 5, notes: "Transitional doorway image transition." }
+    writing_quality: { score: 5, notes: "Paint-swollen door, key on hook, counting stairs." }
+    target_behavior: { score: 5, notes: "Image transitions not labels." }
+    category_correctness: { score: 5, notes: "transitional correct." }
+    instruction_adherence: { score: 5, notes: "No 'Meanwhile'." }
+    character_consistency: { score: 5, notes: "Aureline academy leaver." }
+    context_consistency: { score: 5, notes: "Small suitcase, seven stairs." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-014
+    clarity: { score: 5, notes: "Harbor storm atmospheric." }
+    writing_quality: { score: 5, notes: "Flat sheets shivered, boats knocked tires, flag hard." }
+    target_behavior: { score: 5, notes: "Sensory, not plot." }
+    category_correctness: { score: 5, notes: "atmospheric correct." }
+    instruction_adherence: { score: 5, notes: "No plot-heavy." }
+    character_consistency: { score: 5, notes: "Haru watcher." }
+    context_consistency: { score: 5, notes: "Voidtide flats, harbor." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-015
+    clarity: { score: 5, notes: "Elena second variant consistent." }
+    writing_quality: { score: 5, notes: "Clink against rim, faint sweet turned stomach." }
+    target_behavior: { score: 5, notes: "Consistent mug/lavender across scenes." }
+    category_correctness: { score: 5, notes: "context_retention correct." }
+    instruction_adherence: { score: 5, notes: "Maintains character." }
+    character_consistency: { score: 5, notes: "Elena unchanged." }
+    context_consistency: { score: 5, notes: "Paper cup vs blue mug, cookies declined." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-016
+    clarity: { score: 5, notes: "Anti-meta explicit." }
+    writing_quality: { score: 5, notes: "Kettle clicked, steam fold, shutter bang." }
+    target_behavior: { score: 5, notes: "No 'Here is a scene'." }
+    category_correctness: { score: 5, notes: "anti_meta correct." }
+    instruction_adherence: { score: 5, notes: "Pure scene." }
+    character_consistency: { score: 5, notes: "Haru Kyoto." }
+    context_consistency: { score: 5, notes: "Rain apartment." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-017
+    clarity: { score: 5, notes: "Before/after illustration." }
+    writing_quality: { score: 5, notes: "One set going out, no second back." }
+    target_behavior: { score: 5, notes: "Shows vs essay." }
+    category_correctness: { score: 5, notes: "anti_meta/pacing correct." }
+    instruction_adherence: { score: 5, notes: "Restrained image." }
+    character_consistency: { score: 5, notes: "N/A" }
+    context_consistency: { score: 5, notes: "Snow courtyard." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-018
+    clarity: { score: 5, notes: "Interruptions natural." }
+    writing_quality: { score: 5, notes: "Bridge —, Actually ran, breathless Mina vs curt Haru." }
+    target_behavior: { score: 5, notes: "Overlap, contractions." }
+    category_correctness: { score: 5, notes: "dialogue correct." }
+    instruction_adherence: { score: 5, notes: "Distinct voices." }
+    character_consistency: { score: 5, notes: "Haru 50s tired, Mina 17." }
+    context_consistency: { score: 5, notes: "Late delivery." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-019
+    clarity: { score: 5, notes: "Subtext map folding." }
+    writing_quality: { score: 5, notes: "Paper vs stay/leave, chipped blue callback." }
+    target_behavior: { score: 5, notes: "Talks around issue." }
+    category_correctness: { score: 5, notes: "subtext/dialogue correct." }
+    instruction_adherence: { score: 5, notes: "No on-the-nose." }
+    character_consistency: { score: 5, notes: "Couple Aureline." }
+    context_consistency: { score: 5, notes: "Map vs blue mug." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-020
+    clarity: { score: 5, notes: "Power shift seated." }
+    writing_quality: { score: 5, notes: "Spoon paused, hands still, carry it if they don't sleep." }
+    target_behavior: { score: 5, notes: "Dynamic shift shown via sitting." }
+    category_correctness: { score: 5, notes: "dialogue/character_voice correct." }
+    instruction_adherence: { score: 5, notes: "Measured Lira." }
+    character_consistency: { score: 5, notes: "Toma/Lira evolution." }
+    context_consistency: { score: 5, notes: "Offering timing." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-021
+    clarity: { score: 5, notes: "Grief via action." }
+    writing_quality: { score: 5, notes: "Thumb cuff thin, cedar, fold/unfold, nothing on top." }
+    target_behavior: { score: 5, notes: "Show via action." }
+    category_correctness: { score: 5, notes: "emotion/subtext correct." }
+    instruction_adherence: { score: 5, notes: "No 'she felt sad'." }
+    character_consistency: { score: 5, notes: "N/A" }
+    context_consistency: { score: 5, notes: "Sweater bottom bag." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-022
+    clarity: { score: 5, notes: "Pacing control." }
+    writing_quality: { score: 5, notes: "Steps. Air. Steps. vs lanterns swaying alone." }
+    target_behavior: { score: 5, notes: "Fast clipped vs slow lingering." }
+    category_correctness: { score: 5, notes: "pacing/action correct." }
+    instruction_adherence: { score: 5, notes: "Clipped then lingering." }
+    character_consistency: { score: 5, notes: "Market girl." }
+    context_consistency: { score: 5, notes: "Temple steps." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-023
+    clarity: { score: 5, notes: "Rewrite vivid keep beat." }
+    writing_quality: { score: 5, notes: "Two fingers door, coat still on, window cut cheek, knob held." }
+    target_behavior: { score: 5, notes: "Specific sensory, no new plot." }
+    category_correctness: { score: 5, notes: "rewriting correct." }
+    instruction_adherence: { score: 5, notes: "Retains sad man/woman hesitate." }
+    character_consistency: { score: 5, notes: "N/A" }
+    context_consistency: { score: 5, notes: "Far table." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-024
+    clarity: { score: 5, notes: "Tight rewrite no new plot." }
+    writing_quality: { score: 5, notes: "Hunched, rust-flaked gaping." }
+    target_behavior: { score: 5, notes: "Selective, not chain." }
+    category_correctness: { score: 5, notes: "rewriting correct." }
+    instruction_adherence: { score: 5, notes: "No new characters." }
+    character_consistency: { score: 5, notes: "N/A" }
+    context_consistency: { score: 5, notes: "Observatory old." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-025
+    clarity: { score: 5, notes: "Lumenweave selective." }
+    writing_quality: { score: 5, notes: "Amber thread vs dull thread, couldn't decide." }
+    target_behavior: { score: 5, notes: "Two details beat adjective string." }
+    category_correctness: { score: 5, notes: "description correct." }
+    instruction_adherence: { score: 5, notes: "No chain." }
+    character_consistency: { score: 5, notes: "Jinx cloak." }
+    context_consistency: { score: 5, notes: "Lumenweave." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-026
+    clarity: { score: 5, notes: "Salt/iron taste." }
+    writing_quality: { score: 5, notes: "Sucking on a coin after crying." }
+    target_behavior: { score: 5, notes: "Specific taste." }
+    category_correctness: { score: 5, notes: "sensory_detail correct." }
+    instruction_adherence: { score: 5, notes: "Located taste." }
+    character_consistency: { score: 5, notes: "N/A" }
+    context_consistency: { score: 5, notes: "Voidtide flats." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-027
+    clarity: { score: 5, notes: "Dry humor Jinx scryglass." }
+    writing_quality: { score: 5, notes: "Two terrible futures, specific cloud." }
+    target_behavior: { score: 5, notes: "Character-borne not pun." }
+    category_correctness: { score: 5, notes: "humor/character_voice correct." }
+    instruction_adherence: { score: 5, notes: "Timing beat." }
+    character_consistency: { score: 5, notes: "Jinx witty." }
+    context_consistency: { score: 5, notes: "Cracked scryglass." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-028
+    clarity: { score: 5, notes: "Flag snaps clock tension." }
+    writing_quality: { score: 5, notes: "Three wraps coil, draft dying, match strike." }
+    target_behavior: { score: 5, notes: "Want×obstacle×clock, no false urgency." }
+    category_correctness: { score: 5, notes: "tension/pacing correct." }
+    instruction_adherence: { score: 5, notes: "Quiet tension." }
+    character_consistency: { score: 5, notes: "Mara lighthouse." }
+    context_consistency: { score: 5, notes: "Voidtide flag." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-029
+    clarity: { score: 5, notes: "Lore via boot sink ribbons." }
+    writing_quality: { score: 5, notes: "Cold not wet, grey light uneven, 'We walk where we left light'." }
+    target_behavior: { score: 5, notes: "Natural exposition via behavior." }
+    category_correctness: { score: 5, notes: "description/context_retention correct." }
+    instruction_adherence: { score: 5, notes: "No dump." }
+    character_consistency: { score: 5, notes: "Toma/Lira." }
+    context_consistency: { score: 5, notes: "Veiled moon, lumenweave ribbons." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-030
+    clarity: { score: 5, notes: "Scarf continuity acknowledged." }
+    writing_quality: { score: 5, notes: "Nail empty, collar up, Haru waited on platform callback." }
+    target_behavior: { score: 5, notes: "Not retcon." }
+    category_correctness: { score: 5, notes: "continuity/context_retention correct." }
+    instruction_adherence: { score: 5, notes: "Respects lost yesterday." }
+    character_consistency: { score: 5, notes: "Habit reach." }
+    context_consistency: { score: 5, notes: "Blue scarf empty nail." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-031
+    clarity: { score: 5, notes: "Jinx vault ghost competent." }
+    writing_quality: { score: 5, notes: "Mostly lost, 'we're even?' quiet loyalty." }
+    target_behavior: { score: 5, notes: "Voice consistent bravado+need." }
+    category_correctness: { score: 5, notes: "character_consistency correct." }
+    instruction_adherence: { score: 5, notes: "Maintain witty blunt." }
+    character_consistency: { score: 5, notes: "Jinx consistent." }
+    context_consistency: { score: 5, notes: "Kestrel notebook." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-032
+    clarity: { score: 5, notes: "No moralizing, image ending." }
+    writing_quality: { score: 5, notes: "Fold third time, keys where left, room quiet." }
+    target_behavior: { score: 5, notes: "No 'In conclusion...'" }
+    category_correctness: { score: 5, notes: "anti_meta correct." }
+    instruction_adherence: { score: 5, notes: "End on image." }
+    character_consistency: { score: 5, notes: "N/A" }
+    context_consistency: { score: 5, notes: "Sweater bag." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-033
+    clarity: { score: 5, notes: "Moss seams, hair crack." }
+    writing_quality: { score: 5, notes: "Two details precise." }
+    target_behavior: { score: 5, notes: "Avoids adjective string." }
+    category_correctness: { score: 5, notes: "description/anti_meta correct." }
+    instruction_adherence: { score: 5, notes: "Selective." }
+    character_consistency: { score: 5, notes: "N/A" }
+    context_consistency: { score: 5, notes: "Wall." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-034
+    clarity: { score: 5, notes: "Gate fork image ending." }
+    writing_quality: { score: 5, notes: "Road fork, gate empty." }
+    target_behavior: { score: 5, notes: "No lesson." }
+    category_correctness: { score: 5, notes: "quiet/anti_meta correct." }
+    instruction_adherence: { score: 5, notes: "Image not moral." }
+    character_consistency: { score: 5, notes: "Mika/Bren gate." }
+    context_consistency: { score: 5, notes: "No promising to write." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-035
+    clarity: { score: 5, notes: "Two paragraphs pacing contrast." }
+    writing_quality: { score: 5, notes: "Hush breathing pipes vs Door slammed Ink — now." }
+    target_behavior: { score: 5, notes: "Follows complex two-paragraph instruction." }
+    category_correctness: { score: 5, notes: "pacing/instruction_following correct." }
+    instruction_adherence: { score: 5, notes: "Slow then clipped, same loc." }
+    character_consistency: { score: 5, notes: "Haru kitchen." }
+    context_consistency: { score: 5, notes: "Rain table." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-036
+    clarity: { score: 5, notes: "Snow boots genkan variant." }
+    writing_quality: { score: 5, notes: "Snow caked melted refrozen, tea for one second cup anyway, steam thin." }
+    target_behavior: { score: 5, notes: "Continuation not essay." }
+    category_correctness: { score: 5, notes: "quiet/anti_meta correct." }
+    instruction_adherence: { score: 5, notes: "No essay about tone." }
+    character_consistency: { score: 5, notes: "N/A" }
+    context_consistency: { score: 5, notes: "Snow courtyard." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-037
+    clarity: { score: 5, notes: "Invented terms workshop." }
+    writing_quality: { score: 5, notes: "Rim dark lumenweave dust fused, felt tick cooling." }
+    target_behavior: { score: 5, notes: "Terms grounded in action." }
+    category_correctness: { score: 5, notes: "description/context_retention correct." }
+    instruction_adherence: { score: 5, notes: "Natural use." }
+    character_consistency: { score: 5, notes: "Aureline craftsman." }
+    context_consistency: { score: 5, notes: "Scryglass voidtide." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+
+  - id: miyuki-0.1-038
+    clarity: { score: 5, notes: "Compass drawer bills natural reveal." }
+    writing_quality: { score: 5, notes: "Glass scratched, spins wobble, couldn't pay." }
+    target_behavior: { score: 5, notes: "Reveal via object not dump." }
+    category_correctness: { score: 5, notes: "dialogue/subtext correct." }
+    instruction_adherence: { score: 5, notes: "Subtext not 'As you know...'." }
+    character_consistency: { score: 5, notes: "Sister/brother." }
+    context_consistency: { score: 5, notes: "Compass academy debt." }
+    demonstrates_skill: true
+    keep_edit_discard: keep

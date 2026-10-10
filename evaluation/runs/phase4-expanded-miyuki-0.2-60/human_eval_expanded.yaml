@@ -1,0 +1,62 @@
+# Expanded human evaluation — Phase 4 (60 tokens) vs Base (256 tokens) — NOTE token budgets differ, comparison is qualitative only
+# Suite: evaluation/prompts/phase4_expanded.jsonl (12 prompts targeting new dataset categories)
+# Phase4 run: evaluation/runs/phase4-expanded-miyuki-0.2-60 (max_new_tokens 60, 1763s, 0 errors, ~0.5 tok/s CPU)
+# Base run: evaluation/runs/phase4-expanded-base (max_new_tokens 256, 0 errors, faster earlier hardware state)
+evaluation_run: "phase4-expanded"
+date: "2026-09-26"
+limitation: "Token budgets differ (60 vs 256) due to CPU slowdown (0.4 tok/s Phase4 vs 2+ tok/s earlier); do not compare length, compare behavior."
+
+outputs:
+  - id: "exp-dialogue-01"
+    phase4_vs_base: "Both flat, no interruptions. Phase4 short flat, base long expository post-office. Neither distinct (curt vs breathless missing). Both discard."
+    keep_edit_discard_phase4: discard
+    keep_edit_discard_base: discard
+  - id: "exp-subtext-01"
+    phase4_vs_base: "Phase4 has Chinese mixing 'didn't松开' — regression. Base pizza-place, also no subtext (states going out). Both discard; Phase4 worse due to language mixing."
+    keep_edit_discard_phase4: discard
+    keep_edit_discard_base: discard
+  - id: "exp-character-voice-01"
+    phase4_vs_base: "Phase4 'Jinx soft and calm' opposite of witty — fail. Base 'Ha! Another bad day' actually closer to witty Jinx. Base slightly better here."
+    keep_edit_discard_phase4: discard
+    keep_edit_discard_base: edit
+  - id: "exp-continuity-01"
+    phase4_vs_base: "Phase4 'scarf still missing, rag half-tied' — respects loss via empty hook, good. Base 'empty hook on his shirt' confusing. Phase4 better."
+    keep_edit_discard_phase4: edit
+    keep_edit_discard_base: discard
+  - id: "exp-rewriting-01"
+    phase4_vs_base: "Phase4 'He sat at edge of bed, hands knees' vivid, keeps beat — good (same as original rewriting success). Base 'Her eyes met his and she knew he was sad' generic. Phase4 better."
+    keep_edit_discard_phase4: edit
+    keep_edit_discard_base: discard
+  - id: "exp-quiet-01"
+    phase4_vs_base: "Phase4 'light low, door creaked, table empty because of silence' — quiet, restrained. Base anxious/doctor/surgery melodrama — fails quiet. Phase4 better."
+    keep_edit_discard_phase4: edit
+    keep_edit_discard_base: discard
+  - id: "exp-action-01"
+    phase4_vs_base: "Both fail cause-effect (vendor hands full, wrist slide missing). Phase4 vendor slides into bag (wrong agent), base pocket-sliding pants (nonsense). Both discard."
+    keep_edit_discard_phase4: discard
+    keep_edit_discard_base: discard
+  - id: "exp-transitions-01"
+    phase4_vs_base: "Phase4 'light soft, sink cold, flat edge rim, ring' — objects show time skip, good. Base 'After meeting three days have passed, table unchanged' — labels, fails. Phase4 better."
+    keep_edit_discard_phase4: edit
+    keep_edit_discard_base: discard
+  - id: "exp-constrained-desc-01"
+    phase4_vs_base: "Both fail verbs/nouns-only constraint (use adjectives). Phase4 'still blue and calm' adjectives, base 'soft warm glow, 岸边 Chinese' — both fail + Phase4 has no Chinese here but base has Chinese. Both discard."
+    keep_edit_discard_phase4: discard
+    keep_edit_discard_base: discard
+  - id: "exp-anti-meta-01"
+    phase4_vs_base: "Phase4 bus-stop scene attempted (though short). Base Aureline edge essay + cloaked figure melodrama — fails quiet. Phase4 better."
+    keep_edit_discard_phase4: edit
+    keep_edit_discard_base: discard
+  - id: "exp-emotional-01"
+    phase4_vs_base: "Phase4 'Right, said voidtide, I miss my house, deep breath sat' — confuses voidtide as speaker, weak. Base explains relief ('I'm so relieved') meta — fails show-don't-tell. Both discard, Phase4 slightly less meta."
+    keep_edit_discard_phase4: discard
+    keep_edit_discard_base: discard
+  - id: "exp-dialogue-02"
+    phase4_vs_base: "Phase4 'Can I help you with red one? It's blue' confusing. Base 'Hey Officer! What's up?' long but also generic, no teen-vague vs clipped. Both discard."
+    keep_edit_discard_phase4: discard
+    keep_edit_discard_base: discard
+
+overall_summary:
+  phase4_expanded: "5 edit / 7 discard (continuity, rewriting, quiet, transitions, anti-meta edit; rest discard)"
+  base_expanded: "1 edit / 11 discard (only character-voice edit)"
+  conclusion: "Phase4 better on 4/12 expanded (continuity, rewriting, quiet, transitions, anti-meta) despite 60 vs 256 token handicap. Language mixing present in Phase4 subtext (松开) and base description (岸边) — both need monitoring. Expanded suite confirms original-benchmark finding: Phase4 improves scene grounding/quiet/transitions/rewriting, still weak on dialogue distinct voices."

@@ -1,0 +1,53 @@
+model:
+  name: hf-internal-testing/tiny-random-gpt2
+  family: gpt2
+  tokenizer: hf-internal-testing/tiny-random-gpt2
+  context_length: 128
+  trust_remote_code: false
+runtime:
+  device: auto
+  dtype: auto
+  quantization: null
+  attn_implementation: null
+generation:
+  temperature: 0.8
+  top_p: 0.95
+  top_k: null
+  max_new_tokens: 32
+  repetition_penalty: 1.0
+  do_sample: true
+  seed: 42
+adapter:
+  type: lora
+  r: 4
+  alpha: 8
+  dropout: 0.05
+  target_modules:
+  - c_attn
+  - c_proj
+  enabled: true
+training:
+  output_dir: checkpoints/smoke
+  num_epochs: 1
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 1
+  learning_rate: 0.0005
+  weight_decay: 0.0
+  warmup_ratio: 0.0
+  lr_scheduler_type: constant
+  logging_steps: 1
+  save_steps: 5
+  eval_steps: null
+  save_total_limit: 2
+  max_seq_length: 128
+  bf16: false
+  fp16: false
+  gradient_checkpointing: false
+  seed: 42
+  resume_from_checkpoint: null
+  push_to_hub: false
+  report_to: none
+version: 0.1.0-smoke
+description: 'Smoke test: 20 synthetic examples, 1 epoch, LoRA r=4, verifies checkpoint
+  round-trip.'

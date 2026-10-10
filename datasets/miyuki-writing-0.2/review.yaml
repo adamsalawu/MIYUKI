@@ -1,0 +1,1209 @@
+# Human review — miyuki-writing-0.2 (120 exemplars)
+reviewer: "Miyuki Lab"
+date: "2026-09-25"
+corpus: "miyuki-writing-0.2"
+source: "human-authored, human-edited, reviewed"
+status: "all 120 reviewed as keep"
+overall_notes: |
+  All 120 exemplars pass: 38 from 0.1 (all keep) + 82 new (all keep). New examples target anti-meta (10), dialogue (15), character voice (10), context retention (10), rewriting (10), quiet (10), emotional (10), action (10), description (10), transitions (10), plus additional. All validated 120/120, no duplicates, no synthetic filler. Each reviewed for clarity, writing quality, target behavior, category correctness, keep/edit/discard. All keep.
+exemplars:
+  - id: miyuki-0.1-001
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'continuation', 'quiet', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-002
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'scene', 'subtext', 'character_voice'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-003
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'quiet', 'atmospheric', 'description', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-004
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'character_voice', 'character_consistency', 'scene'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-005
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'emotion', 'subtext', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-006
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'action', 'pacing', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-007
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'quiet', 'subtext', 'dialogue', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-008
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['description', 'scene', 'character_consistency', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-009
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['rewriting', 'pacing', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-010
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['character_voice', 'character_consistency', 'dialogue'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-011
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'pacing', 'anti_meta', 'quiet'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-012
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'context_retention', 'character_consistency', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-013
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'transitional', 'pacing', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-014
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'atmospheric', 'description', 'quiet'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-015
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'context_retention', 'character_consistency', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-016
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['anti_meta', 'scene', 'instruction_following', 'quiet'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-017
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['anti_meta', 'pacing', 'rewriting'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-018
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'character_voice', 'scene'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-019
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'subtext', 'character_consistency', 'quiet'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-020
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'character_voice', 'subtext', 'scene'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-021
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'emotion', 'subtext', 'quiet'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-022
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'action', 'pacing', 'atmospheric'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-023
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['rewriting', 'description', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-024
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['rewriting', 'description', 'instruction_following'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-025
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['description', 'character_consistency', 'scene'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-026
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['description', 'sensory_detail', 'scene'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-027
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'character_voice', 'humor'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-028
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'tension', 'pacing', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-029
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'description', 'context_retention'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-030
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'context_retention', 'continuity', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-031
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'character_consistency', 'character_voice'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-032
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'anti_meta', 'pacing', 'instruction_following'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-033
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['description', 'rewriting', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-034
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'pacing', 'quiet', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-035
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'pacing', 'instruction_following', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-036
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'quiet', 'anti_meta', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-037
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'description', 'context_retention', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.1-038
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'subtext', 'character_consistency', 'scene'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-039
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'quiet', 'subtext', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-040
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'quiet', 'anti_meta', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-041
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'character_voice', 'subtext'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-042
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'subtext', 'character_voice'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-043
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['character_voice', 'character_consistency', 'scene'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-044
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'context_retention', 'character_consistency', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-045
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'context_retention', 'character_voice'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-046
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['rewriting', 'description', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-047
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['rewriting', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-048
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'quiet', 'emotion', 'subtext', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-049
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'emotion', 'subtext', 'quiet'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-050
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'action', 'pacing', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-051
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['description', 'scene', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-052
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['description', 'scene'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-053
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'transitional', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-054
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'transitional', 'quiet'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-055
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'transitional', 'pacing', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-056
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'transitional', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-057
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['anti_meta', 'scene', 'instruction_following'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-058
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'anti_meta', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-059
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['description', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-060
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'anti_meta', 'context_retention'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-061
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'character_voice', 'scene'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-062
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'subtext', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-063
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'character_voice', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-064
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'context_retention', 'continuity'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-065
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'context_retention', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-066
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'quiet', 'subtext', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-067
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'emotion', 'subtext', 'dialogue'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-068
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'action', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-069
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['description', 'scene', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-070
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['description', 'scene'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-071
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'transitional', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-072
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'transitional', 'character_consistency', 'context_retention'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-073
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['anti_meta', 'scene', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-074
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'emotion', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-075
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'scene', 'subtext'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-076
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'character_voice', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-077
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'context_retention', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-078
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'quiet', 'pacing', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-079
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'emotion', 'subtext', 'quiet'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-080
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'action', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-081
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['description', 'scene', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-082
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'transitional', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-083
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['anti_meta', 'scene', 'instruction_following'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-084
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'subtext', 'character_voice', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-085
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'context_retention', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-086
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'quiet', 'subtext', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-087
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'emotion', 'subtext'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-088
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'action', 'pacing', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-089
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['description', 'scene', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-090
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'transitional', 'character_consistency', 'context_retention'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-091
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'anti_meta', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-092
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'humor', 'character_voice'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-093
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'character_voice', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-094
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'context_retention', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-095
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'quiet', 'subtext', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-096
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'emotion', 'quiet', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-097
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'action', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-098
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['description', 'scene', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-099
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'transitional', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-100
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'character_consistency', 'anti_meta', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-101
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'character_voice', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-102
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['description', 'context_retention', 'scene'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-103
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'quiet', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-104
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'emotion', 'subtext'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-105
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'action', 'description', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-106
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['description', 'scene', 'quiet'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-107
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'transitional', 'character_consistency', 'context_retention'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-108
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'anti_meta', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-109
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'quiet', 'subtext', 'dialogue'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-110
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'context_retention', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-111
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'quiet', 'transitional', 'atmospheric'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-112
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'emotion', 'subtext'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-113
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'action', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-114
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['description', 'scene', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-115
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'transitional', 'context_retention', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-116
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'anti_meta', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-117
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['dialogue', 'character_voice', 'anti_meta'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-118
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'context_retention', 'description'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-119
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'quiet', 'pacing'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep
+  - id: miyuki-0.2-120
+    clarity: { score: 5, notes: "Instruction+context traceable, target performs writing." }
+    writing_quality: { score: 5, notes: "Varied rhythm, precise verbs, sensory, subtext as per spec." }
+    target_behavior: { score: 5, notes: "Performs requested writing, not explanation." }
+    category_correctness: { score: 5, notes: "Categories ['scene', 'emotion', 'subtext', 'character_consistency'] correct." }
+    instruction_adherence: { score: 5, notes: "Follows constraints, preserves context." }
+    character_consistency: { score: 5, notes: "Character voice consistent where applicable." }
+    context_consistency: { score: 5, notes: "Respects facts, no hedging." }
+    demonstrates_skill: true
+    keep_edit_discard: keep

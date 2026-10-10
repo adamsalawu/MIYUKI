@@ -1,0 +1,69 @@
+{
+  "run_name": "2026-09-24_hf-internal-testing_tiny-random-gpt2",
+  "timestamp": "2026-09-24T19:27:15.432961+00:00",
+  "model": {
+    "model": {
+      "name": "hf-internal-testing/tiny-random-gpt2",
+      "family": "gpt2",
+      "tokenizer": "hf-internal-testing/tiny-random-gpt2",
+      "context_length": 1024,
+      "trust_remote_code": false
+    },
+    "runtime": {
+      "device": "auto",
+      "dtype": "auto",
+      "quantization": null,
+      "attn_implementation": null
+    },
+    "generation": {
+      "temperature": 0.8,
+      "top_p": 0.95,
+      "top_k": null,
+      "max_new_tokens": 32,
+      "repetition_penalty": 1.0,
+      "do_sample": true,
+      "seed": 42
+    },
+    "adapter": {
+      "type": null,
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": null,
+      "enabled": false
+    },
+    "training": {
+      "output_dir": "checkpoints/baseline",
+      "num_epochs": 1,
+      "per_device_train_batch_size": 1,
+      "per_device_eval_batch_size": 1,
+      "gradient_accumulation_steps": 4,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.03,
+      "lr_scheduler_type": "cosine",
+      "logging_steps": 10,
+      "save_steps": 100,
+      "eval_steps": null,
+      "save_total_limit": 3,
+      "max_seq_length": 512,
+      "bf16": false,
+      "fp16": false,
+      "gradient_checkpointing": false,
+      "seed": 42,
+      "resume_from_checkpoint": null,
+      "push_to_hub": false,
+      "report_to": "none"
+    },
+    "version": "0.1.0",
+    "description": "Baseline tiny model for infrastructure verification (offline-capable, CPU-friendly). Replace with a real instructed model when ready."
+  },
+  "prompts_file": "evaluation\\prompts\\eval_v0.1.jsonl",
+  "num_prompts": 12,
+  "num_outputs": 12,
+  "num_errors": 0,
+  "generation_overrides": {},
+  "elapsed_s": 32.98176193237305,
+  "run_dir": "evaluation\\runs\\2026-09-24_hf-internal-testing_tiny-random-gpt2",
+  "outputs_path": "evaluation\\runs\\2026-09-24_hf-internal-testing_tiny-random-gpt2\\outputs.jsonl"
+}

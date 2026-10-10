@@ -1,0 +1,54 @@
+# Qwen2.5-1.5B-Instruct — model scale test (Phase 5-scale, evaluation only, no training)
+# Base model for scale comparison vs Qwen2-0.5B Phase 4. Selectable via config, does NOT replace small-instruct.yaml.
+model:
+  name: "Qwen/Qwen2.5-1.5B-Instruct"
+  family: "qwen2"
+  tokenizer: "Qwen/Qwen2.5-1.5B-Instruct"
+  context_length: 32768  # official 32K context (we use max_seq 1024 for training compat, eval uses 180 new tokens)
+  trust_remote_code: false
+
+runtime:
+  device: "auto"  # resolves to cpu on this machine (i7-1065G7, torch CPU, no CUDA)
+  dtype: "auto"   # cpu -> float32
+  quantization: null
+  attn_implementation: null
+
+generation:
+  temperature: 0.8
+  top_p: 0.95
+  top_k: null
+  max_new_tokens: 180
+  repetition_penalty: 1.1
+  do_sample: true
+  seed: 42
+
+adapter:
+  type: null
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: null
+  enabled: false
+
+training:
+  output_dir: "checkpoints/scale-1.5b-unused"
+  num_epochs: 3
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 8
+  learning_rate: 0.0002
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  lr_scheduler_type: "cosine"
+  logging_steps: 10
+  save_steps: 100
+  eval_steps: 100
+  save_total_limit: 3
+  max_seq_length: 1024
+  bf16: false
+  fp16: false
+  gradient_checkpointing: false
+  seed: 42
+
+version: "0.1.0-scale-test"
+description: "Scale test only: Qwen2.5-1.5B-Instruct base (1.54B params, 32K context) for direct benchmark vs Phase 4 Qwen2-0.5B adapter. No LoRA training in this milestone."

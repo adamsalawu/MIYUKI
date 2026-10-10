@@ -1,0 +1,110 @@
+{
+  "id": "0004",
+  "created": "2026-09-25T14:02:32.778847+00:00",
+  "model": "Qwen/Qwen2-0.5B-Instruct",
+  "dataset": "datasets\\miyuki-writing-0.1-phase3c\\dataset-a.jsonl",
+  "dataset_version": "0.1.0-phase3c-a",
+  "training_config": {
+    "model": {
+      "name": "Qwen/Qwen2-0.5B-Instruct",
+      "family": "qwen2",
+      "tokenizer": "Qwen/Qwen2-0.5B-Instruct",
+      "context_length": 4096,
+      "trust_remote_code": false
+    },
+    "runtime": {
+      "device": "auto",
+      "dtype": "auto",
+      "quantization": null,
+      "attn_implementation": null
+    },
+    "generation": {
+      "temperature": 0.8,
+      "top_p": 0.95,
+      "top_k": null,
+      "max_new_tokens": 180,
+      "repetition_penalty": 1.1,
+      "do_sample": true,
+      "seed": 42
+    },
+    "adapter": {
+      "type": "lora",
+      "r": 16,
+      "alpha": 32,
+      "dropout": 0.05,
+      "target_modules": null,
+      "enabled": true
+    },
+    "training": {
+      "output_dir": "checkpoints/phase3c-a-miyuki-0.1",
+      "num_epochs": 3,
+      "per_device_train_batch_size": 1,
+      "per_device_eval_batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.03,
+      "lr_scheduler_type": "cosine",
+      "logging_steps": 1,
+      "save_steps": 5,
+      "eval_steps": 5,
+      "save_total_limit": 2,
+      "max_seq_length": 1024,
+      "bf16": false,
+      "fp16": false,
+      "gradient_checkpointing": false,
+      "seed": 42,
+      "resume_from_checkpoint": null,
+      "push_to_hub": false,
+      "report_to": "none"
+    },
+    "version": "0.1.0-phase3c-a",
+    "description": "Phase 3C-A: Qwen2-0.5B + miyuki-writing-0.1-phase3c A (system contract: Miyuki is direct writing assistant...). 38 ex identical targets, 3 epochs, lr 2e-4, r16, batch1 accum8, seed42. Tests system-level behavioral framing."
+  },
+  "hardware": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\Zero\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\python.exe",
+    "cpu": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+    "cpu_brand": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+    "cpu_count_physical": 4,
+    "cpu_count_logical": 8,
+    "ram_total_gb": 15.76,
+    "ram_available_gb": 2.36,
+    "torch_version": "2.14.0+cpu",
+    "torch_available": true,
+    "cuda_available": false,
+    "cuda_version": null,
+    "gpu_count": 0,
+    "gpu_name": "NVIDIA GeForce MX330",
+    "gpu_vram_gb": null,
+    "mps_available": false,
+    "recommended_device": "cpu",
+    "recommended_dtype": "float32",
+    "notes": [
+      "CUDA not available - using CPU. Training will be slow; use small models and LoRA for smoke tests."
+    ]
+  },
+  "duration_s": 1220.8882639408112,
+  "final_loss": 3.239100376764933,
+  "metrics": {
+    "train_runtime_s": 1220.8882639408112,
+    "global_step": 12,
+    "training_loss": 1213.2134,
+    "metrics": {
+      "train_runtime": 1213.2134,
+      "train_samples_per_second": 0.084,
+      "train_steps_per_second": 0.01,
+      "total_flos": 44443593984000.0,
+      "train_loss": 3.239100376764933,
+      "epoch": 2.8235294117647056
+    },
+    "elapsed_s": 1220.8882639408112,
+    "peft_applied": true,
+    "last_loss": 3.239100376764933
+  },
+  "evaluation_results": null,
+  "artifact_location": "checkpoints\\phase3c-a-miyuki-0.1",
+  "notes": "smoke=False peft=True",
+  "status": "completed"
+}

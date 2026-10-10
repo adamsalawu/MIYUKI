@@ -1,0 +1,113 @@
+{
+  "id": "0001",
+  "created": "2026-09-24T19:25:43.001492+00:00",
+  "model": "hf-internal-testing/tiny-random-gpt2",
+  "dataset": "checkpoints\\smoke_dataset.jsonl",
+  "dataset_version": "0.1.0-smoke",
+  "training_config": {
+    "model": {
+      "name": "hf-internal-testing/tiny-random-gpt2",
+      "family": "gpt2",
+      "tokenizer": "hf-internal-testing/tiny-random-gpt2",
+      "context_length": 128,
+      "trust_remote_code": false
+    },
+    "runtime": {
+      "device": "auto",
+      "dtype": "auto",
+      "quantization": null,
+      "attn_implementation": null
+    },
+    "generation": {
+      "temperature": 0.8,
+      "top_p": 0.95,
+      "top_k": null,
+      "max_new_tokens": 32,
+      "repetition_penalty": 1.0,
+      "do_sample": true,
+      "seed": 42
+    },
+    "adapter": {
+      "type": "lora",
+      "r": 4,
+      "alpha": 8,
+      "dropout": 0.05,
+      "target_modules": [
+        "c_attn",
+        "c_proj"
+      ],
+      "enabled": true
+    },
+    "training": {
+      "output_dir": "checkpoints/smoke",
+      "num_epochs": 1,
+      "per_device_train_batch_size": 1,
+      "per_device_eval_batch_size": 1,
+      "gradient_accumulation_steps": 1,
+      "learning_rate": 0.0005,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.0,
+      "lr_scheduler_type": "constant",
+      "logging_steps": 1,
+      "save_steps": 5,
+      "eval_steps": null,
+      "save_total_limit": 2,
+      "max_seq_length": 128,
+      "bf16": false,
+      "fp16": false,
+      "gradient_checkpointing": false,
+      "seed": 42,
+      "resume_from_checkpoint": null,
+      "push_to_hub": false,
+      "report_to": "none"
+    },
+    "version": "0.1.0-smoke",
+    "description": "Smoke test: 20 synthetic examples, 1 epoch, LoRA r=4, verifies checkpoint round-trip."
+  },
+  "hardware": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\Zero\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\python.exe",
+    "cpu": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+    "cpu_brand": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+    "cpu_count_physical": 4,
+    "cpu_count_logical": 8,
+    "ram_total_gb": 15.76,
+    "ram_available_gb": 2.51,
+    "torch_version": "2.14.0+cpu",
+    "torch_available": true,
+    "cuda_available": false,
+    "cuda_version": null,
+    "gpu_count": 0,
+    "gpu_name": "NVIDIA GeForce MX330",
+    "gpu_vram_gb": null,
+    "mps_available": false,
+    "recommended_device": "cpu",
+    "recommended_dtype": "float32",
+    "notes": [
+      "CUDA not available - using CPU. Training will be slow; use small models and LoRA for smoke tests."
+    ]
+  },
+  "duration_s": 25.315484285354614,
+  "final_loss": 6.894769801033868,
+  "metrics": {
+    "train_runtime_s": 25.315484285354614,
+    "global_step": 18,
+    "training_loss": 8.3191,
+    "metrics": {
+      "train_runtime": 8.3191,
+      "train_samples_per_second": 2.164,
+      "train_steps_per_second": 2.164,
+      "total_flos": 909354624.0,
+      "train_loss": 6.894769801033868,
+      "epoch": 1.0
+    },
+    "elapsed_s": 25.315484285354614,
+    "peft_applied": true,
+    "last_loss": 6.894769801033868
+  },
+  "evaluation_results": null,
+  "artifact_location": "checkpoints\\smoke",
+  "notes": "smoke=True peft=True",
+  "status": "completed"
+}

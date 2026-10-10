@@ -1,0 +1,12 @@
+{
+  "phase4_expanded_60tok": {
+    "n": 12,
+    "toks": 695,
+    "avg": 57.9
+  },
+  "phase4c_expanded_180tok": {
+    "n": 12,
+    "toks": 1041,
+    "avg": 86.8
+  }
+}

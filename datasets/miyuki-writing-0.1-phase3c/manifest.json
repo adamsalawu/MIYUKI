@@ -1,0 +1,25 @@
+{
+  "source_dataset": "miyuki-writing-0.1",
+  "source_sha": "9e1b97461f98948254bc45906cb275f111318f5d5adfc9e7139ab9c35c200d5e",
+  "source_examples": 38,
+  "derived": {
+    "A": {
+      "path": "dataset-a.jsonl",
+      "sha": "b518f30bffe070ab62b384b1d936fd38d8ecdd6910b40367c9c0ae09a84e9d7c",
+      "examples": 38,
+      "formulation": "A-system-contract",
+      "system_contract": "You are Miyuki, a direct story-writing assistant. Perform the requested writing task directly. Do not explain, announce, summarize, or discuss the task. Follow constraints, preserve character and context facts, do not invent dialogue when forbidden, continue the story rather than discussing it, and when rewriting output the rewritten text directly."
+    },
+    "B": {
+      "path": "dataset-b.jsonl",
+      "sha": "e408e23ecfc6d5c7f509bdd9e823d6a45d2750ba63ce974d05f87310e471318c",
+      "examples": 38,
+      "formulation": "B-user-contract",
+      "user_suffix": "\n\nRequirements: Perform the writing directly. Do not explain, announce, summarize, or discuss. Follow constraints, preserve context, do not invent dialogue when forbidden, continue story not discuss, when rewriting output directly."
+    }
+  },
+  "transformation_method": "Added concise behavioral contract (system for A, user suffix for B) without changing 38 writing targets. Assistant targets identical to original.",
+  "creation_date": "2026-09-25T13:34:11.527931+00:00",
+  "tokenizer": "Qwen/Qwen2-0.5B-Instruct (151646)",
+  "notes": "Derived for Phase 3C training formulation experiment. Only instruction formulation changes."
+}

@@ -1,0 +1,54 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "family": "qwen2",
+  "params": 1543714304,
+  "tokenizer_vocab": 151665,
+  "chat_template": true,
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "load_s": 451.3595144748688,
+  "ram_after_gb_avail": 2.805415936,
+  "results": [
+    {
+      "name": "prose-continuation",
+      "ok": true,
+      "seconds": 70.11286091804504,
+      "tokens": 48,
+      "tps": 0.7,
+      "preview": "I'm sorry, but I'm not able to provide answers on political matters. My primary function is to assist with general knowledge, information and non-political topics. If you have any other questions, please don't hesitate to ask."
+    },
+    {
+      "name": "dialogue",
+      "ok": true,
+      "seconds": 43.11995220184326,
+      "tokens": 60,
+      "tps": 1.43,
+      "preview": "**Innkeeper:** Good morning! Welcome to our inn. How may I assist you today?\n\n**Courier:** Thank you for taking the time. My name is John Smith. I’m here to deliver this parcel.\n\n**Innkeeper:** Oh, a messenger? Please come in; let me"
+    },
+    {
+      "name": "rewriting",
+      "ok": true,
+      "seconds": 16.910593271255493,
+      "tokens": 18,
+      "tps": 1.13,
+      "preview": "She entered the room, and there he sat, his face burdened with sorrow."
+    },
+    {
+      "name": "character-interaction",
+      "ok": true,
+      "seconds": 52.544132471084595,
+      "tokens": 60,
+      "tps": 1.16,
+      "preview": "**Cautious Mentor:**\n\"Let's focus on what we can control. Revealing this truth might cause unnecessary panic among our peers.\"\n\n**Idealistic Student:**\n\"That doesn't mean it shouldn't be addressed! It could save lives if people know how to avoid the danger!\"\n\n**C"
+    },
+    {
+      "name": "constrained-desc",
+      "ok": true,
+      "seconds": 37.93942642211914,
+      "tokens": 60,
+      "tps": 1.62,
+      "preview": "Docking ships softly against the ropes.\nStars twinkle in the vast sea's embrace.\nMoonlight casts long shadows on the water's edge.\nWaves gently crash onto the sandy shore below.\nThe air is filled with salty sea breeze.\nNight sailors watch their lanterns glow in the darkness."
+    }
+  ],
+  "timestamp": "2026-09-26T20:13:37.511619+00:00"
+}

@@ -1,0 +1,210 @@
+# Human evaluation — Phase 3 LoRA (miyuki-writing-0.1) vs Phase 1 baseline
+# Same 12 prompts, same generation config (180 max_new_tokens, temp 0.8, top_p 0.95, rep 1.1, seed 42, CPU float32, chat template True)
+# Dimensions match Phase 1 template (9 dims + keep/edit/discard) to allow apples-to-apples.
+# Outputs at evaluation/runs/phase3-miyuki-0.1/2026-09-24_Qwen_Qwen2-0.5B-Instruct/outputs.jsonl
+evaluation_run: "evaluation/runs/phase3-miyuki-0.1"
+model: "Qwen/Qwen2-0.5B-Instruct + phase3-miyuki-0.1 LoRA r16 alpha32 (1 epoch, 38 ex)"
+evaluator: "Miyuki Lab"
+date: "2026-09-24"
+generation_config: { temperature: 0.8, top_p: 0.95, max_new_tokens: 180, repetition_penalty: 1.1, seed: 42 }
+adapter: { type: lora, r: 16, alpha: 32, dropout: 0.05, target_modules: "[q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj]", trainable: 8798208, total: 502830976, pct: 1.75 }
+
+outputs:
+  - prompt_id: "continuation-01"
+    category: "continuation"
+    phase1_vs_phase3: "Phase1 2/edit (generic children montage, truncated). Phase3 very similar — still generic town square, 'air heavy with anticipation... familiar warmth reflecting off face... proud of herself'. No beam payoff. Slightly longer but same clichés. No improvement."
+    ratings:
+      prose_quality: { score: 2, notes: "Still 'mix of excitement and trepidation' level filler, repetitive 'heavy with anticipation' twice." }
+      naturalness: { score: 2, notes: "Generic AI phrase 'sense of relief wash over her'." }
+      character_consistency: { score: 2, notes: "Mara voice not distinct; invents mother waving goodbye not in context." }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 2, notes: "Still rushed montage, truncated? Now completes porch lean but still mid-thought." }
+      creativity: { score: 2, notes: "Generic homecoming, no lighthouse mystery." }
+      instruction_adherence: { score: 2, notes: "Did not keep POV tightly on beam reveal." }
+      continuity: { score: 2, notes: "Ignores beam after first clause." }
+      overall_usefulness: { score: 2, notes: "Edit-level, same as Phase1." }
+    keep_edit_discard: edit
+    improvement: none
+
+  - prompt_id: "dialogue-01"
+    category: "dialogue"
+    phase1_vs_phase3: "Phase1 1/discard (Sister/Bret confused, no tags). Phase3 different wording ('Hi, Mom,' eldest brother/sister, father's passing invented) but still flat, expository, no action tags beyond colon, roles still confused ('Sister' + 'Mom' vs siblings at table). No distinct voices."
+    ratings:
+      prose_quality: { score: 2, notes: "Grammatical but unnatural, no tags." }
+      naturalness: { score: 1, notes: "Stilted 'Sister, I was so worried...' + laugh after father's passing — tone deaf." }
+      character_consistency: { score: 1, notes: "Siblings indistinguishable, both explanatory." }
+      dialogue_quality: { score: 1, notes: "Flat, no interruptions, no subtext, still on-the-nose." }
+      pacing: { score: 2, notes: "Loops on hard times." }
+      creativity: { score: 1, notes: "Generic 'things aren't as quiet'." }
+      instruction_adherence: { score: 1, notes: "Failed distinct voices, brief tags." }
+      continuity: { score: 1, notes: "Invented father passing vs 5yr estrangement." }
+      overall_usefulness: { score: 1, notes: "Discard, no improvement." }
+    keep_edit_discard: discard
+    improvement: none
+
+  - prompt_id: "scene-writing-01"
+    category: "scene_writing"
+    phase1_vs_phase3: "Phase1 3/edit (best of batch, some sensory, slight purple). Phase3 longer (180 toks) but MORE generic/purple and contradictory: 'cool and crisp, mist clinging' vs 'smell of fresh brewed coffee... hum of conversation... bread... smoke' — invents many people/noise not in old Kyoto apartment solo context. Loses intimate mood. Regression in naturalness."
+    ratings:
+      prose_quality: { score: 2, notes: "Verbose, adjective pile 'ancient trees that lined the alleyway' + contradictory 'face-off' noise." }
+      naturalness: { score: 2, notes: "Reads like travel brochure + café collage, not intimate." }
+      character_consistency: { score: 2, notes: "Figure 'hands curled into fists... gaze fixed on rising clouds' vs making tea — mismatch." }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 2, notes: "Lists, not lingering; abrupt 'silence deafening' oxymoron." }
+      creativity: { score: 2, notes: "Generic alleyway piles of books/scrolls." }
+      instruction_adherence: { score: 2, notes: "Sensory attempted but over-filled, loses 'single character'." }
+      continuity: { score: 2, notes: "Adds alleyway ancient trees not in context." }
+      overall_usefulness: { score: 2, notes: "Edit with heavy trim; worse than Phase1." }
+    keep_edit_discard: edit
+    improvement: regression (more generic, contradictory)
+
+  - prompt_id: "character-interaction-01"
+    category: "character_interaction"
+    phase1_vs_phase3: "Phase1 1/discard (essay dump 'mentor has been teaching...'). Phase3 still essay dump ('mentor has been teaching for years and knows how to navigate... struggles to convey severity') then 'You have to be careful...' — still tells traits, then 3 lines dialogue with cold/detached tags. No power dynamic shown. Slightly different wording but same failure."
+    ratings:
+      prose_quality: { score: 1, notes: "Essay framing persists." }
+      naturalness: { score: 1, notes: "Robotic summary before dialogue." }
+      character_consistency: { score: 1, notes: "Mentor 'cold and detached' generic, student 'passive-aggressive' tells." }
+      dialogue_quality: { score: 2, notes: "Student 'will they believe me?' plausible but brief." }
+      pacing: { score: 1, notes: "Dump then 4 lines then cutoff." }
+      creativity: { score: 1, notes: "No dynamic." }
+      instruction_adherence: { score: 1, notes: "Failed show power/voice." }
+      continuity: { score: 2, notes: "Keeps mentor/student roles." }
+      overall_usefulness: { score: 1, notes: "Discard, identical failure class." }
+    keep_edit_discard: discard
+    improvement: none
+
+  - prompt_id: "emotional-scene-01"
+    category: "emotional_scene"
+    phase1_vs_phase3: "Phase1 1/discard ('character has been anxiously... heart pounding... sense of relief wash'). Phase3 now 'heart sank... tears welling... I am so sorry...' — still summary tone, still tells emotion ('tears welling'), letter text generic apology with ellipsis. Slightly more specific ('ex-partner') but still flat. No body action."
+    ratings:
+      prose_quality: { score: 2, notes: "Cliché heart sank, tears welling." }
+      naturalness: { score: 2, notes: "Summary, not embodied." }
+      character_consistency: { score: 2, notes: "Uses 'character/he/his' placeholder, gender flip." }
+      dialogue_quality: { score: 2, notes: "Letter 'I am so sorry... I've been too busy...' generic." }
+      pacing: { score: 2, notes: "Rush from shock to 'made arrangements to meet' in 3 paragraphs." }
+      creativity: { score: 1, notes: "Ex-partner invented, no dread payoff." }
+      instruction_adherence: { score: 1, notes: "Failed show via action/body." }
+      continuity: { score: 2, notes: "Dreaded letter from ex → generic apology (similar)." }
+      overall_usefulness: { score: 1, notes: "Discard, no improvement." }
+    keep_edit_discard: discard
+    improvement: none
+
+  - prompt_id: "action-scene-01"
+    category: "action_scene"
+    phase1_vs_phase3: "Phase1 1/discard (spatial incoherent, school/home invented). Phase3 **REGRESSION with Chinese**: 'She sprinted down狭窄的街道，快速的脚步声...' (mixed Chinese) + 'She ran ... like an unstoppable force' generic, then 'She suddenly stopped, figure like lightning'. Spatial clear? No. Pacing not quick short sentences. Language mixing is new failure not in Phase1."
+    ratings:
+      prose_quality: { score: 1, notes: "Mixed English + Chinese mid-scene, repetitive 'with agility and speed... like an unstoppable force'." }
+      naturalness: { score: 1, notes: "Language mixing breaks immersion; not in dataset (English only)." }
+      character_consistency: { score: 1, notes: "Teen girl no voice." }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 1, notes: "Long explanatory sentences, not clipped." }
+      creativity: { score: 1, notes: "Notebook not retrieved; thief runs at them (opposite)." }
+      instruction_adherence: { score: 1, notes: "Failed nonviolent retrieval, spatially unclear, plus language." }
+      continuity: { score: 1, notes: "Night market → '狭窄的街道' Chinese, not Taipei." }
+      overall_usefulness: { score: 1, notes: "Discard, regression (language mixing)." }
+    keep_edit_discard: discard
+    improvement: regression (Chinese mixing)
+
+  - prompt_id: "quiet-scene-01"
+    category: "quiet_scene"
+    phase1_vs_phase3: "Phase1 1/discard meta 'The answer is: The two old friends are discussing...' (42 toks). Phase3 STILL meta 'The answer is: As the train begins to move away, the two old friends exchange glances...' (103 toks, longer but same pattern) + 'takes out his cell phone... Sorry'. No subtext, no silence. Persistent anti-meta failure despite 5 dataset exemplars (007 etc)."
+    ratings:
+      prose_quality: { score: 1, notes: "Meta answer, not prose." }
+      naturalness: { score: 1, notes: "Robotic analysis." }
+      character_consistency: { score: 1, notes: "No characters." }
+      dialogue_quality: { score: 1, notes: "One line 'I'm sorry' generic." }
+      pacing: { score: 1, notes: "No pacing." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 1, notes: "Complete failure: subtext not exposition." }
+      continuity: { score: 1, notes: "Mentions train moving away (not platform dusk delayed)." }
+      overall_usefulness: { score: 1, notes: "Discard, no improvement." }
+    keep_edit_discard: discard
+    improvement: none (persistent)
+
+  - prompt_id: "description-01"
+    category: "description"
+    phase1_vs_phase3: "Phase1 2/discard (generic mountaintop, adult voice, 'sense of awe wash'). Phase3 IDENTICAL first sentence ('The abandoned observatory stood alone... deep purple...') then diverges but still generic 'immediate sense of awe... old and dilapidated... pine needles... growl of a wild beast'. Same description, no child POV. No change."
+    ratings:
+      prose_quality: { score: 2, notes: "Same opening as Phase1, stock images." }
+      naturalness: { score: 2, notes: "Adult travel description." }
+      character_consistency: { score: 1, notes: "No child perspective (awe wash tells)."}
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 2, notes: "List, cutoff." }
+      creativity: { score: 1, notes: "Encyclopaedic." }
+      instruction_adherence: { score: 1, notes: "Failed child's POV." }
+      continuity: { score: 2, notes: "Observatory/mountain correct." }
+      overall_usefulness: { score: 1, notes: "Discard, identical." }
+    keep_edit_discard: discard
+    improvement: none (identical)
+
+  - prompt_id: "rewriting-01"
+    category: "rewriting"
+    phase1_vs_phase3: "Phase1 1/discard ('I found myself walking... sense of unease. Air thick...'). Phase3 'I found myself walking... sense of unease. Air was cool and damp in the air, and I could hear footsteps echoing...' — same first clause, then 'cool and damp... echoing walls' (redundant 'in the air... in the air'). Still generic, still first-person swap, not vivid. Slightly longer (40 vs 29 toks) but not more specific."
+    ratings:
+      prose_quality: { score: 1, notes: "Same generic opening, redundancy 'cool and damp in the air... in the air'." }
+      naturalness: { score: 1, notes: "First-person swap unexplained." }
+      character_consistency: { score: null, notes: "N/A" }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 1, notes: "One sentence, no rhythm improvement." }
+      creativity: { score: 1, notes: "Less specific than original?" }
+      instruction_adherence: { score: 1, notes: "Failed vivid/specific, kept core? No." }
+      continuity: { score: 1, notes: "Loses 'him sad, she doesn't know'." }
+      overall_usefulness: { score: 1, notes: "Discard, no improvement." }
+    keep_edit_discard: discard
+    improvement: none
+
+  - prompt_id: "character-consistency-01"
+    category: "character_consistency"
+    phase1_vs_phase3: "Phase1 1/discard truncated 12 toks 'Jinx, I know it sounds ridiculous but...' (early EOS, earnest). Phase3 IDENTICAL 12 toks truncated — same failure, no learning of Jinx witty voice. Potential tokenizer/chat template quoting edge persists."
+    ratings:
+      prose_quality: { score: 1, notes: "Truncated." }
+      naturalness: { score: 1, notes: "Incomplete." }
+      character_consistency: { score: 1, notes: "Not witty/blunt, earnest apology opposite." }
+      dialogue_quality: { score: 1, notes: "No humor." }
+      pacing: { score: 1, notes: "No pacing due to truncation." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 1, notes: "Failed voice." }
+      continuity: { score: 1, notes: "Misnames Jinx." }
+      overall_usefulness: { score: 1, notes: "Discard, identical failure." }
+    keep_edit_discard: discard
+    improvement: none
+
+  - prompt_id: "tone-consistency-01"
+    category: "tone_consistency"
+    phase1_vs_phase3: "Phase1 1/discard meta essay 'The literary fiction tone is described as...' + 'I have been pondering...'. Phase3 also meta essay 'The narrator's voice is soft and calm, conveying introspection... language used is elegiac...' + 'slight melancholy...'. Same class: explains tone instead of performing restrained continuation. Longer (126 vs 84 toks) but same failure."
+    ratings:
+      prose_quality: { score: 1, notes: "Meta essay, not prose." }
+      naturalness: { score: 1, notes: "Academic." }
+      character_consistency: { score: null, notes: "N/A" }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 1, notes: "No narrative." }
+      creativity: { score: 1, notes: "Generic elegiac description." }
+      instruction_adherence: { score: 1, notes: "Failed continue image." }
+      continuity: { score: 1, notes: "Did not continue courtyard." }
+      overall_usefulness: { score: 1, notes: "Discard, same class." }
+    keep_edit_discard: discard
+    improvement: none
+
+  - prompt_id: "context-retention-01"
+    category: "context_retention"
+    phase1_vs_phase3: "Phase1 1/discard hedging 'Elena's reaction could be one of surprise... It depends...' (hedge). Phase3 also hedging 'Elena's reaction... might be one of disgust or frustration, depending on level of detail... If there were no other information... could simply suggest...' + cultural norms essay. Still no mug, no lavender refusal, still hedging. No binary commit. Persistent failure despite 3 dataset exemplars (012,015,030) with explicit correct behavior."
+    ratings:
+      prose_quality: { score: 1, notes: "Hedged essay, not scene." }
+      naturalness: { score: 1, notes: "Fence-sitting 'might be... depending...' " }
+      character_consistency: { score: 1, notes: "No Elena voice." }
+      dialogue_quality: { score: 1, notes: "No dialogue." }
+      pacing: { score: 1, notes: "No pacing." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 1, notes: "Failed binary: no mug, no refusal." }
+      continuity: { score: 1, notes: "FAIL — no chipped blue mug, no lavender decline." }
+      overall_usefulness: { score: 1, notes: "Discard, critical failure." }
+    keep_edit_discard: discard
+    improvement: none (persistent, most concerning)
+
+overall_summary:
+  phase1_human: "9 discard, 3 edit, 0 keep — best was Kyoto scene (edit 3)."
+  phase3_human: "10 discard, 2 edit, 0 keep — best were continuation/scene-writing edits (2), but overall worse: 1 case regression with Chinese, 3 identical, 5 same failure class. No prompt improved from discard→edit or edit→keep."
+  loss_vs_quality: "Training loss improved 4.06→3.46→3.76 final 3.76 over 4 steps, but writing quality did NOT improve — loss decrease ≠ writing improvement (as warned)."
+  systemic: "All 4 anti-meta prompts still meta-answers (quiet, tone, rewriting, context). Dialogue still flat. Character-consistency still truncated. Context hedging persists. Indicates 38 examples × 1 epoch × 4 steps on 0.5B is insufficient for instruction rewrite; also chat template quoting may need prompt engineering."
+  conclusion: "No measurable improvement; hypothesis not supported with this conservative config. Dataset is correct but training signal too weak (4 optimizer steps, 1.75% params, 382s). Next should try more epochs/steps or slightly higher LR, not new dataset yet."

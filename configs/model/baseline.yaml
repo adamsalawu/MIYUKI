@@ -1,0 +1,55 @@
+# Baseline model configuration - replaceable, single source of truth
+# Change this file to swap base models without touching Python code.
+model:
+  name: "hf-internal-testing/tiny-random-gpt2"
+  family: "gpt2"
+  tokenizer: "hf-internal-testing/tiny-random-gpt2"
+  context_length: 1024
+  trust_remote_code: false
+
+runtime:
+  device: "auto"       # auto | cpu | cuda | cuda:0 | mps
+  dtype: "auto"        # auto | float32 | float16 | bfloat16
+  quantization: null   # null | 4bit | 8bit | gguf
+  attn_implementation: null
+
+generation:
+  temperature: 0.8
+  top_p: 0.95
+  top_k: null
+  max_new_tokens: 128
+  repetition_penalty: 1.0
+  do_sample: true
+  seed: 42
+
+adapter:
+  type: null
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules: null
+  enabled: false
+
+training:
+  output_dir: "checkpoints/baseline"
+  num_epochs: 1
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 4
+  learning_rate: 0.0002
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  lr_scheduler_type: "cosine"
+  logging_steps: 10
+  save_steps: 100
+  eval_steps: null
+  save_total_limit: 3
+  max_seq_length: 512
+  bf16: false
+  fp16: false
+  gradient_checkpointing: false
+  seed: 42
+  resume_from_checkpoint: null
+
+version: "0.1.0"
+description: "Baseline tiny model for infrastructure verification (offline-capable, CPU-friendly). Replace with a real instructed model when ready."

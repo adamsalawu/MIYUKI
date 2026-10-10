@@ -1,0 +1,27 @@
+{
+  "run_name": "2026-09-26_Qwen_Qwen2.5-1.5B-Instruct",
+  "timestamp": "2026-09-26T20:46:52.460410+00:00",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "model_version": "0.1.0-scale-test",
+  "num_prompts": 5,
+  "num_errors": 0,
+  "elapsed_s": 490.7374336719513,
+  "load_s": 16.878528356552124,
+  "categories": [
+    "action",
+    "character_voice",
+    "context_retention",
+    "description",
+    "dialogue"
+  ],
+  "prompt_ids": [
+    "tgt-dialogue-01",
+    "tgt-character-01",
+    "tgt-context-01",
+    "tgt-retrieval-01",
+    "tgt-action-01"
+  ],
+  "outputs_path": "C:\\Aether\\RisingStar\\MIYUKI\\evaluation\\runs\\model-scale-qwen2.5-1.5b-targeted\\2026-09-26_Qwen_Qwen2.5-1.5B-Instruct\\outputs.jsonl",
+  "metadata_path": "C:\\Aether\\RisingStar\\MIYUKI\\evaluation\\runs\\model-scale-qwen2.5-1.5b-targeted\\2026-09-26_Qwen_Qwen2.5-1.5B-Instruct\\metadata.json",
+  "notes": "Automated generation complete. Fill human_template.yaml for qualitative ratings."
+}

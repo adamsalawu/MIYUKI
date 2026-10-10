@@ -1,0 +1,82 @@
+{
+  "repro": {
+    "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "transformers": "4.41.0",
+    "tokenizers": "0.19.1",
+    "base_tokenizer": "Qwen/Qwen2-0.5B-Instruct",
+    "base_vocab": 151646,
+    "dataset": "C:\\Aether\\RisingStar\\MIYUKI\\datasets\\miyuki-writing-0.1\\dataset.jsonl",
+    "dataset_examples": 38,
+    "vocab_sizes": [
+      8192,
+      16000,
+      32000
+    ],
+    "timestamp": "2026-09-24T21:13:29.497879+00:00"
+  },
+  "train_results": [
+    {
+      "vocab_size": 8192,
+      "new_vocab_actual": 2572,
+      "elapsed_s": 0.9058811664581299,
+      "save_dir": "C:\\Aether\\RisingStar\\MIYUKI\\artifacts\\tokenizers\\miyuki-experimental\\miyuki-vocab-8192",
+      "sample_base": 19,
+      "sample_new": 17,
+      "success": true
+    },
+    {
+      "vocab_size": 16000,
+      "new_vocab_actual": 2572,
+      "elapsed_s": 0.841101884841919,
+      "save_dir": "C:\\Aether\\RisingStar\\MIYUKI\\artifacts\\tokenizers\\miyuki-experimental\\miyuki-vocab-16000",
+      "sample_base": 19,
+      "sample_new": 17,
+      "success": true
+    },
+    {
+      "vocab_size": 32000,
+      "new_vocab_actual": 2572,
+      "elapsed_s": 0.8764297962188721,
+      "save_dir": "C:\\Aether\\RisingStar\\MIYUKI\\artifacts\\tokenizers\\miyuki-experimental\\miyuki-vocab-32000",
+      "sample_base": 19,
+      "sample_new": 17,
+      "success": true
+    }
+  ],
+  "comparisons": [
+    {
+      "vocab_size": 8192,
+      "total_chars": 21738,
+      "base_tokens": 5071,
+      "new_tokens": 4776,
+      "base_tok_per_char": 0.23327813046278406,
+      "new_tok_per_char": 0.21970742478608887,
+      "compression": 0.05817393019128377,
+      "expansion": -0.05817393019128377,
+      "new_vs_base_ratio": 0.9418260698087162
+    },
+    {
+      "vocab_size": 16000,
+      "total_chars": 21738,
+      "base_tokens": 5071,
+      "new_tokens": 4776,
+      "base_tok_per_char": 0.23327813046278406,
+      "new_tok_per_char": 0.21970742478608887,
+      "compression": 0.05817393019128377,
+      "expansion": -0.05817393019128377,
+      "new_vs_base_ratio": 0.9418260698087162
+    },
+    {
+      "vocab_size": 32000,
+      "total_chars": 21738,
+      "base_tokens": 5071,
+      "new_tokens": 4776,
+      "base_tok_per_char": 0.23327813046278406,
+      "new_tok_per_char": 0.21970742478608887,
+      "compression": 0.05817393019128377,
+      "expansion": -0.05817393019128377,
+      "new_vs_base_ratio": 0.9418260698087162
+    }
+  ]
+}

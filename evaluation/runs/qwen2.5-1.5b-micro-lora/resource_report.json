@@ -1,0 +1,42 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "params": 1543714304,
+  "trainable_if_trained": 18464768,
+  "trainable_pct": 1.18,
+  "total_with_lora": 1562179072,
+  "ram_total_gb": 16.92,
+  "ram_avail_before_gb": 9.47,
+  "ram_avail_after_load_gb": 2.81,
+  "ram_avail_after_lora_gb": 2.82,
+  "ram_used_percent_after": 83.4,
+  "threshold_gb": 3.0,
+  "decision": "NO-GO",
+  "load_s": 17.29,
+  "transformers": "4.41.0",
+  "torch": "2.14.0+cpu",
+  "python": "3.12.10",
+  "cpu": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel (4 phys / 8 logical)",
+  "cuda_available": false,
+  "gpu_name": "NVIDIA GeForce MX330",
+  "training_estimate": {
+    "dataset_examples": 120,
+    "train_examples": 108,
+    "eval_examples": 12,
+    "batch_size": 1,
+    "gradient_accumulation": 8,
+    "expected_optimizer_steps_1_epoch": 13,
+    "expected_training_batches": 108,
+    "estimated_runtime_note": "Based on 0.5B Phase4 (39 steps in 2971s = 76s/step) and 1.5B inference ~1.5 tok/s vs 0.5B 2.3 tok/s; training step ~3-4x slower -> ~200-300s/step; 13 steps = ~45-65 min + 451s load (cold) / 17s warm. NOT exact."
+  },
+  "training_runtime": null,
+  "steps_per_sec": null,
+  "generation_speed_before": "1.53 tok/s avg (12x180 benchmark, 1346s)",
+  "generation_speed_after": null,
+  "checkpoint_size": null,
+  "notes": [
+    "Preflight loads model exactly as scale benchmark + LoRA r16 attach, no training step.",
+    "2.82GB avail after load+LoRA < 3.0GB threshold; training needs gradients (LoRA 18M) + activations (batch1 seq1024, 28 layers) + optimizer + dataloader beyond this.",
+    "NO training attempted per guard. No checkpoint created. No additional RAM consumed.",
+    "Scale-test inference (already done) remains valid: 1.5B base 2/5/5 vs Phase4 5/4/3."
+  ]
+}

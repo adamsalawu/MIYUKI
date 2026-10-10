@@ -1,0 +1,64 @@
+# Qwen2.5-1.5B Micro-LoRA — 1 epoch early-signal test (NOT full training)
+# Model/dataset/loss from Phase 4, only base model changes to 1.5B. Separate from phase4_lora.yaml (do not modify Phase 4).
+model:
+  name: "Qwen/Qwen2.5-1.5B-Instruct"
+  family: "qwen2"
+  tokenizer: "Qwen/Qwen2.5-1.5B-Instruct"
+  context_length: 32768
+  trust_remote_code: false
+
+runtime:
+  device: "auto"  # cpu on this machine
+  dtype: "auto"   # cpu -> float32
+  quantization: null
+  attn_implementation: null
+
+generation:
+  temperature: 0.8
+  top_p: 0.95
+  top_k: null
+  max_new_tokens: 180
+  repetition_penalty: 1.1
+  do_sample: true
+  seed: 42
+
+adapter:
+  type: "lora"
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: null  # auto qwen2 [q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj]
+  enabled: true
+
+training:
+  output_dir: "checkpoints/qwen2.5-1.5b-micro-lora"
+  num_epochs: 1
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 8
+  learning_rate: 0.0002
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  lr_scheduler_type: "cosine"
+  logging_steps: 1
+  save_steps: 5
+  eval_steps: 5
+  save_total_limit: 2
+  max_seq_length: 1024
+  bf16: false
+  fp16: false
+  gradient_checkpointing: false
+  seed: 42
+  resume_from_checkpoint: null
+  push_to_hub: false
+  report_to: "none"
+  assistant_only_loss: true  # preserved from Phase 4
+
+version: "0.1.0-micro-1.5b"
+description: "Micro-test: Qwen2.5-1.5B + miyuki-writing-0.2 (120 ex, SHA 8cda31...), LoRA r16 alpha32, 1 epoch, lr2e-4, batch1 accum8, max_seq1024, seed42, CPU, assistant_only true. Early signal only, not full training."
+
+# Expected cost (pre-training estimate):
+#   120 examples -> 108 train / 12 eval (90/10 seed42, same as Phase4)
+#   batch1 accum8 -> ~13 optimizer steps for 1 epoch (108/8=13.5, Phase4 got 13/epoch)
+#   1.5B inference ~1.5 tok/s (vs 0.5B 2.3); training step ~3-4x slower than 0.5B's 76s/step -> ~200-300s/step
+#   Estimated runtime: 13 steps * ~250s = ~54 min + 451s load = ~1h. NOT exact.

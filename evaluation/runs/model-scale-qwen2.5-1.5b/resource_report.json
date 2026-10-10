@@ -1,0 +1,43 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "params": 1543714304,
+  "params_human": "1.54B (1543714304)",
+  "tokenizer_vocab": 151665,
+  "tokenizer_chat_template": true,
+  "context_length_config": 32768,
+  "model_files_download_gb": 3.10,
+  "runtime": "TransformersRuntime (AutoTokenizer + AutoModelForCausalLM, Qwen chat template, same as 0.5B)",
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "cuda_available": false,
+  "gpu_name": "NVIDIA GeForce MX330",
+  "gpu_vram_gb": null,
+  "cpu": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel (4 phys / 8 logical)",
+  "ram_total_gb": 15.76,
+  "ram_available_before_gb": 5.74,
+  "ram_available_after_load_gb": 1.58,
+  "ram_used_percent_after": 90.7,
+  "transformers": "4.41.0",
+  "torch": "2.14.0+cpu",
+  "python": "3.12.10",
+  "load_s": 451.4,
+  "sanity_generation": [
+    {"name": "prose-continuation", "seconds": 70.1, "tokens": 48, "tps": 0.7},
+    {"name": "dialogue", "seconds": 43.1, "tokens": 60, "tps": 1.43},
+    {"name": "rewriting", "seconds": 16.9, "tokens": 18, "tps": 1.13},
+    {"name": "character-interaction", "seconds": 52.5, "tokens": 60, "tps": 1.16},
+    {"name": "constrained-desc", "seconds": 37.9, "tokens": 60, "tps": 1.62}
+  ],
+  "benchmark_12_elapsed_s": 1346.4,
+  "benchmark_12_avg_tps": 1.53,
+  "benchmark_12_total_tokens": 1971,
+  "targeted_5_elapsed_s": 507.7,
+  "disk_free_gb": 455.97,
+  "notes": [
+    "Standard Transformers model, no GPTQ/AWQ/GGUF, architecturally clean comparison.",
+    "RAM critically low after load (1.58 GB avail, 90.7% used) — fits but no headroom for training.",
+    "MX330 2 GB VRAM not used (torch CPU, cuda_available False).",
+    "Sanity prose-continuation produced false refusal ('not able to provide answers on political matters') for non-political lighthouse prompt — misalignment risk noted.",
+    "Generation 0.7-1.78 tok/s (similar to 0.5B Phase4 0.4-2.2, slightly slower per token but longer outputs)."
+  ]
+}

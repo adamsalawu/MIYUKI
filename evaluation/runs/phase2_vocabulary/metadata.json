@@ -1,0 +1,27 @@
+{
+  "experiment": "phase2_vocabulary",
+  "tokenizer_id": "Qwen/Qwen2-0.5B-Instruct",
+  "vocab_size_original": 151646,
+  "model_vocab_size": 151936,
+  "dataset": "miyuki-writing-0.1",
+  "dataset_examples": 38,
+  "timestamp": "2026-09-24T21:13:29.497879+00:00",
+  "python_version": "3.12.10",
+  "transformers": "4.41.0",
+  "repro": {
+    "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "transformers": "4.41.0",
+    "tokenizers": "0.19.1",
+    "base_tokenizer": "Qwen/Qwen2-0.5B-Instruct",
+    "base_vocab": 151646,
+    "dataset": "C:\\Aether\\RisingStar\\MIYUKI\\datasets\\miyuki-writing-0.1\\dataset.jsonl",
+    "dataset_examples": 38,
+    "vocab_sizes": [
+      8192,
+      16000,
+      32000
+    ],
+    "timestamp": "2026-09-24T21:13:29.497879+00:00"
+  }
+}

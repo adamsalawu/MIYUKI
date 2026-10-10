@@ -1,0 +1,2 @@
+[console_scripts]
+miyuki = miyuki.cli:main

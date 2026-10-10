@@ -1,0 +1,58 @@
+{
+  "total_examples": 120,
+  "total_characters": 57558,
+  "total_words": 6318,
+  "total_qwen_tokens": 16088,
+  "average_tokens_per_example": 134.06666666666666,
+  "maximum_tokens_per_example": 233,
+  "category_counts": {
+    "scene": 98,
+    "continuation": 1,
+    "quiet": 26,
+    "character_consistency": 32,
+    "dialogue": 24,
+    "subtext": 25,
+    "character_voice": 19,
+    "atmospheric": 4,
+    "description": 40,
+    "pacing": 36,
+    "emotion": 12,
+    "action": 9,
+    "anti_meta": 32,
+    "rewriting": 7,
+    "context_retention": 20,
+    "transitional": 13,
+    "instruction_following": 6,
+    "sensory_detail": 1,
+    "humor": 2,
+    "tension": 1,
+    "continuity": 2
+  },
+  "tag_counts": {
+    "instruction_following": 113,
+    "continuity": 12,
+    "prose_flow": 68,
+    "pacing": 9,
+    "character_consistency": 3,
+    "naturalness": 21,
+    "sensory_detail": 13,
+    "subtext": 1
+  },
+  "failure_target_counts": {
+    "anti_meta": 32,
+    "dialogue": 24,
+    "character_voice": 19,
+    "character_consistency": 32,
+    "context_retention": 20,
+    "rewriting": 7,
+    "quiet": 26,
+    "emotion": 12,
+    "action": 9,
+    "description": 40,
+    "transitional": 13
+  },
+  "train_eval_split": {
+    "train": 108,
+    "eval": 12
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "name": "miyuki-writing-0.2",
+  "version": "0.2.0",
+  "description": "Human-authored Miyuki writing corpus expanded from 0.1 (38) + 82 new targeted exemplars = 120 total. Focus on anti-meta, dialogue, character voice, context retention, rewriting, quiet, emotional, action, description, transitions. Quality over count.",
+  "source": "human-authored",
+  "license": "CC-BY-4.0",
+  "creation_date": "2026-09-25T15:28:33.694063+00:00",
+  "num_examples": 120,
+  "source_dataset": "miyuki-writing-0.1",
+  "source_sha": "9e1b97461f98948254bc45906cb275f111318f5d5adfc9e7139ab9c35c200d5e",
+  "derived_sha": "8cda31a91a76b1d6e8dc67ea2b779de06334836dad089b6bd59210dbdc6985d6",
+  "categories": {
+    "scene": 98,
+    "continuation": 1,
+    "quiet": 26,
+    "character_consistency": 32,
+    "dialogue": 24,
+    "subtext": 25,
+    "character_voice": 19,
+    "atmospheric": 4,
+    "description": 40,
+    "pacing": 36,
+    "emotion": 12,
+    "action": 9,
+    "anti_meta": 32,
+    "rewriting": 7,
+    "context_retention": 20,
+    "transitional": 13,
+    "instruction_following": 6,
+    "sensory_detail": 1,
+    "humor": 2,
+    "tension": 1,
+    "continuity": 2
+  },
+  "skills": {
+    "instruction_following": 113,
+    "continuity": 12,
+    "prose_flow": 68,
+    "pacing": 9,
+    "character_consistency": 3,
+    "naturalness": 21,
+    "sensory_detail": 13,
+    "subtext": 1
+  },
+  "failure_targets": {
+    "anti_meta": 32,
+    "dialogue": 24,
+    "character_voice": 19,
+    "character_consistency": 32,
+    "context_retention": 20,
+    "rewriting": 7,
+    "quiet": 26,
+    "emotion": 12,
+    "action": 9,
+    "description": 40,
+    "transitional": 13
+  },
+  "splits": {
+    "train": 108,
+    "eval": 12
+  },
+  "characters": {
+    "total_chars": 57558,
+    "avg_chars_per_example": 479.65
+  },
+  "words": {
+    "total_words": 6318,
+    "avg_words_per_example": 52.65
+  },
+  "tokens": {
+    "total_tokens_qwen": 16088,
+    "avg_tokens_per_example": 134.06666666666666,
+    "max_tokens_per_example": 233,
+    "tokens_per_char": 0.2795093644671462
+  },
+  "tokenizer": {
+    "id": "Qwen/Qwen2-0.5B-Instruct",
+    "vocab_size": 151646,
+    "chat_template": true
+  },
+  "files": {
+    "dataset.jsonl": {
+      "sha256": "8cda31a91a76b1d6e8dc67ea2b779de06334836dad089b6bd59210dbdc6985d6",
+      "num_examples": 120
+    }
+  },
+  "validation": {
+    "status": "passed",
+    "errors": [],
+    "duplicates": 0
+  },
+  "provenance": {
+    "author": "Miyuki Lab human-authored, human-edited, reviewed",
+    "phase1_failures_targeted": [
+      "meta-analysis",
+      "flat dialogue",
+      "lore dumping",
+      "quiet-scene failure",
+      "context hedging",
+      "action incoherence",
+      "premature EOS",
+      "exposition",
+      "voice drift",
+      "repetition",
+      "generic phrasing",
+      "premature conclusion"
+    ]
+  },
+  "notes": "120 total = 38 from 0.1 + 82 new. All 120 reviewed as keep in review.yaml. No synthetic filler. Balanced for Miyuki writing spec."
+}

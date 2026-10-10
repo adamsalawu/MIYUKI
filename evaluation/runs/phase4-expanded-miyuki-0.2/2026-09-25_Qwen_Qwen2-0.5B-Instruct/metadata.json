@@ -1,0 +1,73 @@
+{
+  "run_name": "2026-09-25_Qwen_Qwen2-0.5B-Instruct",
+  "timestamp": "2026-09-25T16:41:25.281105+00:00",
+  "model": {
+    "model": {
+      "name": "Qwen/Qwen2-0.5B-Instruct",
+      "family": "qwen2",
+      "tokenizer": "Qwen/Qwen2-0.5B-Instruct",
+      "context_length": 4096,
+      "trust_remote_code": false
+    },
+    "runtime": {
+      "device": "auto",
+      "dtype": "auto",
+      "quantization": null,
+      "attn_implementation": null
+    },
+    "generation": {
+      "temperature": 0.8,
+      "top_p": 0.95,
+      "top_k": null,
+      "max_new_tokens": 180,
+      "repetition_penalty": 1.1,
+      "do_sample": true,
+      "seed": 42
+    },
+    "adapter": {
+      "type": "lora",
+      "r": 16,
+      "alpha": 32,
+      "dropout": 0.05,
+      "target_modules": null,
+      "enabled": true
+    },
+    "training": {
+      "output_dir": "checkpoints/phase4-miyuki-0.2",
+      "num_epochs": 3,
+      "per_device_train_batch_size": 1,
+      "per_device_eval_batch_size": 1,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.03,
+      "lr_scheduler_type": "cosine",
+      "logging_steps": 1,
+      "save_steps": 5,
+      "eval_steps": 5,
+      "save_total_limit": 2,
+      "max_seq_length": 1024,
+      "bf16": false,
+      "fp16": false,
+      "gradient_checkpointing": false,
+      "seed": 42,
+      "resume_from_checkpoint": null,
+      "push_to_hub": false,
+      "report_to": "none",
+      "assistant_only_loss": true
+    },
+    "version": "0.2.0-phase4",
+    "description": "Phase 4: Qwen2-0.5B + miyuki-writing-0.2 (120 ex, 38+82 targeted, SHA 8cda31...), LoRA r16 alpha32, 3 epochs, lr2e-4, batch1 accum8, max_seq1024, seed42, CPU, assistant_only_loss true. Tests whether larger deliberately curated data + correct loss improves writing enough to justify 0.5B."
+  },
+  "prompts_file": "evaluation\\prompts\\phase4_expanded.jsonl",
+  "num_prompts": 12,
+  "num_outputs": 12,
+  "num_errors": 0,
+  "generation_overrides": {},
+  "elapsed_s": 502.74580240249634,
+  "load_s": 12.523912191390991,
+  "load_error": null,
+  "model_params": 502830976,
+  "run_dir": "C:\\Aether\\RisingStar\\MIYUKI\\evaluation\\runs\\phase4-expanded-miyuki-0.2\\2026-09-25_Qwen_Qwen2-0.5B-Instruct",
+  "outputs_path": "C:\\Aether\\RisingStar\\MIYUKI\\evaluation\\runs\\phase4-expanded-miyuki-0.2\\2026-09-25_Qwen_Qwen2-0.5B-Instruct\\outputs.jsonl"
+}

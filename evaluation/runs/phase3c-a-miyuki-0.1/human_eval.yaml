@@ -1,0 +1,233 @@
+# Human evaluation — Phase 3C-A (system contract) vs Phase 1/3/3B
+# Same 12 prompts, same generation config (180 max, temp0.8 top_p0.95 rep1.1 seed42, CPU, chat True)
+evaluation_run: "evaluation/runs/phase3c-a-miyuki-0.1"
+model: "Qwen/Qwen2-0.5B-Instruct + phase3c-a LoRA r16 alpha32 (system contract, 3 epochs, 12 steps, lr2e-4)"
+evaluator: "Miyuki Lab"
+date: "2026-09-25"
+generation_config: { temperature: 0.8, top_p: 0.95, max_new_tokens: 180, repetition_penalty: 1.1, seed: 42 }
+adapter: { type: lora, r: 16, alpha: 32, formulation: "A-system-contract: You are Miyuki, direct story-writing assistant... (64 toks system)" }
+# Derived from miyuki-writing-0.1 SHA 9e1b9..., dataset-a SHA b518f30b
+
+outputs:
+  - prompt_id: "continuation-01"
+    category: "continuation"
+    generated_preview: "it was time to return. The sound of the distant sea, the whirring of the generator, it was a reminder that home was still..."
+    toks: 66
+    phase1_vs_phase3_vs_3b_vs_3c_a: "Phase1/3 180 generic town square, Phase3B 76 oak stump lantern 'Home' (slight improvement), Phase3C-A 66 generator/sea (new invention generator not in context, short, not beam payoff). Shorter than Phase3B, less specific than oak stump. No improvement over Phase3B."
+    ratings:
+      prose_quality: { score: 2, notes: "Generic generator whirring, not specific." }
+      naturalness: { score: 2, notes: "Invented generator not in lighthouse context." }
+      character_consistency: { score: 2, notes: "Mara not distinct." }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 2, notes: "Short, incomplete." }
+      creativity: { score: 2, notes: "Generic." }
+      instruction_adherence: { score: 2, notes: "Not beam reveal." }
+      continuity: { score: 2, notes: "Adds generator." }
+      overall_usefulness: { score: 2, notes: "Discard-level, not better than Phase3B." }
+    keep_edit_discard: discard
+    improvement: none (shorter, less specific than Phase3B)
+
+  - prompt_id: "dialogue-01"
+    category: "dialogue"
+    generated_preview: "\"Hi,\" said the eldest brother, breaking the silence with a soft hello. The younger sister looked up..."
+    toks: 108
+    phase1_vs: "Phase1 180 Sister/Bret confused, Phase3 180 Hi Mom/Sister, Phase3B 72 Aunt Mary/Tom, Phase3C-A 108 Hi breaking silence — still flat, roles slightly better (eldest brother + younger sister) but still no distinct voices, still no brief tags, still invented? Now at least siblings correct (eldest + younger sister) vs Aunt Mary."
+    ratings:
+      prose_quality: { score: 2, notes: "Grammatical but flat." }
+      naturalness: { score: 1, notes: "Hello breaking silence soft — unnatural." }
+      character_consistency: { score: 2, notes: "Slightly better roles (eldest/younger) but voices not distinct." }
+      dialogue_quality: { score: 1, notes: "Flat, no interruptions." }
+      pacing: { score: 2, notes: "Short." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 1, notes: "Failed distinct voices, no exposition." }
+      continuity: { score: 2, notes: "At least siblings correct, not Aunt Mary." }
+      overall_usefulness: { score: 1, notes: "Discard." }
+    keep_edit_discard: discard
+    improvement: none (slightly better roles but still flat)
+
+  - prompt_id: "scene-writing-01"
+    category: "scene_writing"
+    generated_preview: "The rain was gentle, the puddles trickling down the glass, creating a gentle symphony as tea poured..."
+    toks: 100
+    phase1_vs: "Phase1 180 raindrops danced (edit 3), Phase3 180 verbose ancient trees, Phase3B 180 old books/smoke (2), Phase3C-A 100 gentle puddles trickling (shorter, less contradictory than Phase3B's fire, but still generic puddles symphony)."
+    ratings:
+      prose_quality: { score: 2, notes: "Gentle puddles trickling generic." }
+      naturalness: { score: 2, notes: "Puddles symphony is purple." }
+      character_consistency: { score: 2, notes: "Single character not grounded." }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 2, notes: "Short, not lingering." }
+      creativity: { score: 2, notes: "Generic." }
+      instruction_adherence: { score: 2, notes: "Sensory attempt but over." }
+      continuity: { score: 2, notes: "Rain/puddles ok." }
+      overall_usefulness: { score: 2, notes: "Edit, similar to Phase1 but shorter." }
+    keep_edit_discard: edit
+    improvement: none
+
+  - prompt_id: "character-interaction-01"
+    category: "character_interaction"
+    generated_preview: "The mentor hesitated before revealing the truth. He knew it was risky, but he couldn't ignore..."
+    toks: 113
+    phase1_vs: "Phase1 1 essay dump, Phase3 1 essay, Phase3B 3 improvement (eyes dim), Phase3C-A 113 hesitated before revealing truth — starts late (not essay) but still summary 'He knew it was risky...' rather than dramatized confrontation. Shorter than Phase3B's 180 with more beats."
+    ratings:
+      prose_quality: { score: 2, notes: "Starts late but summary." }
+      naturalness: { score: 2, notes: "Hesitated before revealing — telling." }
+      character_consistency: { score: 2, notes: "Mentor/student not distinct." }
+      dialogue_quality: { score: 2, notes: "Brief, not distinct voices." }
+      pacing: { score: 2, notes: "Short." }
+      creativity: { score: 1, notes: "No dynamic." }
+      instruction_adherence: { score: 2, notes: "Not showing power/voice clearly." }
+      continuity: { score: 2, notes: "Respects mentor/student." }
+      overall_usefulness: { score: 1, notes: "Discard, worse than Phase3B's 3/edit." }
+    keep_edit_discard: discard
+    improvement: regression vs Phase3B (Phase3B was 3/edit)
+
+  - prompt_id: "emotional-scene-01"
+    category: "emotional_scene"
+    generated_preview: "The character's heart sank as the letter landed on their desk. The words were brief - \"Sorry, nothing here.\" Silence fel..."
+    toks: 28
+    phase1_vs: "Phase1 1 summary, Phase3 1 summary, Phase3B 4 keep (held between teeth 77), Phase3C-A 28 very short 'heart sank... Sorry, nothing here.' — not embodied, still tells 'heart sank', letter 'Sorry, nothing here' is not surprising Dread not expected? Short, not show via action."
+    ratings:
+      prose_quality: { score: 1, notes: "Very short, tells heart sank." }
+      naturalness: { score: 1, notes: "Summary." }
+      character_consistency: { score: 1, notes: "Character placeholder." }
+      dialogue_quality: { score: 1, notes: "Letter 'Sorry, nothing here' generic." }
+      pacing: { score: 1, notes: "Too short." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 1, notes: "Failed show via body." }
+      continuity: { score: 1, notes: "Not dreaded letter." }
+      overall_usefulness: { score: 1, notes: "Discard, far worse than Phase3B keep." }
+    keep_edit_discard: discard
+    improvement: strong regression (Phase3B keep → discard)
+
+  - prompt_id: "action-scene-01"
+    category: "action_scene"
+    generated_preview: "\"Quick!\" The protagonist ran forward, her heart pounding as she searched the market. She felt dizzy from running so muc..."
+    toks: 58
+    phase1_vs: "Phase1 1 incoherent, Phase3 Chinese 1, Phase3B 1 no Chinese but incoherent, Phase3C-A 58 Quick! ran forward heart pounding dizzy — short, no retrieval, not quick short sentences, not spatially clear."
+    ratings:
+      prose_quality: { score: 1, notes: "Short, dizzy generic." }
+      naturalness: { score: 1, notes: "Quick! then dizzy." }
+      character_consistency: { score: 1, notes: "No voice." }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 1, notes: "Not clipped." }
+      creativity: { score: 1, notes: "No retrieval." }
+      instruction_adherence: { score: 1, notes: "Failed retrieve." }
+      continuity: { score: 1, notes: "Market but no notebook." }
+      overall_usefulness: { score: 1, notes: "Discard." }
+    keep_edit_discard: discard
+    improvement: none (Chinese fixed already in Phase3B, still incoherent)
+
+  - prompt_id: "quiet-scene-01"
+    category: "quiet_scene"
+    generated_preview: "\"Can I help you with the ticket?\" one friend asks, turning to the other. \"No,\" the other responds, speaking quietly. \"I"
+    toks: 36
+    phase1_vs: "Phase1 42 meta The answer is, Phase3 103 meta, Phase3B 20 ticket line, Phase3C-A 36 ticket line (both ticket) — still not quiet scene with subtext, still off-topic ticket (not platform dusk silence). No longer meta 'The answer is:' (good) but still off-topic."
+    ratings:
+      prose_quality: { score: 1, notes: "Ticket line, not scene." }
+      naturalness: { score: 1, notes: "Off-topic." }
+      character_consistency: { score: 1, notes: "No friends." }
+      dialogue_quality: { score: 1, notes: "Generic ticket." }
+      pacing: { score: 1, notes: "No pacing." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 1, notes: "Failed subtext." }
+      continuity: { score: 1, notes: "No delayed train." }
+      overall_usefulness: { score: 1, notes: "Discard." }
+    keep_edit_discard: discard
+    improvement: none (no longer meta essay but still off-topic, similar to Phase3B)
+
+  - prompt_id: "description-01"
+    category: "description"
+    generated_preview: "The abandoned observatory stood alone in the rugged terrain of the mountainside, its walls thick with moss and bark..."
+    toks: 171
+    phase1_vs: "Phase1 180 generic mountaintop, Phase3 identical 180, Phase3B 180 first-person room with dialogue violation, Phase3C-A 171 walls thick with moss and bark — similar to Phase1, adult description not child's, no dialogue now (good vs Phase3B) but still not child POV."
+    ratings:
+      prose_quality: { score: 2, notes: "Similar to Phase1, moss and bark generic." }
+      naturalness: { score: 2, notes: "Adult description." }
+      character_consistency: { score: 1, notes: "Not child." }
+      dialogue_quality: { score: null, notes: "N/A (no dialogue, correct vs Phase3B violation)" }
+      pacing: { score: 2, notes: "List." }
+      creativity: { score: 1, notes: "Not POV-anchored." }
+      instruction_adherence: { score: 1, notes: "Failed child's perspective." }
+      continuity: { score: 2, notes: "Observatory mountain ok." }
+      overall_usefulness: { score: 1, notes: "Discard, similar to Phase1." }
+    keep_edit_discard: discard
+    improvement: none (better than Phase3B violation but same as Phase1)
+
+  - prompt_id: "rewriting-01"
+    category: "rewriting"
+    generated_preview: "\"I found myself walking through the empty room, feeling a chill run down my spine. It felt as if someone had just steppe..."
+    toks: 70
+    phase1_vs: "Phase1 29 generic sense of unease, Phase3 40 cool damp, Phase3B 17 Her eyes met his..., Phase3C-A 70 chill run down spine ...just steppe (truncated) — longer than Phase1/3 but still generic 'chill run down spine' and truncated 'just steppe' (incomplete). Not more vivid/specific."
+    ratings:
+      prose_quality: { score: 2, notes: "Chill run down spine cliché, truncated." }
+      naturalness: { score: 1, notes: "First-person swap." }
+      character_consistency: { score: null, notes: "N/A" }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 1, notes: "Truncated." }
+      creativity: { score: 1, notes: "Not specific." }
+      instruction_adherence: { score: 1, notes: "Failed vivid keep core." }
+      continuity: { score: 1, notes: "Loses him sad." }
+      overall_usefulness: { score: 1, notes: "Discard." }
+    keep_edit_discard: discard
+    improvement: none (longer but still generic)
+
+  - prompt_id: "character-consistency-01"
+    category: "character_consistency"
+    generated_preview: "\"Jinx,\" I said, my voice soft with sarcasm. \"I don't like it when you do that.\" She didn't reply; just stared out the w..."
+    toks: 87
+    phase1_vs: "Phase1 12 truncated, Phase3 identical 12, Phase3B 31 longer but earnest, Phase3C-A 87 longer soft with sarcasm — still not witty blunt deflect (soft with sarcasm is hedging, not blunt). Better length, voice slightly closer (sarcasm) but still not 'Another perfect plan... points to insecurities'."
+    ratings:
+      prose_quality: { score: 2, notes: "Complete, soft with sarcasm hedged." }
+      naturalness: { score: 2, notes: "Soft with sarcasm not blunt." }
+      character_consistency: { score: 2, notes: "Sarcasm hint but not blunt deflect." }
+      dialogue_quality: { score: 2, notes: "No dry humor." }
+      pacing: { score: 2, notes: "Complete." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 2, notes: "Soft sarcasm not witty blunt." }
+      continuity: { score: 1, notes: "Misnames Jinx." }
+      overall_usefulness: { score: 1, notes: "Discard, longer but still not voice." }
+    keep_edit_discard: discard
+    improvement: slight (longer, some sarcasm but still not witty)
+
+  - prompt_id: "tone-consistency-01"
+    category: "tone_consistency"
+    generated_preview: "The narrator's voice is soft and calm, but there is a hint of sadness in his words as he says \"The snow had covered the..."
+    toks: 49
+    phase1_vs: "Phase1 84 meta essay, Phase3 126 meta, Phase3B 23 Quietly I begin, Phase3C-A 49 The narrator's voice is soft and calm... hint of sadness... — again meta essay (The narrator's voice...), shorter than Phase3 but same class as Phase1/3."
+    ratings:
+      prose_quality: { score: 1, notes: "Meta essay." }
+      naturalness: { score: 1, notes: "Academic." }
+      character_consistency: { score: null, notes: "N/A" }
+      dialogue_quality: { score: null, notes: "N/A" }
+      pacing: { score: 1, notes: "No narrative." }
+      creativity: { score: 1, notes: "Generic." }
+      instruction_adherence: { score: 1, notes: "Failed continue image." }
+      continuity: { score: 1, notes: "Did not continue courtyard." }
+      overall_usefulness: { score: 1, notes: "Discard, same as Phase1/3." }
+    keep_edit_discard: discard
+    improvement: none (Phase3B was 23 non-meta but short; this is back to meta)
+
+  - prompt_id: "context-retention-01"
+    category: "context_retention"
+    generated_preview: "\"Thank you, I won't drink it.\""
+    toks: 11
+    phase1_vs: "Phase1 111 hedging essay, Phase3 157 hedging, Phase3B 32 Thank you she says picking up pot... I like it (short hedging), Phase3C-A 11 Thank you, I won't drink it. — very short, no mug, no lavender, no grandmother, no refusal reason. Shorter but still fails binary (no chipped blue mug). At least not hedging essay (no could be/depends) — now concise refusal but without mug. Slight reduction in hedging but still fail."
+    ratings:
+      prose_quality: { score: 2, notes: "Very short, no mug." }
+      naturalness: { score: 2, notes: "Concise refusal but missing context." }
+      character_consistency: { score: 1, notes: "No Elena mug." }
+      dialogue_quality: { score: 2, notes: "Short." }
+      pacing: { score: 1, notes: "Too short." }
+      creativity: { score: 1, notes: "None." }
+      instruction_adherence: { score: 1, notes: "Failed mug + lavender." }
+      continuity: { score: 1, notes: "FAIL — no mug." }
+      overall_usefulness: { score: 1, notes: "Discard, less hedging but still fail." }
+    keep_edit_discard: discard
+    improvement: slight (less hedging essay, but still fails, shorter)
+
+overall_summary:
+  phase1: "0 keep /3 edit /9 discard"
+  phase3: "0/2/10"
+  phase3b: "1/2/9 (emotional keep, character-interaction improvement, Chinese fixed)"
+  phase3c-a: "0/1/11? Actually 1 edit (scene-writing), 0 keep, 11 discard? Count: continuation discard, dialogue discard, scene edit (1), character discard, emotional discard, action discard, quiet discard, description discard, rewriting discard, Jinx discard, tone discard, context discard => 0 keep /1 edit /11 discard"
+  notes: "Phase3C-A with system contract performs worse than Phase3B (1 keep →0 keep, 2 edit→1 edit). System contract did not teach anti-meta, introduced regression in emotional (keep→discard) and character-interaction (3→discard). Suggests system-level framing not sufficient and may confuse model."

@@ -1,0 +1,390 @@
+{
+  "version": "5.0.0",
+  "created": "2026-09-29",
+  "sources": [
+    "evaluation/runs/phase1_qwen2_0.5b/human_eval.yaml",
+    "evaluation/runs/phase3-miyuki-0.1/human_eval.yaml",
+    "evaluation/runs/phase3b-miyuki-0.1/human_eval.yaml",
+    "evaluation/runs/phase3c-a-miyuki-0.1/human_eval.yaml",
+    "evaluation/runs/phase3c-b-miyuki-0.1/human_eval.yaml",
+    "evaluation/runs/phase4-miyuki-0.2/human_eval.yaml",
+    "evaluation/runs/phase4c-miyuki-0.3/human_eval.yaml",
+    "evaluation/runs/model-scale-qwen2.5-1.5b/human_eval.yaml",
+    "evaluation/runs/phase4-expanded-miyuki-0.2-60/human_eval_expanded.yaml"
+  ],
+  "baseline": {
+    "model": "Qwen/Qwen2-0.5B-Instruct + phase4-miyuki-0.2 LoRA (120 ex, assistant-only, 39 steps)",
+    "keep_edit_discard": "5/4/3",
+    "meta": 0,
+    "chinese_leakage_original": 0,
+    "premature_eos_original": 0,
+    "note": "Phase 4 is the quality reference until a Phase 5 experiment proves otherwise."
+  },
+  "categories": {
+    "A_character_intelligence": {
+      "character_voice": {
+        "status": "partially_improved",
+        "evidence": "P1-P3: interchangeable voices (Sister/Bret, Aunt Mary). P4: Jinx still earnest (109 toks mission-speak). P4C: Jinx in-voice dry/blunt (discard->edit) but content drifts surreal. 1.5B base: best Jinx yet (41-tok witty) but multi-character scenes still collapse."
+      },
+      "personality_consistency": {
+        "status": "failing",
+        "evidence": "Jinx witty/blunt requirement failed P1-P4 (earnest/formal opposite). P4C improved single-scene voice but multi-character scenes collapse to generic."
+      },
+      "emotional_behavior": {
+        "status": "partially_improved",
+        "evidence": "P1-P3: tells emotion ('heart pounding', 'relief wash'). P3B: showed via body (held between teeth, swallow thickly - P4C lost this keep). P4: body action present but letter-empty confusing."
+      },
+      "character_specific_vocabulary": {
+        "status": "failing",
+        "evidence": "No phase produced distinct diction per character in eval; training examples (002, 041, 043, 076) demonstrate it but 4C eval shows collapsed voices in multi-character."
+      },
+      "character_knowledge_boundaries": {
+        "status": "failing",
+        "evidence": "P4C hallucinates 'junior year', 'two people by fire', 'mom made it' - model states facts outside character knowledge."
+      },
+      "character_reactions": {
+        "status": "partially_improved",
+        "evidence": "043/076 training examples teach distinct reactions; P4C dialogue shows some differentiation but eval not conclusively improved."
+      },
+      "goals": {
+        "status": "untested",
+        "evidence": "No eval prompt isolated goal-following."
+      },
+      "relationships": {
+        "status": "partially_improved",
+        "evidence": "Mentor/student power dynamic improved P3B->P4; sibling roles improved P4C (eldest/mom kept)."
+      }
+    },
+    "B_dialogue": {
+      "distinct_voices": {
+        "status": "failing",
+        "evidence": "All phases: dialogue prompts scored 1-2. P4C improved roles but voices still collapse. 24-33 dialogue training examples not sufficient."
+      },
+      "conversational_rhythm": {
+        "status": "failing",
+        "evidence": "No interruptions produced in eval despite training examples (018, 041)."
+      },
+      "subtext": {
+        "status": "failing",
+        "evidence": "quiet-scene-01 failed P1-P3 (meta/ticket). P4 first success (bench/whispers). P4C held. exp-subtext-01 still fails both P4 and P4C (dinner talk not leaving/staying debate)."
+      },
+      "interruptions": {
+        "status": "failing",
+        "evidence": "Never produced in evaluation."
+      },
+      "implication": {
+        "status": "untested",
+        "evidence": "No dedicated eval prompt."
+      },
+      "reactions": {
+        "status": "partially_improved",
+        "evidence": "P4C dialogue reactions more apt."
+      },
+      "silence": {
+        "status": "improved",
+        "evidence": "P4/P4C quiet-scene-01 PASS (silence carries weight, no meta)."
+      },
+      "natural_responses": {
+        "status": "partially_improved",
+        "evidence": "P4C 'I'm not thirsty, just tired' natural; still some robotic replies."
+      },
+      "multi_character_scenes": {
+        "status": "failing",
+        "evidence": "All multi-character evals collapse: P4C exp-dialogue-02 'camera' invented, exp-character-voice-01 Jinx soft."
+      },
+      "avoiding_narrator_like_dialogue": {
+        "status": "improved",
+        "evidence": "P4-P4C: no essay-style dialogue in original suite (vs P1-P3 dumps)."
+      }
+    },
+    "C_context": {
+      "exact_facts": {
+        "status": "failing",
+        "evidence": "context-retention-01 failed ALL phases: no chipped-blue mug, no lavender hate. P4C targeted 'cold, hard black from the fridge' hallucination."
+      },
+      "binary_facts": {
+        "status": "failing",
+        "evidence": "Blue/lavender, mug/phone, station/market - all failed through 4C. 20+ binary training examples not learned."
+      },
+      "object_identity": {
+        "status": "failing",
+        "evidence": "1.5B hallucinated silver/black mug; P4C 'cold hard black from fridge'."
+      },
+      "color": {
+        "status": "partially_improved",
+        "evidence": "Blue scarf respected in some continuations (P4C exp-continuity-01) but blue mug never used."
+      },
+      "ownership": {
+        "status": "failing",
+        "evidence": "Grandmother's mug never attributed correctly in eval."
+      },
+      "relationships": {
+        "status": "partially_improved",
+        "evidence": "Mentor/student, eldest/younger kept in P4C."
+      },
+      "previous_actions": {
+        "status": "improved",
+        "evidence": "P4C exp-continuity-01: 'scarf still missing... didn't put it on because he knew' - respects prior action."
+      },
+      "chronology": {
+        "status": "untested_dedicated",
+        "evidence": "exp-transitions tests 3-day skip; P4C learned mug-ring but labels 'Three days later'."
+      },
+      "negative_facts": {
+        "status": "failing",
+        "evidence": "'hates lavender', 'never drinks coffee from anything else' - negative constraints never obeyed in eval."
+      },
+      "do_not_change_x_constraints": {
+        "status": "partially_improved",
+        "evidence": "No-dialogue constraint: P4/P4C respected in description (vs P3B violation). Fact constraints still fail."
+      }
+    },
+    "D_viewpoint": {
+      "first_person": {
+        "status": "untested_isolated",
+        "evidence": "No eval prompt isolates 1st-person; training 150 exists."
+      },
+      "third_limited": {
+        "status": "failing",
+        "evidence": "P4C: hallucinates facts outside limited viewpoint (junior year, two people)."
+      },
+      "child_viewpoint": {
+        "status": "failing",
+        "evidence": "description-01 failed all phases: adult summary, not child-anchored. P4 keep (backpack-27) was closest; P4C regressed to adult."
+      },
+      "restricted_knowledge": {
+        "status": "failing",
+        "evidence": "Model states omniscient facts; training 150/151 teach limited but eval fails."
+      },
+      "sensory_grounding": {
+        "status": "improved",
+        "evidence": "P4-P4C: selective grounded details (damp teacup, lantern/stream) vs P1-P3 purple."
+      },
+      "internal_knowledge_boundaries": {
+        "status": "failing",
+        "evidence": "Same as restricted knowledge."
+      }
+    },
+    "E_action": {
+      "object_retrieval": {
+        "status": "failing",
+        "evidence": "action-scene-01 failed all phases: notebook never retrieved. P4C targeted: notebook ends with vendor."
+      },
+      "spatial_relationships": {
+        "status": "failing",
+        "evidence": "P1: school/security incoherent; P4C: vague light/paper-sleeve."
+      },
+      "action_sequencing": {
+        "status": "failing",
+        "evidence": "Cause-effect chains broken in all action evals."
+      },
+      "cause_effect": {
+        "status": "partially_improved",
+        "evidence": "Training 080/097 teach readable chains; P4 action partially tracks (bag thud) but retrieval fails."
+      },
+      "physical_continuity": {
+        "status": "failing",
+        "evidence": "P4C: 'light flickered... paper on sleeve' disjointed."
+      },
+      "character_positioning": {
+        "status": "failing",
+        "evidence": "1.5B: vendor grabs protagonist; P4C: notebook with vendor."
+      },
+      "believable_movement": {
+        "status": "failing",
+        "evidence": "All action evals: invented/staged movement."
+      }
+    },
+    "F_prose": {
+      "description": {
+        "status": "improved",
+        "evidence": "P4 keep (damp teacup) vs P1 purple raindrops. P4C comparable but less POV."
+      },
+      "imagery": {
+        "status": "regressed_in_4c",
+        "evidence": "P4C surreal: 'window glass hard then soft', 'thumb no finger', 'old woman stopped because door creaked' - new failure mode from overfitting (train 0.25 vs eval plateau 2.86)."
+      },
+      "pacing": {
+        "status": "partially_improved",
+        "evidence": "P4 quiet/scene pacing good; action pacing still fails."
+      },
+      "sentence_variation": {
+        "status": "partially_improved",
+        "evidence": "P4C 0 short-EOS in original; varied rhythm in keeps."
+      },
+      "paragraph_rhythm": {
+        "status": "partially_improved",
+        "evidence": "P4 paragraphs lead into each other; P4C surreal breaks."
+      },
+      "atmosphere": {
+        "status": "improved",
+        "evidence": "P4/P4C quiet/scene atmosphere intimate."
+      },
+      "emotional_writing": {
+        "status": "partially_improved",
+        "evidence": "P3B keep (body action) lost in P4C; P4 edit-level; surreal regressions."
+      },
+      "quiet_scenes": {
+        "status": "improved",
+        "evidence": "P4/P4C quiet-scene-01 PASS (first real quiet success)."
+      },
+      "action_scenes": {
+        "status": "failing",
+        "evidence": "All action prompts 1-2."
+      },
+      "transitions": {
+        "status": "improved",
+        "evidence": "P4C learned mug-ring (dataset 055/115); P4 used objects too."
+      }
+    },
+    "G_instruction_following": {
+      "rewriting": {
+        "status": "partially_improved",
+        "evidence": "P4 keep (bed/hands/glasses/click 100 toks) - best. P4C regressed (29 toks, less vivid). exp-rewriting still short in both."
+      },
+      "continuation": {
+        "status": "improved",
+        "evidence": "P4/P4C: proper continuation, no restart/summary (vs P1-P3 meta)."
+      },
+      "style_constraints": {
+        "status": "partially_improved",
+        "evidence": "Tone kept P4/P4C; no-adjectives constraint (constrained-desc) still fails."
+      },
+      "length_constraints": {
+        "status": "untested",
+        "evidence": "No length-constraint eval prompt."
+      },
+      "forbidden_details": {
+        "status": "partially_improved",
+        "evidence": "No-dialogue respected; no-violence still violated (P4C targeted vendor grab)."
+      },
+      "requested_details": {
+        "status": "failing",
+        "evidence": "Notebook retrieval requested, never delivered."
+      },
+      "formatting": {
+        "status": "improved",
+        "evidence": "Dialogue format produced in all phases."
+      },
+      "tone": {
+        "status": "improved",
+        "evidence": "tone-consistency-01: P4/P4C perform restrained continuation, no essay (vs P1-P3 meta)."
+      }
+    },
+    "H_anti_patterns": {
+      "meta_commentary": {
+        "status": "eliminated",
+        "evidence": "P4-P4C: 0 meta flags (answer-is, tone-essay, announcements) in original+expanded vs P1 4 meta."
+      },
+      "certainly": {
+        "status": "eliminated_original",
+        "evidence": "0 in original suite all phases; 1.5B base had 1 ('Certainly! Here's your sentence')."
+      },
+      "explaining_instead_of_writing": {
+        "status": "eliminated",
+        "evidence": "P4-P4C write scenes when asked (vs P1-P3 analysis)."
+      },
+      "generic_ai_phrases": {
+        "status": "reduced",
+        "evidence": "P1: 'wind of history', 'mix of excitement'. P4: less purple. Still some generic ('air thick with old books')."
+      },
+      "hedging": {
+        "status": "eliminated_original",
+        "evidence": "P4-P4C: 0 hedging essays (could-be/depends) vs P1 context essay."
+      },
+      "list_answers": {
+        "status": "failing_15b_only",
+        "evidence": "1.5B context numbered-list; 0.5B P4/P4C clean."
+      },
+      "summarization_instead_of_continuation": {
+        "status": "eliminated",
+        "evidence": "P4-P4C continue properly."
+      },
+      "premature_endings": {
+        "status": "improved",
+        "evidence": "P4/P4C: 0 short-EOS in original (vs P1 4 truncated). Expanded still has short outputs."
+      },
+      "hallucinated_context": {
+        "status": "failing",
+        "evidence": "P4C: 'junior year', 'two people by fire', 'mom made it'; 1.5B: silver mug."
+      },
+      "surreal_incoherent_imagery": {
+        "status": "regressed_in_4c",
+        "evidence": "NEW failure mode in P4C (overfitting): 4 prompts with surreal imagery."
+      },
+      "unnecessary_moralizing": {
+        "status": "improved",
+        "evidence": "No 'And so they learned' in P4-P4C."
+      },
+      "unnecessary_disclaimers": {
+        "status": "failing_15b_only",
+        "evidence": "1.5B sanity false refusal; 0.5B clean."
+      }
+    }
+  },
+  "surviving_failures_priority": [
+    {
+      "rank": 1,
+      "failure": "exact/binary context (mug/lavender, negative facts)",
+      "phases_failed": "P1-4C all",
+      "dataset_response": "0.3 B-target 8 examples not learned at 3 epochs"
+    },
+    {
+      "rank": 2,
+      "failure": "viewpoint constraints (child, limited knowledge)",
+      "phases_failed": "P1-4C all",
+      "dataset_response": "0.3 E-target 6 examples; description regressed"
+    },
+    {
+      "rank": 3,
+      "failure": "object/detail retrieval in action",
+      "phases_failed": "P1-4C all",
+      "dataset_response": "0.3 D-target 6 examples; notebook still never retrieved"
+    },
+    {
+      "rank": 4,
+      "failure": "multi-character voice collapse",
+      "phases_failed": "P1-4C all",
+      "dataset_response": "0.3 A-target 8 examples; single-scene Jinx improved"
+    },
+    {
+      "rank": 5,
+      "failure": "action continuity/spatial",
+      "phases_failed": "P1-4C all",
+      "dataset_response": "0.3 D-target partial"
+    },
+    {
+      "rank": 6,
+      "failure": "dialogue subtext/interruptions",
+      "phases_failed": "P1-4C mostly",
+      "dataset_response": "0.3 A/C partial; quiet-scene PASS"
+    },
+    {
+      "rank": 7,
+      "failure": "surreal imagery (NEW, overfitting)",
+      "phases_failed": "P4C only",
+      "dataset_response": "not data - training duration issue"
+    },
+    {
+      "rank": 8,
+      "failure": "rewriting vividness loss",
+      "phases_failed": "P4C regression",
+      "dataset_response": "P4 (0.2) keep was best"
+    }
+  ],
+  "eliminated": [
+    "meta commentary (answer-is, tone-essay)",
+    "hedging essays (could-be/depends)",
+    "explaining instead of writing",
+    "summarization instead of continuation",
+    "moralizing",
+    "premature EOS in original suite",
+    "Chinese leakage in original suite"
+  ],
+  "hardware_constraints": {
+    "training_backend": "Qwen2-0.5B-Instruct + PEFT (only trainable)",
+    "blocked": "Qwen2.5-1.5B LoRA (NO-GO: 2.82GB < 3.0GB after load+LoRA)",
+    "eval_speed_variance": "2.84 tok/s (Sep 24) -> 0.4-0.5 tok/s (Sep 25-26) under memory pressure",
+    "overfit_threshold_observed": "154 examples x 3 epochs -> train 0.25 / eval plateau 2.86"
+  }
+}
